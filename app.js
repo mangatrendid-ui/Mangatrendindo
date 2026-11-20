@@ -49,6 +49,40 @@
      Kalau layanannya tidak bisa dihubungi, angkanya disembunyikan saja. */
   var COUNTER_WS = 'mangatrendindo';
   var COUNTER_BASE = 'https://api.counterapi.dev/v2';
+  /* Kolom komentar (Disqus, gratis). Shortname dari dashboard Disqus setelah
+     mendaftarkan situs mangatrendindo.my.id (kategori Entertainment).
+     Tiap halaman punya thread sendiri lewat page.identifier. */
+  var DISQUS_SHORTNAME = 'mangatrendindo-my-id';
+  var DISQUS_SITE = 'https://mangatrendindo.my.id';
+  function komentarHtml() {
+    return '<div class="komentar"><h2 class="section-title">Komentar</h2><div id="disqus_thread"></div></div>';
+  }
+  /* Situs ini single-page (pindah halaman tanpa reload), jadi setiap selesai
+     render halaman yang punya kolom komentar, panggil ini dengan id halaman.
+     Kalau script Disqus belum dimuat, muat dulu; kalau sudah, reset ke
+     halaman baru (cara resmi Disqus untuk SPA). */
+  function muatKomentar(pageId, pageTitle) {
+    var pageUrl = DISQUS_SITE + '/' + location.hash;
+    if (window.DISQUS) {
+      window.DISQUS.reset({ reload: true, config: function () {
+        this.page.identifier = pageId;
+        this.page.url = pageUrl;
+        this.page.title = pageTitle;
+      }});
+      return;
+    }
+    window.disqus_config = function () {
+      this.page.identifier = pageId;
+      this.page.url = pageUrl;
+      this.page.title = pageTitle;
+    };
+    if (document.querySelector('script[data-disqus-embed]')) return;
+    var s = document.createElement('script');
+    s.setAttribute('data-disqus-embed', '1');
+    s.src = 'https://' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', String(+new Date()));
+    (document.head || document.body).appendChild(s);
+  }
   /* CounterAPI menghapus titik dari slug (mis. nama "blue-lock-370.1" jadi slug
      "blue-lock-3701"), jadi kunci counter juga harus tanpa titik. */
   function counterKey(mangaId, nomor) {
@@ -285,9 +319,11 @@
         '</a>' +
         (c.download ? '<a class="btn-dl" href="' + esc(c.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
         '</div>';
-      }).join('') + '</div>';
+      }).join('') + '</div>' +
+      komentarHtml();
 
     app.innerHTML = html;
+    muatKomentar('manga-' + m.id, m.judul);
 
     document.getElementById('btn-bookmark').addEventListener('click', function () {
       if (isBookmark(m.id)) {
@@ -358,7 +394,9 @@
             : '<p class="empty" style="padding:24px">Halaman chapter ini belum diunggah. Upload gambar halaman ke folder images/ lalu isi daftar pages di data.json.</p>') +
         '</div>' +
         nav +
-      '</div>';
+      '</div>' +
+      komentarHtml();
+    muatKomentar('baca-' + m.id + '-' + ch.nomor, m.judul + ' — Chapter ' + ch.nomor);
     window.scrollTo(0, 0);
   }
 
