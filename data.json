@@ -139,7 +139,7 @@
         {
             "id": "blue-lock",
             "judul": "Blue Lock",
-            "cover": "https://picsum.photos/seed/blue-lock/400/600",
+            "cover": "blue-lock.jpeg",
             "sinopsis": "Yoichi Isagi, striker SMA biasa, mengikuti program Blue Lock — proyek radikal untuk menciptakan striker terbaik Jepang demi menjuarai Piala Dunia.",
             "genre": [
                 "Sports",
