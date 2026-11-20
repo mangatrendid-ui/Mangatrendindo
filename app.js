@@ -134,7 +134,7 @@
 
     var daftar = DATA.manga.filter(function (m) {
       return genreAktif === 'Semua' || m.genre.indexOf(genreAktif) !== -1;
-    });
+    }).sort(function (a, b) { return a.judul.localeCompare(b.judul); });
 
     app.innerHTML =
       '<h2 class="section-title">Daftar Manga</h2>' +
