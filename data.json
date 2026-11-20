@@ -1,6 +1,108 @@
 {
     "manga": [
         {
+            "id": "mairimashita-iruma-kun",
+            "judul": "Mairimashita Iruma-kun",
+            "cover": "https://picsum.photos/seed/mairimashita-iruma-kun/400/600",
+            "sinopsis": "Iruma Suzuki, anak manusia yang dijual orang tuanya ke iblis Sullivan, harus bersekolah di sekolah iblis Babyls sambil menyembunyikan bahwa dia manusia.",
+            "genre": [
+                "Comedy",
+                "Fantasy",
+                "School"
+            ],
+            "status": "Ongoing",
+            "rating": 4.2,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 467,
+                    "judul": "",
+                    "tanggal": "2026-11-19",
+                    "pages": []
+                },
+                {
+                    "nomor": 466,
+                    "judul": "",
+                    "tanggal": "2026-11-12",
+                    "pages": []
+                },
+                {
+                    "nomor": 465,
+                    "judul": "",
+                    "tanggal": "2026-11-05",
+                    "pages": []
+                }
+            ]
+        },
+        {
+            "id": "blue-lock",
+            "judul": "Blue Lock",
+            "cover": "https://picsum.photos/seed/blue-lock/400/600",
+            "sinopsis": "Yoichi Isagi, striker SMA biasa, mengikuti program Blue Lock — proyek radikal untuk menciptakan striker terbaik Jepang demi menjuarai Piala Dunia.",
+            "genre": [
+                "Sports",
+                "Action",
+                "Drama"
+            ],
+            "status": "Ongoing",
+            "rating": 4.5,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 369,
+                    "judul": "",
+                    "tanggal": "2026-11-17",
+                    "pages": []
+                },
+                {
+                    "nomor": 368,
+                    "judul": "",
+                    "tanggal": "2026-11-10",
+                    "pages": []
+                },
+                {
+                    "nomor": 367,
+                    "judul": "",
+                    "tanggal": "2026-11-03",
+                    "pages": []
+                }
+            ]
+        },
+        {
+            "id": "mokushiroku-no-yonkishi",
+            "judul": "Mokushiroku no Yonkishi",
+            "cover": "https://picsum.photos/seed/mokushiroku-no-yonkishi/400/600",
+            "sinopsis": "Percival, anak yang hidup tenang di pegunungan, memulai perjalanan setelah bertemu ksatria misterius — dan ternyata dia adalah salah satu dari Empat Ksatria Kiamat.",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "status": "Ongoing",
+            "rating": 3.6,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 261,
+                    "judul": "",
+                    "tanggal": "2026-11-17",
+                    "pages": []
+                },
+                {
+                    "nomor": 260,
+                    "judul": "",
+                    "tanggal": "2026-11-03",
+                    "pages": []
+                },
+                {
+                    "nomor": 259,
+                    "judul": "",
+                    "tanggal": "2026-10-27",
+                    "pages": []
+                }
+            ]
+        },
+        {
             "chapters": [
                 {
                     "judul": "Gerhana Ketiga",
@@ -98,7 +200,7 @@
             "id": "akademi-sihir-nusantara",
             "judul": "Akademi Sihir Nusantara",
             "rating": 4.7,
-            "sinopsis": "Di akademi sihir tersembunyi di tengah hutan Kalimantan, Nara \u2014 siswa tanpa bakat sihir \u2014 justru bisa melihat mantra yang tak terlihat orang lain.",
+            "sinopsis": "Di akademi sihir tersembunyi di tengah hutan Kalimantan, Nara — siswa tanpa bakat sihir — justru bisa melihat mantra yang tak terlihat orang lain.",
             "status": "Ongoing",
             "views": 128900
         },
@@ -144,7 +246,7 @@
             "id": "bayangan-kota-neon",
             "judul": "Bayangan Kota Neon",
             "rating": 4.6,
-            "sinopsis": "Detektif Kirana menyelidiki kasus orang hilang di Kota Neon, kota yang tidak pernah tidur \u2014 dan menemukan bahwa bayangan para korban masih berjalan di jalanan.",
+            "sinopsis": "Detektif Kirana menyelidiki kasus orang hilang di Kota Neon, kota yang tidak pernah tidur — dan menemukan bahwa bayangan para korban masih berjalan di jalanan.",
             "status": "Ongoing",
             "views": 98400
         },
@@ -262,7 +364,7 @@
             "id": "koki-dari-dunia-lain",
             "judul": "Koki dari Dunia Lain",
             "rating": 4.4,
-            "sinopsis": "Chef Bimo tersesat ke dunia pedang dan sihir. Tanpa pedang dan tanpa sihir, satu-satunya senjatanya adalah wajan \u2014 dan masakannya bisa menyembuhkan luka.",
+            "sinopsis": "Chef Bimo tersesat ke dunia pedang dan sihir. Tanpa pedang dan tanpa sihir, satu-satunya senjatanya adalah wajan — dan masakannya bisa menyembuhkan luka.",
             "status": "Ongoing",
             "views": 76800
         },
@@ -350,7 +452,7 @@
         }
     ],
     "site": {
-        "deskripsi": "Website baca manga \u2014 semua judul di bawah ini adalah karya fiksi orisinal untuk contoh.",
+        "deskripsi": "Website baca manga MANGATRENDINDO — daftar judul, chapter terbaru, dan reader.",
         "nama": "MANGATRENDINDO"
     }
 }
