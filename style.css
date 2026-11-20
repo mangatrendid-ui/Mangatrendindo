@@ -96,6 +96,7 @@ button { cursor: pointer; font-family: inherit; }
 .update-item img { width: 56px; height: 84px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
 .update-item h3 { font-size: 15px; }
 .update-item h3 a:hover { color: var(--accent); }
+.update-item .chapter-links { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
 .update-item .chapter-link {
   display: inline-block; margin-top: 4px; font-size: 13px; font-weight: 600;
   color: var(--accent-2);

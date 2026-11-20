@@ -106,17 +106,32 @@
       if (a.mi !== b.mi) return b.mi - a.mi;
       return a.ci - b.ci;
     });
-    var update = semuaChapter.slice(0, 8);
+    var grupUpdate = [];
+    semuaChapter.forEach(function (u) {
+      var g = null;
+      for (var i = 0; i < grupUpdate.length; i++) {
+        if (grupUpdate[i].manga.id === u.manga.id) { g = grupUpdate[i]; break; }
+      }
+      if (!g) { g = { manga: u.manga, chapters: [] }; grupUpdate.push(g); }
+      g.chapters.push(u.chapter);
+    });
+    var update = grupUpdate.slice(0, 8);
 
     var html = '<h2 class="section-title">Update Terbaru</h2>' +
       '<div class="update-list">' +
-      update.map(function (u) {
+      update.map(function (g) {
+        var chLinks = g.chapters.slice(0, 3).map(function (c) {
+          return '<a class="chapter-link" href="#/baca/' + esc(g.manga.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + '</a>';
+        }).join('');
+        if (g.chapters.length > 3) {
+          chLinks += '<a class="chapter-link" href="#/manga/' + esc(g.manga.id) + '">Lihat semua chapter &raquo;</a>';
+        }
         return '<div class="update-item">' +
-          '<a href="#/manga/' + esc(u.manga.id) + '"><img src="' + esc(u.manga.cover) + '" alt="Cover ' + esc(u.manga.judul) + '" loading="lazy"></a>' +
-          '<div><h3><a href="#/manga/' + esc(u.manga.id) + '">' + esc(u.manga.judul) + '</a></h3>' +
-          '<a class="chapter-link" href="#/baca/' + esc(u.manga.id) + '/' + u.chapter.nomor + '">Chapter ' + u.chapter.nomor + (u.chapter.judul ? ' — ' + esc(u.chapter.judul) : '') + '</a>' +
-          '<div class="manga-meta"><span>' + esc(u.manga.genre.join(', ')) + '</span></div></div>' +
-          '<span class="update-time"><span class="up-label">UP</span> &middot; ' + fmtTanggal(u.chapter.tanggal) + '</span>' +
+          '<a href="#/manga/' + esc(g.manga.id) + '"><img src="' + esc(g.manga.cover) + '" alt="Cover ' + esc(g.manga.judul) + '" loading="lazy"></a>' +
+          '<div><h3><a href="#/manga/' + esc(g.manga.id) + '">' + esc(g.manga.judul) + '</a></h3>' +
+          '<div class="chapter-links">' + chLinks + '</div>' +
+          '<div class="manga-meta"><span>' + esc(g.manga.genre.join(', ')) + '</span></div></div>' +
+          '<span class="update-time"><span class="up-label">UP</span> &middot; ' + fmtTanggal(g.chapters[0].tanggal) + '</span>' +
         '</div>';
       }).join('') + '</div>';
 
@@ -124,8 +139,11 @@
       '<div class="manga-grid">' +
       DATA.manga.slice().sort(function (a, b) {
         var cb = chapterTerbaru(b), ca = chapterTerbaru(a);
-        var d = ((cb && cb.tanggal) || '').localeCompare((ca && ca.tanggal) || '');
-        return d !== 0 ? d : a.judul.localeCompare(b.judul);
+        var da = (ca && ca.tanggal) || '', db = (cb && cb.tanggal) || '';
+        var d = db.localeCompare(da);
+        if (d !== 0) return d;
+        if (!da) return a.judul.localeCompare(b.judul);
+        return DATA.manga.indexOf(b) - DATA.manga.indexOf(a);
       }).map(function (m) { return kartuManga(m); }).join('') +
       '</div>';
 
