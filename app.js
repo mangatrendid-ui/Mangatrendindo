@@ -419,7 +419,7 @@
     } else if (parts[0] === 'manga' && parts[1]) {
       renderDetail(decodeURIComponent(parts[1]));
     } else if (parts[0] === 'baca' && parts[1] && parts[2]) {
-      renderReader(decodeURIComponent(parts[1]), parseInt(parts[2], 10));
+      renderReader(decodeURIComponent(parts[1]), parseFloat(parts[2]));
     } else {
       document.querySelector('[data-nav="beranda"]').classList.add('active');
       renderBeranda();
