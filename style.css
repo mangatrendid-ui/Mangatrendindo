@@ -169,3 +169,7 @@ button { cursor: pointer; font-family: inherit; }
   .detail-info h1 { font-size: 21px; }
   .update-time { display: none; }
 }
+
+/* Slot iklan */
+.ad-slot { text-align: center; margin: 12px auto; max-width: 100%; overflow: hidden; }
+.ad-slot iframe { max-width: 100%; }
