@@ -1,6 +1,108 @@
 {
     "manga": [
         {
+            "id": "fairy-tail-100-years-quest",
+            "judul": "Fairy Tail: 100 Years Quest",
+            "cover": "https://picsum.photos/seed/fairy-tail-100-years-quest/400/600",
+            "sinopsis": "Setelah mengalahkan Zeref dan Acnologia, Natsu dan tim Fairy Tail menerima misi 100 tahun: menyegel Lima Dewa Naga di benua Guiltina.",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Comedy"
+            ],
+            "status": "Ongoing",
+            "rating": 4.3,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 224,
+                    "judul": "",
+                    "tanggal": "2026-11-10",
+                    "pages": []
+                },
+                {
+                    "nomor": 223,
+                    "judul": "",
+                    "tanggal": "2026-10-27",
+                    "pages": []
+                },
+                {
+                    "nomor": 222,
+                    "judul": "",
+                    "tanggal": "2026-09-23",
+                    "pages": []
+                }
+            ]
+        },
+        {
+            "id": "undead-unluck",
+            "judul": "Undead Unluck",
+            "cover": "https://picsum.photos/seed/undead-unluck/400/600",
+            "sinopsis": "Fuuko Izumo, gadis pembawa sial, bertemu Andy, pria yang tidak bisa mati. Bersama Union, mereka melawan makhluk penolak dan takdir dunia.",
+            "genre": [
+                "Action",
+                "Comedy",
+                "Supernatural"
+            ],
+            "status": "Completed",
+            "rating": 3.9,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 239,
+                    "judul": "",
+                    "tanggal": "2025-01-27",
+                    "pages": []
+                },
+                {
+                    "nomor": 238,
+                    "judul": "",
+                    "tanggal": "2025-01-20",
+                    "pages": []
+                },
+                {
+                    "nomor": 237,
+                    "judul": "",
+                    "tanggal": "2025-01-13",
+                    "pages": []
+                }
+            ]
+        },
+        {
+            "id": "tougen-anki",
+            "judul": "Tougen Anki",
+            "cover": "https://picsum.photos/seed/tougen-anki/400/600",
+            "sinopsis": "Shiki Ichinose, keturunan Oni, masuk sekolah Momotaro untuk melawan para Momotaro — sambil mencari kebenaran tentang ayahnya.",
+            "genre": [
+                "Action",
+                "Supernatural",
+                "Shounen"
+            ],
+            "status": "Ongoing",
+            "rating": 4.0,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 291,
+                    "judul": "",
+                    "tanggal": "2026-11-12",
+                    "pages": []
+                },
+                {
+                    "nomor": 290,
+                    "judul": "",
+                    "tanggal": "2026-11-06",
+                    "pages": []
+                },
+                {
+                    "nomor": 289,
+                    "judul": "",
+                    "tanggal": "2026-10-30",
+                    "pages": []
+                }
+            ]
+        },
+        {
             "id": "mairimashita-iruma-kun",
             "judul": "Mairimashita Iruma-kun",
             "cover": "https://picsum.photos/seed/mairimashita-iruma-kun/400/600",
@@ -101,354 +203,6 @@
                     "pages": []
                 }
             ]
-        },
-        {
-            "chapters": [
-                {
-                    "judul": "Gerhana Ketiga",
-                    "nomor": 3,
-                    "pages": [
-                        "https://picsum.photos/seed/pedang-langit-senja-c3-p1/800/1200",
-                        "https://picsum.photos/seed/pedang-langit-senja-c3-p2/800/1200",
-                        "https://picsum.photos/seed/pedang-langit-senja-c3-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-19"
-                },
-                {
-                    "judul": "Pedang yang Terbangun",
-                    "nomor": 2,
-                    "pages": [
-                        "https://picsum.photos/seed/pedang-langit-senja-c2-p1/800/1200",
-                        "https://picsum.photos/seed/pedang-langit-senja-c2-p2/800/1200",
-                        "https://picsum.photos/seed/pedang-langit-senja-c2-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-12"
-                },
-                {
-                    "judul": "Anak Desa dan Pedang Patah",
-                    "nomor": 1,
-                    "pages": [
-                        "https://picsum.photos/seed/pedang-langit-senja-c1-p1/800/1200",
-                        "https://picsum.photos/seed/pedang-langit-senja-c1-p2/800/1200",
-                        "https://picsum.photos/seed/pedang-langit-senja-c1-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-05"
-                }
-            ],
-            "cover": "https://picsum.photos/seed/pedang-langit-senja/400/600",
-            "genre": [
-                "Action",
-                "Fantasy",
-                "Adventure"
-            ],
-            "id": "pedang-langit-senja",
-            "judul": "Pedang Langit Senja",
-            "rating": 4.8,
-            "sinopsis": "Raka, pemuda desa yang menemukan pedang patah peninggalan langit, harus belajar mengendalikan kekuatannya sebelum gerhana ketiga tiba dan menelan dunia.",
-            "status": "Ongoing",
-            "views": 152300
-        },
-        {
-            "chapters": [
-                {
-                    "judul": "Ujian Tengah Semester",
-                    "nomor": 4,
-                    "pages": [
-                        "https://picsum.photos/seed/akademi-sihir-c4-p1/800/1200",
-                        "https://picsum.photos/seed/akademi-sihir-c4-p2/800/1200",
-                        "https://picsum.photos/seed/akademi-sihir-c4-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-20"
-                },
-                {
-                    "judul": "Perpustakaan Terlarang",
-                    "nomor": 3,
-                    "pages": [
-                        "https://picsum.photos/seed/akademi-sihir-c3-p1/800/1200",
-                        "https://picsum.photos/seed/akademi-sihir-c3-p2/800/1200",
-                        "https://picsum.photos/seed/akademi-sihir-c3-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-13"
-                },
-                {
-                    "judul": "Teman Sekamar yang Aneh",
-                    "nomor": 2,
-                    "pages": [
-                        "https://picsum.photos/seed/akademi-sihir-c2-p1/800/1200",
-                        "https://picsum.photos/seed/akademi-sihir-c2-p2/800/1200",
-                        "https://picsum.photos/seed/akademi-sihir-c2-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-06"
-                },
-                {
-                    "judul": "Surat Penerimaan",
-                    "nomor": 1,
-                    "pages": [
-                        "https://picsum.photos/seed/akademi-sihir-c1-p1/800/1200",
-                        "https://picsum.photos/seed/akademi-sihir-c1-p2/800/1200",
-                        "https://picsum.photos/seed/akademi-sihir-c1-p3/800/1200"
-                    ],
-                    "tanggal": "2026-10-30"
-                }
-            ],
-            "cover": "https://picsum.photos/seed/akademi-sihir-nusantara/400/600",
-            "genre": [
-                "Fantasy",
-                "School",
-                "Adventure"
-            ],
-            "id": "akademi-sihir-nusantara",
-            "judul": "Akademi Sihir Nusantara",
-            "rating": 4.7,
-            "sinopsis": "Di akademi sihir tersembunyi di tengah hutan Kalimantan, Nara — siswa tanpa bakat sihir — justru bisa melihat mantra yang tak terlihat orang lain.",
-            "status": "Ongoing",
-            "views": 128900
-        },
-        {
-            "chapters": [
-                {
-                    "judul": "Jejak di Lantai 47",
-                    "nomor": 3,
-                    "pages": [
-                        "https://picsum.photos/seed/kota-neon-c3-p1/800/1200",
-                        "https://picsum.photos/seed/kota-neon-c3-p2/800/1200",
-                        "https://picsum.photos/seed/kota-neon-c3-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-18"
-                },
-                {
-                    "judul": "Kota yang Tidak Tidur",
-                    "nomor": 2,
-                    "pages": [
-                        "https://picsum.photos/seed/kota-neon-c2-p1/800/1200",
-                        "https://picsum.photos/seed/kota-neon-c2-p2/800/1200",
-                        "https://picsum.photos/seed/kota-neon-c2-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-11"
-                },
-                {
-                    "judul": "Laporan Orang Hilang",
-                    "nomor": 1,
-                    "pages": [
-                        "https://picsum.photos/seed/kota-neon-c1-p1/800/1200",
-                        "https://picsum.photos/seed/kota-neon-c1-p2/800/1200",
-                        "https://picsum.photos/seed/kota-neon-c1-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-04"
-                }
-            ],
-            "cover": "https://picsum.photos/seed/bayangan-kota-neon/400/600",
-            "genre": [
-                "Sci-Fi",
-                "Mystery",
-                "Thriller"
-            ],
-            "id": "bayangan-kota-neon",
-            "judul": "Bayangan Kota Neon",
-            "rating": 4.6,
-            "sinopsis": "Detektif Kirana menyelidiki kasus orang hilang di Kota Neon, kota yang tidak pernah tidur — dan menemukan bahwa bayangan para korban masih berjalan di jalanan.",
-            "status": "Ongoing",
-            "views": 98400
-        },
-        {
-            "chapters": [
-                {
-                    "judul": "Suara dari Dalam Hutan",
-                    "nomor": 2,
-                    "pages": [
-                        "https://picsum.photos/seed/hutan-larangan-c2-p1/800/1200",
-                        "https://picsum.photos/seed/hutan-larangan-c2-p2/800/1200",
-                        "https://picsum.photos/seed/hutan-larangan-c2-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-17"
-                },
-                {
-                    "judul": "Warisan Kakek",
-                    "nomor": 1,
-                    "pages": [
-                        "https://picsum.photos/seed/hutan-larangan-c1-p1/800/1200",
-                        "https://picsum.photos/seed/hutan-larangan-c1-p2/800/1200",
-                        "https://picsum.photos/seed/hutan-larangan-c1-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-10"
-                }
-            ],
-            "cover": "https://picsum.photos/seed/penjaga-hutan-larangan/400/600",
-            "genre": [
-                "Adventure",
-                "Fantasy",
-                "Drama"
-            ],
-            "id": "penjaga-hutan-larangan",
-            "judul": "Sang Penjaga Hutan Larangan",
-            "rating": 4.5,
-            "sinopsis": "Sinta mewarisi tugas kakeknya menjaga Hutan Larangan. Saat pembalak liar masuk membawa mesin aneh, roh hutan memilih Sinta sebagai penjaga terakhir.",
-            "status": "Ongoing",
-            "views": 87200
-        },
-        {
-            "chapters": [
-                {
-                    "judul": "Wajah yang Dikenal",
-                    "nomor": 3,
-                    "pages": [
-                        "https://picsum.photos/seed/pemburu-iblis-c3-p1/800/1200",
-                        "https://picsum.photos/seed/pemburu-iblis-c3-p2/800/1200",
-                        "https://picsum.photos/seed/pemburu-iblis-c3-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-16"
-                },
-                {
-                    "judul": "Kontrak Terakhir",
-                    "nomor": 2,
-                    "pages": [
-                        "https://picsum.photos/seed/pemburu-iblis-c2-p1/800/1200",
-                        "https://picsum.photos/seed/pemburu-iblis-c2-p2/800/1200",
-                        "https://picsum.photos/seed/pemburu-iblis-c2-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-09"
-                },
-                {
-                    "judul": "Pensiun yang Gagal",
-                    "nomor": 1,
-                    "pages": [
-                        "https://picsum.photos/seed/pemburu-iblis-c1-p1/800/1200",
-                        "https://picsum.photos/seed/pemburu-iblis-c1-p2/800/1200",
-                        "https://picsum.photos/seed/pemburu-iblis-c1-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-02"
-                }
-            ],
-            "cover": "https://picsum.photos/seed/pemburu-iblis-terakhir/400/600",
-            "genre": [
-                "Action",
-                "Supernatural",
-                "Horror"
-            ],
-            "id": "pemburu-iblis-terakhir",
-            "judul": "Pemburu Iblis Terakhir",
-            "rating": 4.7,
-            "sinopsis": "Setelah semua pemburu iblis gugur, Dimas yang pensiun dipaksa kembali berburu ketika iblis yang dulu ia kalahkan bangkit dengan wajah baru.",
-            "status": "Ongoing",
-            "views": 110500
-        },
-        {
-            "chapters": [
-                {
-                    "judul": "Nasi Goreng untuk Raja Iblis",
-                    "nomor": 2,
-                    "pages": [
-                        "https://picsum.photos/seed/koki-dunia-lain-c2-p1/800/1200",
-                        "https://picsum.photos/seed/koki-dunia-lain-c2-p2/800/1200",
-                        "https://picsum.photos/seed/koki-dunia-lain-c2-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-15"
-                },
-                {
-                    "judul": "Wajan Pertama di Dunia Sihir",
-                    "nomor": 1,
-                    "pages": [
-                        "https://picsum.photos/seed/koki-dunia-lain-c1-p1/800/1200",
-                        "https://picsum.photos/seed/koki-dunia-lain-c1-p2/800/1200",
-                        "https://picsum.photos/seed/koki-dunia-lain-c1-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-08"
-                }
-            ],
-            "cover": "https://picsum.photos/seed/koki-dunia-lain/400/600",
-            "genre": [
-                "Comedy",
-                "Fantasy",
-                "Slice of Life"
-            ],
-            "id": "koki-dari-dunia-lain",
-            "judul": "Koki dari Dunia Lain",
-            "rating": 4.4,
-            "sinopsis": "Chef Bimo tersesat ke dunia pedang dan sihir. Tanpa pedang dan tanpa sihir, satu-satunya senjatanya adalah wajan — dan masakannya bisa menyembuhkan luka.",
-            "status": "Ongoing",
-            "views": 76800
-        },
-        {
-            "chapters": [
-                {
-                    "judul": "Payung Merah",
-                    "nomor": 3,
-                    "pages": [
-                        "https://picsum.photos/seed/cinta-hujan-c3-p1/800/1200",
-                        "https://picsum.photos/seed/cinta-hujan-c3-p2/800/1200",
-                        "https://picsum.photos/seed/cinta-hujan-c3-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-14"
-                },
-                {
-                    "judul": "Halte yang Sama",
-                    "nomor": 2,
-                    "pages": [
-                        "https://picsum.photos/seed/cinta-hujan-c2-p1/800/1200",
-                        "https://picsum.photos/seed/cinta-hujan-c2-p2/800/1200",
-                        "https://picsum.photos/seed/cinta-hujan-c2-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-07"
-                },
-                {
-                    "judul": "Hujan Pertama",
-                    "nomor": 1,
-                    "pages": [
-                        "https://picsum.photos/seed/cinta-hujan-c1-p1/800/1200",
-                        "https://picsum.photos/seed/cinta-hujan-c1-p2/800/1200",
-                        "https://picsum.photos/seed/cinta-hujan-c1-p3/800/1200"
-                    ],
-                    "tanggal": "2026-10-31"
-                }
-            ],
-            "cover": "https://picsum.photos/seed/cinta-musim-hujan/400/600",
-            "genre": [
-                "Romance",
-                "Drama",
-                "Slice of Life"
-            ],
-            "id": "cinta-di-musim-hujan",
-            "judul": "Cinta di Musim Hujan",
-            "rating": 4.6,
-            "sinopsis": "Setiap musim hujan, Laras selalu bertemu pria berpayung merah di halte yang sama. Tahun ini, ia bertekad mengetahui siapa pria itu sebenarnya.",
-            "status": "Completed",
-            "views": 91300
-        },
-        {
-            "chapters": [
-                {
-                    "judul": "Pelanggan Terakhir",
-                    "nomor": 2,
-                    "pages": [
-                        "https://picsum.photos/seed/robot-toko-c2-p1/800/1200",
-                        "https://picsum.photos/seed/robot-toko-c2-p2/800/1200",
-                        "https://picsum.photos/seed/robot-toko-c2-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-13"
-                },
-                {
-                    "judul": "Toko di Ujung Gang",
-                    "nomor": 1,
-                    "pages": [
-                        "https://picsum.photos/seed/robot-toko-c1-p1/800/1200",
-                        "https://picsum.photos/seed/robot-toko-c1-p2/800/1200",
-                        "https://picsum.photos/seed/robot-toko-c1-p3/800/1200"
-                    ],
-                    "tanggal": "2026-11-06"
-                }
-            ],
-            "cover": "https://picsum.photos/seed/robot-penjaga-toko/400/600",
-            "genre": [
-                "Sci-Fi",
-                "Slice of Life",
-                "Drama"
-            ],
-            "id": "robot-kecil-penjaga-toko",
-            "judul": "Robot Kecil Penjaga Toko",
-            "rating": 4.9,
-            "sinopsis": "Di tahun 2087, robot tua bernama R-7 menjaga toko kelontong terakhir di gang sempit. Ia tidak bisa bicara, tapi semua pelanggan tahu ia peduli.",
-            "status": "Ongoing",
-            "views": 65400
         }
     ],
     "site": {
