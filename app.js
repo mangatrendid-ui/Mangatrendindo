@@ -49,17 +49,22 @@
      Kalau layanannya tidak bisa dihubungi, angkanya disembunyikan saja. */
   var COUNTER_WS = 'mangatrendindo';
   var COUNTER_BASE = 'https://api.counterapi.dev/v2';
+  /* CounterAPI menghapus titik dari slug (mis. nama "blue-lock-370.1" jadi slug
+     "blue-lock-3701"), jadi kunci counter juga harus tanpa titik. */
+  function counterKey(mangaId, nomor) {
+    return (mangaId + '-' + nomor).replace(/\./g, '');
+  }
   function counterHit(mangaId, nomor) {
     try {
       var c = new AbortController();
       setTimeout(function () { c.abort(); }, 2500);
-      fetch(COUNTER_BASE + '/' + COUNTER_WS + '/' + encodeURIComponent(mangaId + '-' + nomor) + '/up', { signal: c.signal, mode: 'cors' }).catch(function () {});
+      fetch(COUNTER_BASE + '/' + COUNTER_WS + '/' + encodeURIComponent(counterKey(mangaId, nomor)) + '/up', { signal: c.signal, mode: 'cors' }).catch(function () {});
     } catch (e) {}
   }
   function counterGet(mangaId, nomor) {
     var c = new AbortController();
     var t = setTimeout(function () { c.abort(); }, 3000);
-    return fetch(COUNTER_BASE + '/' + COUNTER_WS + '/' + encodeURIComponent(mangaId + '-' + nomor), { signal: c.signal, mode: 'cors' })
+    return fetch(COUNTER_BASE + '/' + COUNTER_WS + '/' + encodeURIComponent(counterKey(mangaId, nomor)), { signal: c.signal, mode: 'cors' })
       .then(function (r) { clearTimeout(t); if (!r.ok) return null; return r.json(); })
       .then(function (j) { return (j && j.data && typeof j.data.up_count === 'number') ? j.data.up_count : null; })
       .catch(function () { clearTimeout(t); return null; });
