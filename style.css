@@ -176,3 +176,32 @@ button { cursor: pointer; font-family: inherit; }
 
 .ad-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 12px; }
 .ad-row .ad-item { max-width: 100%; overflow: hidden; }
+
+/* Layout dua kolom + sidebar */
+.layout { display: flex; gap: 24px; align-items: flex-start; }
+.layout .content { flex: 1 1 auto; min-width: 0; }
+.sidebar { width: 300px; flex-shrink: 0; display: flex; flex-direction: column; gap: 20px; padding-top: 4px; }
+.side-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+.side-box h3 { font-size: 15px; font-weight: 800; margin-bottom: 8px; padding-left: 8px; border-left: 3px solid var(--accent); }
+.side-rank { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.side-rank:last-child { border-bottom: none; }
+.side-rank .rank { font-weight: 800; color: var(--accent); width: 18px; flex-shrink: 0; }
+.side-rank img { width: 40px; height: 60px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+.side-rank .side-title { font-size: 14px; font-weight: 700; line-height: 1.3; }
+.side-rank .side-title:hover { color: var(--accent); }
+.side-rank .side-ch { font-size: 12px; color: var(--muted); }
+.sidebar .chips { margin-bottom: 0; }
+
+/* Tombol kembali ke atas */
+#to-top {
+  position: fixed; right: 20px; bottom: 20px; z-index: 60;
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border);
+  background: var(--accent); color: #fff; font-size: 20px; font-weight: 800;
+  opacity: 0; pointer-events: none; transition: opacity .2s ease;
+}
+#to-top.show { opacity: 1; pointer-events: auto; }
+
+@media (max-width: 900px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; }
+}

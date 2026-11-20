@@ -59,6 +59,39 @@
       '</div></a>';
   }
 
+  /* ---------- Sidebar: Manga Populer + Genre ---------- */
+  function renderSidebar() {
+    var populer = DATA.manga.slice().sort(function (a, b) { return b.views - a.views; }).slice(0, 4);
+    var popEl = document.getElementById('sidebar-popular');
+    if (popEl) {
+      popEl.innerHTML = populer.map(function (m, i) {
+        var ch = chapterTerbaru(m);
+        return '<a class="side-rank" href="#/manga/' + esc(m.id) + '">' +
+          '<span class="rank">' + (i + 1) + '</span>' +
+          '<img src="' + esc(m.cover) + '" alt="Cover ' + esc(m.judul) + '" loading="lazy">' +
+          '<span><span class="side-title">' + esc(m.judul) + '</span><br>' +
+          '<span class="side-ch">Chapter ' + (ch ? ch.nomor : '-') + '</span></span></a>';
+      }).join('');
+    }
+    var genres = ['Semua'];
+    DATA.manga.forEach(function (m) {
+      m.genre.forEach(function (g) { if (genres.indexOf(g) === -1) genres.push(g); });
+    });
+    genres.sort();
+    var genEl = document.getElementById('sidebar-genres');
+    if (genEl) {
+      genEl.innerHTML = genres.map(function (g) {
+        return '<a class="chip" href="#/daftar" data-genre="' + esc(g) + '">' + esc(g) + '</a>';
+      }).join('');
+      genEl.querySelectorAll('[data-genre]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          genreAktif = el.getAttribute('data-genre');
+          if ((location.hash || '#/') === '#/daftar') renderDaftar();
+        });
+      });
+    }
+  }
+
   /* ---------- Halaman: Beranda ---------- */
   function renderBeranda() {
     var semuaChapter = [];
@@ -70,8 +103,6 @@
     semuaChapter.sort(function (a, b) { return b.chapter.tanggal.localeCompare(a.chapter.tanggal); });
     var update = semuaChapter.slice(0, 8);
 
-    var populer = DATA.manga.slice().sort(function (a, b) { return b.views - a.views; }).slice(0, 4);
-
     var html = '<h2 class="section-title">Update Terbaru</h2>' +
       '<div class="update-list">' +
       update.map(function (u) {
@@ -82,13 +113,6 @@
           '<div class="manga-meta"><span>' + esc(u.manga.genre.join(', ')) + '</span></div></div>' +
           '<span class="update-time"><span class="up-label">UP</span> &middot; ' + fmtTanggal(u.chapter.tanggal) + '</span>' +
         '</div>';
-      }).join('') + '</div>';
-
-    html += '<h2 class="section-title">Manga Populer</h2>' +
-      '<p class="section-sub">Paling banyak dibaca minggu ini.</p>' +
-      '<div class="manga-grid">' +
-      populer.map(function (m, i) {
-        return kartuManga(m, { cls: 'hot', teks: '#' + (i + 1) + ' Populer' });
       }).join('') + '</div>';
 
     html += '<h2 class="section-title">Semua Manga</h2>' +
@@ -300,6 +324,15 @@
   }
 
   searchInput.addEventListener('input', function () { router(); });
+
+  var toTop = document.getElementById('to-top');
+  if (toTop) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 600) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    });
+    toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
   window.addEventListener('hashchange', function () {
     searchInput.value = '';
     router();
@@ -307,7 +340,7 @@
 
   fetch('data.json')
     .then(function (r) { if (!r.ok) throw new Error('data.json tidak ditemukan'); return r.json(); })
-    .then(function (data) { DATA = data; router(); })
+    .then(function (data) { DATA = data; renderSidebar(); router(); })
     .catch(function (err) {
       app.innerHTML = '<p class="empty">Gagal memuat data.json: ' + esc(err.message) + '</p>';
     });
