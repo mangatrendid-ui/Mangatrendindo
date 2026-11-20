@@ -84,8 +84,7 @@
         '</div>';
       }).join('') + '</div>';
 
-    html += '<div class="ad-slot ad-native"><div id="container-171b635ddeaadfaff006545e880d2827"></div></div>' +
-      '<h2 class="section-title">Manga Populer</h2>' +
+    html += '<h2 class="section-title">Manga Populer</h2>' +
       '<p class="section-sub">Paling banyak dibaca minggu ini.</p>' +
       '<div class="manga-grid">' +
       populer.map(function (m, i) {
@@ -99,15 +98,6 @@
 
     app.innerHTML = html;
 
-    // Muat Native Banner Adsterra setelah wadahnya ada di halaman
-    var oldNative = document.querySelector('script[data-native-ad]');
-    if (oldNative) oldNative.remove();
-    var nativeScript = document.createElement('script');
-    nativeScript.setAttribute('data-native-ad', '1');
-    nativeScript.async = true;
-    nativeScript.setAttribute('data-cfasync', 'false');
-    nativeScript.src = 'https://pl32475891.profitableratecpmnetwork.com/171b635ddeaadfaff006545e880d2827/invoke.js';
-    document.body.appendChild(nativeScript);
   }
 
   /* ---------- Halaman: Daftar Manga + filter genre ---------- */
