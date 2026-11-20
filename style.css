@@ -173,3 +173,6 @@ button { cursor: pointer; font-family: inherit; }
 /* Slot iklan */
 .ad-slot { text-align: center; margin: 12px auto; max-width: 100%; overflow: hidden; }
 .ad-slot iframe { max-width: 100%; }
+
+.ad-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 12px; }
+.ad-row .ad-item { max-width: 100%; overflow: hidden; }
