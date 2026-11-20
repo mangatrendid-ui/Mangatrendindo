@@ -34,6 +34,24 @@
   function chapterTerbaru(m) {
     return m.chapters.slice().sort(function (a, b) { return b.nomor - a.nomor; })[0];
   }
+  /* Judul halaman per rute, supaya Google Analytics mencatat judul manga/chapter,
+     bukan cuma 'MANGATRENDINDO — Baca Manga' di semua halaman. */
+  function judulHalaman() {
+    var hash = location.hash || '#/';
+    var parts = hash.replace(/^#\//, '').split('/');
+    var dasar = 'MANGATRENDINDO — Baca Manga';
+    if (parts[0] === 'daftar') return 'Daftar Manga | ' + dasar;
+    if (parts[0] === 'koleksi') return 'Koleksiku | ' + dasar;
+    if (parts[0] === 'manga' && parts[1] && DATA) {
+      var m = cariManga(decodeURIComponent(parts[1]));
+      if (m) return m.judul + ' | ' + dasar;
+    }
+    if (parts[0] === 'baca' && parts[1] && parts[2] && DATA) {
+      var m2 = cariManga(decodeURIComponent(parts[1]));
+      if (m2) return m2.judul + ' Chapter ' + parts[2] + ' | ' + dasar;
+    }
+    return dasar;
+  }
   function cariManga(id) {
     return DATA.manga.find(function (m) { return m.id === id; });
   }
@@ -323,6 +341,7 @@
   function router() {
     var hash = location.hash || '#/';
     var parts = hash.replace(/^#\//, '').split('/');
+    document.title = judulHalaman();
     document.querySelectorAll('.nav a').forEach(function (a) { a.classList.remove('active'); });
 
     var q = searchInput.value.trim();
@@ -362,14 +381,18 @@
   }
   window.addEventListener('hashchange', function () {
     searchInput.value = '';
-    if (typeof gtag === 'function') gtag('event', 'page_view', { page_path: location.pathname + location.hash });
+    if (typeof gtag === 'function') gtag('event', 'page_view', { page_path: location.pathname + location.hash, page_title: judulHalaman() });
     router();
   });
 
   fetch('data.json')
     .then(function (r) { if (!r.ok) throw new Error('data.json tidak ditemukan'); return r.json(); })
-    .then(function (data) { DATA = data; renderSidebar(); router(); })
+    .then(function (data) {
+      DATA = data; renderSidebar(); router();
+      if (typeof gtag === 'function') gtag('event', 'page_view', { page_path: location.pathname + location.hash, page_title: judulHalaman() });
+    })
     .catch(function (err) {
       app.innerHTML = '<p class="empty">Gagal memuat data.json: ' + esc(err.message) + '</p>';
+      if (typeof gtag === 'function') gtag('event', 'page_view', { page_path: location.pathname + location.hash });
     });
 })();
