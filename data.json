@@ -265,6 +265,68 @@
             "rating": 4.4,
             "views": 0,
             "chapters": []
+        },
+        {
+            "id": "one-piece",
+            "judul": "One Piece",
+            "cover": "Onepiece.jpeg",
+            "sinopsis": "Monkey D. Luffy, bocah bertopi jerami dengan kekuatan karet, berlayar bersama kru Topi Jerami mencari harta karun legendaris One Piece untuk menjadi Raja Bajak Laut.",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "status": "Ongoing",
+            "rating": 4.8,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 1199,
+                    "judul": "",
+                    "tanggal": "2026-11-20",
+                    "pages": [
+                        "Onepiece-1199-01.jpg",
+                        "Onepiece-1199-02.jpg",
+                        "Onepiece-1199-03.jpg",
+                        "Onepiece-1199-04.jpg",
+                        "Onepiece-1199-05.jpg",
+                        "Onepiece-1199-06.jpg",
+                        "Onepiece-1199-07.jpg",
+                        "Onepiece-1199-08.jpg",
+                        "Onepiece-1199-09.jpg",
+                        "Onepiece-1199-10.jpg",
+                        "Onepiece-1199-11.jpg",
+                        "Onepiece-1199-12.jpg",
+                        "Onepiece-1199-13.jpg",
+                        "Onepiece-1199-14.jpg"
+                    ]
+                },
+                {
+                    "nomor": 1198,
+                    "judul": "",
+                    "tanggal": "2026-11-20",
+                    "pages": [
+                        "Onepiece-1198-01.jpg",
+                        "Onepiece-1198-02.jpg",
+                        "Onepiece-1198-03.jpg",
+                        "Onepiece-1198-04.jpg",
+                        "Onepiece-1198-05.jpg",
+                        "Onepiece-1198-06.jpg",
+                        "Onepiece-1198-07.jpg",
+                        "Onepiece-1198-08.jpg",
+                        "Onepiece-1198-09.jpg",
+                        "Onepiece-1198-10.jpg",
+                        "Onepiece-1198-11.jpg",
+                        "Onepiece-1198-12.jpg",
+                        "Onepiece-1198-13.jpg",
+                        "Onepiece-1198-14.jpg",
+                        "Onepiece-1198-15.jpg",
+                        "Onepiece-1198-16.jpg",
+                        "Onepiece-1198-17.jpg",
+                        "Onepiece-1198-18.jpg"
+                    ]
+                }
+            ]
         }
     ],
     "site": {
