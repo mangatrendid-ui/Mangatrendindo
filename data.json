@@ -225,7 +225,7 @@
         {
             "id": "be-blues-ao-ni-nare",
             "judul": "Be Blues! ~Ao ni Nare",
-            "cover": "https://picsum.photos/seed/beblues/300/450",
+            "cover": "beblues.jpg",
             "sinopsis": "Ryuu Ichijou, bocah yang bermimpi menjadi pemain sepak bola profesional, berjuang bersama teman-temannya dari lapangan kecil hingga liga profesional.",
             "genre": [
                 "Sports",
@@ -259,7 +259,7 @@
         {
             "id": "ao-ashi-brotherfoot",
             "judul": "Ao Ashi Brotherfoot",
-            "cover": "https://picsum.photos/seed/brotherfoot/300/450",
+            "cover": "brotherfoot.jpg",
             "sinopsis": "Spin-off Ao Ashi yang menceritakan perjuangan Shun Aoi, adik Ashito, di dunia sepak bola.",
             "genre": [
                 "Sports",
@@ -293,7 +293,7 @@
         {
             "id": "iruma-kun-if-episode-of-mafia",
             "judul": "Mairimashita! Iruma-kun: If Episode of Mafia",
-            "cover": "https://picsum.photos/seed/irumafia/300/450",
+            "cover": "iruma-mafia.jpg",
             "sinopsis": "Di dunia alternatif, Iruma Suzuki tumbuh sebagai pewaris keluarga mafia iblis — kisah lain dari Iruma-kun yang penuh aksi dan komedi.",
             "genre": [
                 "Action",
@@ -328,7 +328,7 @@
         {
             "id": "bungou-stray-dogs",
             "judul": "Bungou Stray Dogs",
-            "cover": "https://picsum.photos/seed/bungou/300/450",
+            "cover": "bungou.jpg",
             "sinopsis": "Atsushi Nakajima, pemuda dengan kemampuan harimau putih, bergabung dengan Agensi Detektif Bersenjata yang anggotanya memiliki kekuatan supernatural.",
             "genre": [
                 "Action",
