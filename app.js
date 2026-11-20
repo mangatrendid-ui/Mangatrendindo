@@ -117,7 +117,7 @@
 
     html += '<h2 class="section-title">Semua Manga</h2>' +
       '<div class="manga-grid">' +
-      DATA.manga.map(function (m) { return kartuManga(m); }).join('') +
+      DATA.manga.slice().sort(function (a, b) { return a.judul.localeCompare(b.judul); }).map(function (m) { return kartuManga(m); }).join('') +
       '</div>';
 
     app.innerHTML = html;
