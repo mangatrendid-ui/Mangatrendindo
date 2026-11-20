@@ -31,6 +31,39 @@
       return new Date(tgl + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
     } catch (e) { return tgl; }
   }
+  function waktuRelatif(tgl) {
+    try {
+      var d = new Date(tgl + 'T00:00:00');
+      var hari = Math.floor((new Date() - d) / 86400000);
+      if (hari <= 0) return 'hari ini';
+      if (hari === 1) return 'kemarin';
+      if (hari < 7) return hari + ' hari lalu';
+      if (hari < 30) return Math.floor(hari / 7) + ' minggu lalu';
+      if (hari < 365) return Math.floor(hari / 30) + ' bulan lalu';
+      return Math.floor(hari / 365) + ' tahun lalu';
+    } catch (e) { return tgl; }
+  }
+  /* Penghitung view per chapter (CounterAPI v2, gratis).
+     Butuh workspace 'mangatrendindo' yang dibuat sekali di counterapi.dev.
+     Angka mulai dari 0 dan bertambah setiap kali ada yang membuka chapter.
+     Kalau layanannya tidak bisa dihubungi, angkanya disembunyikan saja. */
+  var COUNTER_WS = 'mangatrendindo';
+  var COUNTER_BASE = 'https://api.counterapi.dev/v2';
+  function counterHit(mangaId, nomor) {
+    try {
+      var c = new AbortController();
+      setTimeout(function () { c.abort(); }, 2500);
+      fetch(COUNTER_BASE + '/' + COUNTER_WS + '/' + encodeURIComponent(mangaId + '-' + nomor) + '/up', { signal: c.signal, mode: 'cors' }).catch(function () {});
+    } catch (e) {}
+  }
+  function counterGet(mangaId, nomor) {
+    var c = new AbortController();
+    var t = setTimeout(function () { c.abort(); }, 3000);
+    return fetch(COUNTER_BASE + '/' + COUNTER_WS + '/' + encodeURIComponent(mangaId + '-' + nomor), { signal: c.signal, mode: 'cors' })
+      .then(function (r) { clearTimeout(t); if (!r.ok) return null; return r.json(); })
+      .then(function (j) { return (j && j.data && typeof j.data.up_count === 'number') ? j.data.up_count : null; })
+      .catch(function () { clearTimeout(t); return null; });
+  }
   function chapterTerbaru(m) {
     return m.chapters.slice().sort(function (a, b) { return b.nomor - a.nomor; })[0];
   }
@@ -219,11 +252,13 @@
             '<span class="badge status">' + esc(m.status) + '</span>' +
             '<span class="rating">&#9733; ' + m.rating.toFixed(1) + '</span>' +
             '<span>' + esc(m.genre.join(' &middot; ')) + '</span>' +
-            '<span>&middot; ' + m.views.toLocaleString('id-ID') + ' dibaca</span>' +
+            '<span id="total-dibaca">&middot; ' + m.views.toLocaleString('id-ID') + ' dibaca</span>' +
           '</div>' +
           '<p class="sinopsis">' + esc(m.sinopsis) + '</p>' +
           '<div class="btn-row">' +
-            '<a class="btn" href="#/baca/' + esc(m.id) + '/' + chapters[0].nomor + '">Baca Chapter ' + chapters[0].nomor + '</a>' +
+            (chapters.length
+              ? '<a class="btn" href="#/baca/' + esc(m.id) + '/' + chapters[0].nomor + '">Baca Chapter ' + chapters[0].nomor + '</a>'
+              : '<span class="btn" style="opacity:.4">Belum ada chapter</span>') +
             '<button class="btn ghost" id="btn-bookmark">' + (isBookmark(m.id) ? '&#9733; Sudah di Bookmark' : '&#9734; Bookmark') + '</button>' +
           '</div>' +
           (prog
@@ -239,7 +274,8 @@
           '<span class="ch-num">Chapter ' + c.nomor + '</span>' +
           '<span class="ch-title">' + esc(c.judul || '') + '</span>' +
           (dibaca ? '<span class="read-badge">Sudah dibaca</span>' : '') +
-          '<time>' + fmtTanggal(c.tanggal) + '</time>' +
+          '<span class="ch-views" data-vc="' + esc(m.id) + '-' + c.nomor + '">&#128065; <span class="vc-num"></span></span>' +
+          '<time>' + waktuRelatif(c.tanggal) + '</time>' +
         '</a>';
       }).join('') + '</div>';
 
@@ -254,6 +290,25 @@
       saveJSON('mt_bookmarks', bookmarks);
       renderDetail(m.id);
     });
+
+    /* Isi jumlah view per chapter + total dibaca (dari layanan counter). */
+    var totalEl = document.getElementById('total-dibaca');
+    var total = 0, selesai = 0;
+    app.querySelectorAll('[data-vc]').forEach(function (el) {
+      var key = el.getAttribute('data-vc');
+      var dash = key.lastIndexOf('-');
+      counterGet(key.slice(0, dash), parseInt(key.slice(dash + 1), 10)).then(function (v) {
+        selesai++;
+        if (v === null) { el.style.display = 'none'; }
+        else {
+          el.querySelector('.vc-num').textContent = v.toLocaleString('id-ID');
+          total += v;
+        }
+        if (selesai === chapters.length && totalEl && total > 0) {
+          totalEl.textContent = '· ' + total.toLocaleString('id-ID') + ' dibaca';
+        }
+      });
+    });
   }
 
   /* ---------- Halaman: Reader vertikal ---------- */
@@ -266,6 +321,9 @@
     // Simpan progress baca
     progress[m.id] = { chapter: nomor, tanggal: ch.tanggal };
     saveJSON('mt_progress', progress);
+
+    // Hitung 1 view untuk chapter ini
+    counterHit(mangaId, nomor);
 
     var semua = m.chapters.slice().sort(function (a, b) { return a.nomor - b.nomor; });
     var idx = semua.findIndex(function (c) { return c.nomor === nomor; });
