@@ -3,7 +3,7 @@
         {
             "id": "fairy-tail-100-years-quest",
             "judul": "Fairy Tail: 100 Years Quest",
-            "cover": "https://picsum.photos/seed/fairy-tail-100-years-quest/400/600",
+            "cover": "fairytail.jpeg",
             "sinopsis": "Setelah mengalahkan Zeref dan Acnologia, Natsu dan tim Fairy Tail menerima misi 100 tahun: menyegel Lima Dewa Naga di benua Guiltina.",
             "genre": [
                 "Action",
@@ -71,7 +71,7 @@
         {
             "id": "tougen-anki",
             "judul": "Tougen Anki",
-            "cover": "https://picsum.photos/seed/tougen-anki/400/600",
+            "cover": "tougenanki.jpg",
             "sinopsis": "Shiki Ichinose, keturunan Oni, masuk sekolah Momotaro untuk melawan para Momotaro — sambil mencari kebenaran tentang ayahnya.",
             "genre": [
                 "Action",
@@ -191,7 +191,7 @@
         {
             "id": "mokushiroku-no-yonkishi",
             "judul": "Mokushiroku no Yonkishi",
-            "cover": "https://picsum.photos/seed/mokushiroku-no-yonkishi/400/600",
+            "cover": "mokushirokunoyonkishi.jpeg",
             "sinopsis": "Percival, anak yang hidup tenang di pegunungan, memulai perjalanan setelah bertemu ksatria misterius — dan ternyata dia adalah salah satu dari Empat Ksatria Kiamat.",
             "genre": [
                 "Action",
