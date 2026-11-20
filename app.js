@@ -338,6 +338,7 @@
   }
   window.addEventListener('hashchange', function () {
     searchInput.value = '';
+    if (typeof gtag === 'function') gtag('event', 'page_view', { page_path: location.pathname + location.hash });
     router();
   });
 
