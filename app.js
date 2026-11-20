@@ -270,13 +270,16 @@
       '<div class="chapter-list">' +
       chapters.map(function (c) {
         var dibaca = c.nomor <= sudahBaca;
-        return '<a class="chapter-row" href="#/baca/' + esc(m.id) + '/' + c.nomor + '">' +
+        return '<div class="chapter-row-wrap">' +
+          '<a class="chapter-row" href="#/baca/' + esc(m.id) + '/' + c.nomor + '">' +
           '<span class="ch-num">Chapter ' + c.nomor + '</span>' +
           '<span class="ch-title">' + esc(c.judul || '') + '</span>' +
           (dibaca ? '<span class="read-badge">Sudah dibaca</span>' : '') +
           '<span class="ch-views" data-vc="' + esc(m.id) + '-' + c.nomor + '">&#128065; <span class="vc-num"></span></span>' +
           '<time>' + waktuRelatif(c.tanggal) + '</time>' +
-        '</a>';
+        '</a>' +
+        (c.download ? '<a class="btn-dl" href="' + esc(c.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
+        '</div>';
       }).join('') + '</div>';
 
     app.innerHTML = html;
@@ -297,7 +300,7 @@
     app.querySelectorAll('[data-vc]').forEach(function (el) {
       var key = el.getAttribute('data-vc');
       var dash = key.lastIndexOf('-');
-      counterGet(key.slice(0, dash), parseInt(key.slice(dash + 1), 10)).then(function (v) {
+      counterGet(key.slice(0, dash), parseFloat(key.slice(dash + 1))).then(function (v) {
         selesai++;
         if (v === null) { el.style.display = 'none'; }
         else {
@@ -333,6 +336,7 @@
     var nav = '<div class="reader-nav">' +
       (prev ? '<a class="btn ghost" href="#/baca/' + esc(m.id) + '/' + prev.nomor + '">&laquo; Chapter ' + prev.nomor + '</a>' : '<span class="btn ghost" style="opacity:.4">&laquo; Sebelumnya</span>') +
       '<a class="btn ghost" href="#/manga/' + esc(m.id) + '">Daftar Chapter</a>' +
+      (ch.download ? '<a class="btn" href="' + esc(ch.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
       (next ? '<a class="btn" href="#/baca/' + esc(m.id) + '/' + next.nomor + '">Chapter ' + next.nomor + ' &raquo;</a>' : '<span class="btn" style="opacity:.4">Chapter Berikutnya &raquo;</span>') +
     '</div>';
 

@@ -91,6 +91,19 @@ daftar `"chapters"` (chapter terbaru ditulis paling atas):
 
 `"nomor"` harus berurutan dan tidak boleh sama dengan chapter lain di judul itu.
 
+### 2a. Link download chapter (opsional)
+
+Kalau mau ada tombol Download di sebuah chapter, tambahkan `"download"` di
+blok chapter itu, isinya link file ZIP chapter tersebut (misalnya dari
+Safefileku):
+
+```json
+"download": "https://safefileku.com/download/xxxx"
+```
+
+Tombol Download muncul di daftar chapter dan di halaman baca. Chapter tanpa
+`"download"` tidak menampilkan tombol.
+
 ### 3. Upload gambar
 
 1. Di GitHub, buka folder `images/` → **Add file → Upload files**.
@@ -114,6 +127,7 @@ memakai gambar placeholder dari `picsum.photos` — aman dipakai sebagai contoh.
 - Filter genre di halaman Daftar Manga
 - Halaman detail manga dengan daftar chapter + waktu update
 - Reader vertikal dengan tombol Chapter Sebelumnya / Berikutnya
+- Tombol Download per chapter (kalau diisi link download di data.json)
 - Bookmark (tombol Bookmark di halaman detail, dilihat di menu Koleksiku)
 - Progres baca tersimpan otomatis di browser (localStorage) — terakhir dibaca
   dan tanda "Sudah dibaca" di daftar chapter
