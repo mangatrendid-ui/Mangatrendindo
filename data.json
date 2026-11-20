@@ -15,12 +15,6 @@
             "views": 0,
             "chapters": [
                 {
-                    "nomor": 224,
-                    "judul": "",
-                    "tanggal": "2026-11-10",
-                    "pages": []
-                },
-                {
                     "nomor": 223,
                     "judul": "",
                     "tanggal": "2026-10-27",
@@ -49,12 +43,6 @@
                         "fairytail-223-21.jpg",
                         "fairytail-223-22.jpg"
                     ]
-                },
-                {
-                    "nomor": 222,
-                    "judul": "",
-                    "tanggal": "2026-09-23",
-                    "pages": []
                 }
             ]
         },
@@ -71,26 +59,7 @@
             "status": "Completed",
             "rating": 3.9,
             "views": 0,
-            "chapters": [
-                {
-                    "nomor": 239,
-                    "judul": "",
-                    "tanggal": "2025-01-27",
-                    "pages": []
-                },
-                {
-                    "nomor": 238,
-                    "judul": "",
-                    "tanggal": "2025-01-20",
-                    "pages": []
-                },
-                {
-                    "nomor": 237,
-                    "judul": "",
-                    "tanggal": "2025-01-13",
-                    "pages": []
-                }
-            ]
+            "chapters": []
         },
         {
             "id": "tougen-anki",
@@ -105,26 +74,7 @@
             "status": "Ongoing",
             "rating": 4.0,
             "views": 0,
-            "chapters": [
-                {
-                    "nomor": 291,
-                    "judul": "",
-                    "tanggal": "2026-11-12",
-                    "pages": []
-                },
-                {
-                    "nomor": 290,
-                    "judul": "",
-                    "tanggal": "2026-11-06",
-                    "pages": []
-                },
-                {
-                    "nomor": 289,
-                    "judul": "",
-                    "tanggal": "2026-10-30",
-                    "pages": []
-                }
-            ]
+            "chapters": []
         },
         {
             "id": "mairimashita-iruma-kun",
@@ -197,12 +147,6 @@
                         "iruma-466-20.jpg",
                         "iruma-466-21.jpg"
                     ]
-                },
-                {
-                    "nomor": 465,
-                    "judul": "",
-                    "tanggal": "2026-11-05",
-                    "pages": []
                 }
             ]
         },
@@ -243,18 +187,6 @@
                         "bluelock-369-16.jpg",
                         "bluelock-369-17.jpg"
                     ]
-                },
-                {
-                    "nomor": 368,
-                    "judul": "",
-                    "tanggal": "2026-11-10",
-                    "pages": []
-                },
-                {
-                    "nomor": 367,
-                    "judul": "",
-                    "tanggal": "2026-11-03",
-                    "pages": []
                 }
             ]
         },
@@ -271,26 +203,7 @@
             "status": "Ongoing",
             "rating": 3.6,
             "views": 0,
-            "chapters": [
-                {
-                    "nomor": 261,
-                    "judul": "",
-                    "tanggal": "2026-11-17",
-                    "pages": []
-                },
-                {
-                    "nomor": 260,
-                    "judul": "",
-                    "tanggal": "2026-11-03",
-                    "pages": []
-                },
-                {
-                    "nomor": 259,
-                    "judul": "",
-                    "tanggal": "2026-10-27",
-                    "pages": []
-                }
-            ]
+            "chapters": []
         },
         {
             "id": "be-blues-ao-ni-nare",
@@ -305,26 +218,7 @@
             "status": "Completed",
             "rating": 4.1,
             "views": 0,
-            "chapters": [
-                {
-                    "nomor": 489,
-                    "judul": "",
-                    "tanggal": "2023-01-09",
-                    "pages": []
-                },
-                {
-                    "nomor": 488,
-                    "judul": "",
-                    "tanggal": "2022-12-31",
-                    "pages": []
-                },
-                {
-                    "nomor": 487,
-                    "judul": "",
-                    "tanggal": "2022-12-30",
-                    "pages": []
-                }
-            ]
+            "chapters": []
         },
         {
             "id": "ao-ashi-brotherfoot",
@@ -339,26 +233,7 @@
             "status": "Ongoing",
             "rating": 4.0,
             "views": 0,
-            "chapters": [
-                {
-                    "nomor": 28,
-                    "judul": "",
-                    "tanggal": "2026-11-11",
-                    "pages": []
-                },
-                {
-                    "nomor": 27,
-                    "judul": "",
-                    "tanggal": "2026-11-04",
-                    "pages": []
-                },
-                {
-                    "nomor": 26,
-                    "judul": "",
-                    "tanggal": "2026-10-28",
-                    "pages": []
-                }
-            ]
+            "chapters": []
         },
         {
             "id": "iruma-kun-if-episode-of-mafia",
@@ -374,26 +249,7 @@
             "status": "Ongoing",
             "rating": 4.2,
             "views": 0,
-            "chapters": [
-                {
-                    "nomor": 50,
-                    "judul": "",
-                    "tanggal": "2026-11-18",
-                    "pages": []
-                },
-                {
-                    "nomor": 49,
-                    "judul": "",
-                    "tanggal": "2026-10-29",
-                    "pages": []
-                },
-                {
-                    "nomor": 48,
-                    "judul": "",
-                    "tanggal": "2026-10-21",
-                    "pages": []
-                }
-            ]
+            "chapters": []
         },
         {
             "id": "bungou-stray-dogs",
@@ -408,26 +264,7 @@
             "status": "Completed",
             "rating": 4.4,
             "views": 0,
-            "chapters": [
-                {
-                    "nomor": 130,
-                    "judul": "",
-                    "tanggal": "2026-03-04",
-                    "pages": []
-                },
-                {
-                    "nomor": 129,
-                    "judul": "",
-                    "tanggal": "2026-02-01",
-                    "pages": []
-                },
-                {
-                    "nomor": 128,
-                    "judul": "",
-                    "tanggal": "2026-01-01",
-                    "pages": []
-                }
-            ]
+            "chapters": []
         }
     ],
     "site": {

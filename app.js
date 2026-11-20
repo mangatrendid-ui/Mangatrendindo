@@ -118,7 +118,8 @@
     html += '<h2 class="section-title">Semua Manga</h2>' +
       '<div class="manga-grid">' +
       DATA.manga.slice().sort(function (a, b) {
-        var d = (chapterTerbaru(b).tanggal || '').localeCompare(chapterTerbaru(a).tanggal || '');
+        var cb = chapterTerbaru(b), ca = chapterTerbaru(a);
+        var d = ((cb && cb.tanggal) || '').localeCompare((ca && ca.tanggal) || '');
         return d !== 0 ? d : a.judul.localeCompare(b.judul);
       }).map(function (m) { return kartuManga(m); }).join('') +
       '</div>';
