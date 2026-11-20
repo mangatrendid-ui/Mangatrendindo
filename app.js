@@ -95,12 +95,17 @@
   /* ---------- Halaman: Beranda ---------- */
   function renderBeranda() {
     var semuaChapter = [];
-    DATA.manga.forEach(function (m) {
-      m.chapters.forEach(function (c) {
-        semuaChapter.push({ manga: m, chapter: c });
+    DATA.manga.forEach(function (m, mi) {
+      m.chapters.forEach(function (c, ci) {
+        semuaChapter.push({ manga: m, chapter: c, mi: mi, ci: ci });
       });
     });
-    semuaChapter.sort(function (a, b) { return b.chapter.tanggal.localeCompare(a.chapter.tanggal); });
+    semuaChapter.sort(function (a, b) {
+      var d = b.chapter.tanggal.localeCompare(a.chapter.tanggal);
+      if (d !== 0) return d;
+      if (a.mi !== b.mi) return b.mi - a.mi;
+      return a.ci - b.ci;
+    });
     var update = semuaChapter.slice(0, 8);
 
     var html = '<h2 class="section-title">Update Terbaru</h2>' +

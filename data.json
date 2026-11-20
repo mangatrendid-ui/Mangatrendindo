@@ -327,6 +327,53 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "kingdom",
+            "judul": "Kingdom",
+            "cover": "Kingdom.jpg",
+            "sinopsis": "Shin, budak yatim piatu yang bercita-cita menjadi Jenderal Besar, berjuang di era Negara-Negara Berperang di Tiongkok kuno. Bersama Ei Sei, raja muda Qin yang bermimpi menyatukan Tiongkok, ia menapaki jalan perang demi mewujudkan ambisinya.",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Historical",
+                "Seinen"
+            ],
+            "status": "Ongoing",
+            "rating": 4.8,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 894,
+                    "judul": "",
+                    "tanggal": "2026-11-20",
+                    "pages": [
+                        "Kingdom-894-01.webp",
+                        "Kingdom-894-02.webp",
+                        "Kingdom-894-03.webp",
+                        "Kingdom-894-04.webp",
+                        "Kingdom-894-05.webp",
+                        "Kingdom-894-06.webp",
+                        "Kingdom-894-07.webp",
+                        "Kingdom-894-08.webp",
+                        "Kingdom-894-09.webp",
+                        "Kingdom-894-10.webp",
+                        "Kingdom-894-11.webp",
+                        "Kingdom-894-12.webp",
+                        "Kingdom-894-13.webp",
+                        "Kingdom-894-14.webp",
+                        "Kingdom-894-15.webp",
+                        "Kingdom-894-16.webp",
+                        "Kingdom-894-17.webp",
+                        "Kingdom-894-18.webp",
+                        "Kingdom-894-19.webp",
+                        "Kingdom-894-20.webp",
+                        "Kingdom-894-21.webp",
+                        "Kingdom-894-22.webp",
+                        "Kingdom-894-23.webp"
+                    ]
+                }
+            ]
         }
     ],
     "site": {
