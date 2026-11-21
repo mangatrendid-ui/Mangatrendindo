@@ -261,7 +261,7 @@
       if (!g) { g = { manga: u.manga, chapters: [] }; grupUpdate.push(g); }
       g.chapters.push(u.chapter);
     });
-    var update = grupUpdate.slice(0, 8);
+    var update = grupUpdate;
 
     var html = '<h2 class="section-title">Update Terbaru</h2>' +
       '<div class="update-grid">' +
@@ -281,7 +281,7 @@
         '</div>';
       }).join('') + '</div>';
 
-    html += '<h2 class="section-title">Semua Manga</h2>' +
+    html += '<h2 class="section-title">Semua Manga <span class="total-judul">Total ' + DATA.manga.length + ' judul</span></h2>' +
       '<div class="update-list">' +
       DATA.manga.slice().sort(function (a, b) {
         var cb = chapterTerbaru(b), ca = chapterTerbaru(a);
