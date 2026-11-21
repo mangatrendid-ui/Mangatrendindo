@@ -214,10 +214,10 @@
     var html = '<h2 class="section-title">Update Terbaru</h2>' +
       '<div class="update-grid">' +
       update.map(function (g) {
-        var chLinks = g.chapters.slice(0, 2).map(function (c) {
+        var chLinks = g.chapters.slice(0, 3).map(function (c) {
           var linkCh = c.vip ? '#/vip/' : '#/baca/';
           var up = waktuRelatif(c.tanggal) === 'hari ini' ? ' <span class="up-badge">UP</span>' : '';
-          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274; VIP' : '') + up + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal) + '</span></a>';
+          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274;' : '') + up + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal) + '</span></a>';
         }).join('');
         return '<div class="update-card">' +
           '<a href="#/manga/' + esc(g.manga.id) + '"><img src="' + esc(g.manga.cover) + '" alt="Cover ' + esc(g.manga.judul) + '" loading="lazy"></a>' +
@@ -239,7 +239,7 @@
         var chs = m.chapters.slice().sort(function (a, b) { return b.nomor - a.nomor; });
         var chLinks = chs.slice(0, 3).map(function (c) {
           var linkCh = c.vip ? '#/vip/' : '#/baca/';
-          return '<a class="chapter-link" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274; VIP' : '') + '</a>';
+          return '<a class="chapter-link" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274;' : '') + '</a>';
         }).join('');
         if (chs.length > 3) {
           chLinks += '<a class="chapter-link" href="#/manga/' + esc(m.id) + '">Lihat semua chapter &raquo;</a>';
@@ -314,7 +314,7 @@
           '<div class="btn-row">' +
             (chapters.length
               ? (chapters[0].vip
-                  ? '<a class="btn" href="#/vip/' + esc(m.id) + '/' + chapters[0].nomor + '">&#128274; Baca Chapter ' + chapters[0].nomor + ' (VIP)</a>'
+                  ? '<a class="btn" href="#/vip/' + esc(m.id) + '/' + chapters[0].nomor + '">&#128274; Baca Chapter ' + chapters[0].nomor + '</a>'
                   : '<a class="btn" href="#/baca/' + esc(m.id) + '/' + chapters[0].nomor + '">Baca Chapter ' + chapters[0].nomor + '</a>')
               : '<span class="btn" style="opacity:.4">Belum ada chapter</span>') +
             '<button class="btn ghost" id="btn-bookmark">' + (isBookmark(m.id) ? '&#9733; Sudah di Bookmark' : '&#9734; Bookmark') + '</button>' +
@@ -333,7 +333,7 @@
           '<a class="chapter-row' + (c.vip ? ' vip-row' : '') + '" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">' +
           '<span class="ch-num">Chapter ' + c.nomor + '</span>' +
           '<span class="ch-title">' + esc(c.judul || '') + '</span>' +
-          (c.vip ? '<span class="vip-badge">&#128274; VIP</span>' : '') +
+          (c.vip ? '<span class="vip-badge">&#128274;</span>' : '') +
           (dibaca ? '<span class="read-badge">Sudah dibaca</span>' : '') +
           '<span class="ch-views" data-vc="' + esc(m.id) + '-' + c.nomor + '">&#128065; <span class="vc-num"></span></span>' +
           '<time>' + waktuRelatif(c.tanggal) + '</time>' +
@@ -386,7 +386,7 @@
       '<div class="vip-lock">' +
         '<div class="vip-lock-icon">&#128274;</div>' +
         '<h1>' + esc(m.judul) + ' — Chapter ' + ch.nomor + '</h1>' +
-        '<p class="vip-lock-sub">Chapter VIP &middot; ' + fmtTanggal(ch.tanggal) + '</p>' +
+        '<p class="vip-lock-sub">&#128274; ' + fmtTanggal(ch.tanggal) + '</p>' +
         '<p>Chapter ini tersedia lebih awal khusus untuk pendukung di Trakteer. Dukung kreator untuk membaca chapter ini sekarang.</p>' +
         (ch.trakteer ? '<a class="btn vip-btn" href="' + esc(ch.trakteer) + '" target="_blank" rel="noopener">Dukung di Trakteer &raquo;</a>' : '') +
         '<a class="btn ghost" href="#/manga/' + esc(m.id) + '">Kembali ke Daftar Chapter</a>' +
