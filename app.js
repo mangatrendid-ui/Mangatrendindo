@@ -28,13 +28,23 @@
   }
   function fmtTanggal(tgl) {
     try {
-      return new Date(tgl + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+      return new Date(tgl.indexOf('T') !== -1 ? tgl : tgl + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
     } catch (e) { return tgl; }
   }
   function waktuRelatif(tgl) {
     try {
-      var d = new Date(tgl + 'T00:00:00');
-      var hari = Math.floor((new Date() - d) / 86400000);
+      var punyaJam = tgl.indexOf('T') !== -1;
+      var d = new Date(punyaJam ? tgl : tgl + 'T00:00:00');
+      var skrg = new Date();
+      if (d > skrg) return 'hari ini';
+      if (punyaJam) {
+        var jam = Math.floor((skrg - d) / 3600000);
+        if (jam < 1) return 'baru saja';
+        if (jam < 24 && d.toDateString() === skrg.toDateString()) return jam + ' jam lalu';
+      }
+      var awalHariIni = new Date(skrg.getFullYear(), skrg.getMonth(), skrg.getDate());
+      var awalHariD = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+      var hari = Math.round((awalHariIni - awalHariD) / 86400000);
       if (hari <= 0) return 'hari ini';
       if (hari === 1) return 'kemarin';
       if (hari < 7) return hari + ' hari lalu';
@@ -42,6 +52,12 @@
       if (hari < 365) return Math.floor(hari / 30) + ' bulan lalu';
       return Math.floor(hari / 365) + ' tahun lalu';
     } catch (e) { return tgl; }
+  }
+  function isHariIni(tgl) {
+    try {
+      var d = new Date(tgl.indexOf('T') !== -1 ? tgl : tgl + 'T00:00:00');
+      return d.toDateString() === new Date().toDateString();
+    } catch (e) { return false; }
   }
   /* Penghitung view per chapter (CounterAPI v2, gratis).
      Butuh workspace 'mangatrendindo' yang dibuat sekali di counterapi.dev.
@@ -219,7 +235,7 @@
           if (c.vip) {
             return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + ' &#128274;</span></a>';
           }
-          var up = waktuRelatif(c.tanggal) === 'hari ini' ? ' <span class="up-badge">UP</span>' : '';
+          var up = isHariIni(c.tanggal) ? ' <span class="up-badge">UP</span>' : '';
           return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + up + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal) + '</span></a>';
         }).join('');
         return '<div class="update-card">' +
