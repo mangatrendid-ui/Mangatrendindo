@@ -131,10 +131,11 @@
     s.setAttribute('data-timestamp', String(+new Date()));
     (document.head || document.body).appendChild(s);
   }
-  /* CounterAPI menghapus titik dari slug (mis. nama "blue-lock-370.1" jadi slug
-     "blue-lock-3701"), jadi kunci counter juga harus tanpa titik. */
+  /* CounterAPI menghapus titik dari slug, jadi titik pada nomor chapter pecahan
+     diubah menjadi strip (1.1 -> "1-1"), bukan dihapus: kalau titik dihapus,
+     chapter 1.1 jadi "...-11" dan bentrok dengan chapter 11. */
   function counterKey(mangaId, nomor) {
-    return (mangaId + '-' + nomor).replace(/\./g, '');
+    return (mangaId + '-' + nomor).replace(/\./g, '-');
   }
   function counterHit(mangaId, nomor) {
     try {
