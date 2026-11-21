@@ -243,3 +243,4 @@ button { cursor: pointer; font-family: inherit; }
 .update-card h3 a { color: var(--text); }
 .update-card h3 a:hover { color: var(--accent); }
 @media (min-width: 900px) { .update-grid { grid-template-columns: repeat(4, 1fr); } }
+.update-card .update-chapters { padding-top: 0; }

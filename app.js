@@ -220,14 +220,14 @@
           return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274; VIP' : '') + up + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal) + '</span></a>';
         }).join('');
         return '<div class="update-card">' +
-          '<div class="update-chapters">' + chLinks + '</div>' +
           '<a href="#/manga/' + esc(g.manga.id) + '"><img src="' + esc(g.manga.cover) + '" alt="Cover ' + esc(g.manga.judul) + '" loading="lazy"></a>' +
           '<h3><a href="#/manga/' + esc(g.manga.id) + '">' + esc(g.manga.judul) + '</a></h3>' +
+          '<div class="update-chapters">' + chLinks + '</div>' +
         '</div>';
       }).join('') + '</div>';
 
     html += '<h2 class="section-title">Semua Manga</h2>' +
-      '<div class="manga-grid">' +
+      '<div class="update-list">' +
       DATA.manga.slice().sort(function (a, b) {
         var cb = chapterTerbaru(b), ca = chapterTerbaru(a);
         var da = (ca && ca.tanggal) || '', db = (cb && cb.tanggal) || '';
@@ -235,8 +235,24 @@
         if (d !== 0) return d;
         if (!da) return a.judul.localeCompare(b.judul);
         return DATA.manga.indexOf(b) - DATA.manga.indexOf(a);
-      }).map(function (m) { return kartuManga(m); }).join('') +
-      '</div>';
+      }).map(function (m) {
+        var chs = m.chapters.slice().sort(function (a, b) { return b.nomor - a.nomor; });
+        var chLinks = chs.slice(0, 3).map(function (c) {
+          var linkCh = c.vip ? '#/vip/' : '#/baca/';
+          return '<a class="chapter-link" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274; VIP' : '') + '</a>';
+        }).join('');
+        if (chs.length > 3) {
+          chLinks += '<a class="chapter-link" href="#/manga/' + esc(m.id) + '">Lihat semua chapter &raquo;</a>';
+        }
+        if (!chLinks) chLinks = '<span class="chapter-link" style="color:var(--muted)">Belum ada chapter</span>';
+        return '<div class="update-item">' +
+          '<a href="#/manga/' + esc(m.id) + '"><img src="' + esc(m.cover) + '" alt="Cover ' + esc(m.judul) + '" loading="lazy"></a>' +
+          '<div><h3><a href="#/manga/' + esc(m.id) + '">' + esc(m.judul) + '</a></h3>' +
+          '<div class="chapter-links">' + chLinks + '</div>' +
+          '<div class="manga-meta"><span>' + esc(m.genre.join(', ')) + '</span></div></div>' +
+          (chs.length ? '<span class="update-time"><span class="up-label">UP</span> &middot; ' + fmtTanggal(chs[0].tanggal) + '</span>' : '') +
+        '</div>';
+      }).join('') + '</div>';
 
     app.innerHTML = html;
 
