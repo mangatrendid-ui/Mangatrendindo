@@ -216,8 +216,11 @@
       update.map(function (g) {
         var chLinks = g.chapters.slice(0, 3).map(function (c) {
           var linkCh = c.vip ? '#/vip/' : '#/baca/';
+          if (c.vip) {
+            return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + ' &#128274;</span></a>';
+          }
           var up = waktuRelatif(c.tanggal) === 'hari ini' ? ' <span class="up-badge">UP</span>' : '';
-          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274;' : '') + up + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal) + '</span></a>';
+          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + up + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal) + '</span></a>';
         }).join('');
         return '<div class="update-card">' +
           '<a href="#/manga/' + esc(g.manga.id) + '"><img src="' + esc(g.manga.cover) + '" alt="Cover ' + esc(g.manga.judul) + '" loading="lazy"></a>' +
