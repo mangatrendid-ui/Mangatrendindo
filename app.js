@@ -233,10 +233,10 @@
         var chLinks = g.chapters.slice(0, 3).map(function (c) {
           var linkCh = c.vip ? '#/vip/' : '#/baca/';
           if (c.vip) {
-            return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + ' &#128274;</span></a>';
+            return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span class="update-ch-teks"><span class="update-ch-nomor">Chapter ' + c.nomor + '</span>' + (c.judul ? '<span class="update-ch-judul"> — ' + esc(c.judul) + '</span>' : '') + ' &#128274;</span></a>';
           }
           var up = isHariIni(c.tanggal) ? ' <span class="up-badge">UP</span>' : '';
-          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + up + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal) + '</span></a>';
+          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span class="update-ch-teks"><span class="update-ch-nomor">Chapter ' + c.nomor + '</span>' + up + (c.judul ? '<span class="update-ch-judul"> — ' + esc(c.judul) + '</span>' : '') + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal).replace(' lalu', '') + '</span></a>';
         }).join('');
         return '<div class="update-card">' +
           '<a href="#/manga/' + esc(g.manga.id) + '"><img src="' + esc(g.manga.cover) + '" alt="Cover ' + esc(g.manga.judul) + '" loading="lazy"></a>' +
