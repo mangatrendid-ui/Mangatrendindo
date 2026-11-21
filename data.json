@@ -74,7 +74,24 @@
             "status": "Ongoing",
             "rating": 4.0,
             "views": 0,
-            "chapters": []
+            "chapters": [
+                {
+                    "nomor": 248,
+                    "judul": "",
+                    "tanggal": "2026-11-21",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/tougen-anki-chapter-248-bahasa-indonesia-shliX"
+                },
+                {
+                    "nomor": 247,
+                    "judul": "",
+                    "tanggal": "2026-11-21",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/tougen-anki-chapter-247-bahasa-indonesia-nblZk"
+                }
+            ]
         },
         {
             "id": "mairimashita-iruma-kun",

@@ -219,3 +219,13 @@ button { cursor: pointer; font-family: inherit; }
   .layout { flex-direction: column; }
   .sidebar { width: 100%; }
 }
+
+/* ---------- Chapter VIP (terkunci) ---------- */
+.vip-badge { background: #FFD700; color: #111; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.chapter-row.vip-row { opacity: .95; }
+.vip-lock { max-width: 560px; margin: 48px auto; text-align: center; padding: 32px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; }
+.vip-lock-icon { font-size: 56px; }
+.vip-lock h1 { font-size: 22px; margin: 12px 0 4px; }
+.vip-lock-sub { color: var(--muted); font-size: 14px; }
+.vip-lock p { color: var(--muted); line-height: 1.6; }
+.vip-lock .btn { display: inline-block; margin: 10px 6px 0; }

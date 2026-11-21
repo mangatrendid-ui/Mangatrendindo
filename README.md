@@ -104,6 +104,27 @@ Safefileku):
 Tombol Download muncul di daftar chapter dan di halaman baca. Chapter tanpa
 `"download"` tidak menampilkan tombol.
 
+### 2b. Chapter VIP / terkunci (Trakteer, opsional)
+
+Kalau sebuah chapter hanya tersedia untuk pendukung di Trakteer (akses lebih
+awal dan berbayar), tambahkan `"vip": true` dan `"trakteer"` di blok chapter
+itu, isinya link reward Trakteer untuk chapter tersebut:
+
+```json
+"vip": true,
+"trakteer": "https://trakteer.id/krul_teppes/reward/nama-manga-chapter-xxx"
+```
+
+Chapter VIP muncul di situs dengan ikon gembok dan label VIP. Kalau diklik,
+yang terbuka bukan halaman baca, melainkan halaman kunci dengan tombol
+"Dukung di Trakteer" yang mengarah ke link di atas.
+
+Penting: **jangan upload halaman chapter VIP ke repo ini**. Halaman VIP
+cukup ada di Trakteer saja — situs ini statis, jadi kalau gambar halamannya
+sudah di-upload ke sini, siapa pun bisa menemukannya walau chapter-nya
+terkunci. Kalau chapter VIP sudah mau digratiskan, upload halamannya seperti
+biasa lalu hapus `"vip"` dan `"trakteer"` dari blok chapter itu.
+
 ### 3. Upload gambar
 
 1. Di GitHub, buka folder `images/` → **Add file → Upload files**.

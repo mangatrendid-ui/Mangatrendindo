@@ -122,6 +122,10 @@
       var m2 = cariManga(decodeURIComponent(parts[1]));
       if (m2) return m2.judul + ' Chapter ' + parts[2] + ' | ' + dasar;
     }
+    if (parts[0] === 'vip' && parts[1] && parts[2] && DATA) {
+      var m3 = cariManga(decodeURIComponent(parts[1]));
+      if (m3) return m3.judul + ' Chapter ' + parts[2] + ' (VIP) | ' + dasar;
+    }
     return dasar;
   }
   function cariManga(id) {
@@ -211,7 +215,8 @@
       '<div class="update-list">' +
       update.map(function (g) {
         var chLinks = g.chapters.slice(0, 3).map(function (c) {
-          return '<a class="chapter-link" href="#/baca/' + esc(g.manga.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + '</a>';
+          var linkCh = c.vip ? '#/vip/' : '#/baca/';
+          return '<a class="chapter-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274; VIP' : '') + '</a>';
         }).join('');
         if (g.chapters.length > 3) {
           chLinks += '<a class="chapter-link" href="#/manga/' + esc(g.manga.id) + '">Lihat semua chapter &raquo;</a>';
@@ -296,7 +301,9 @@
           '<p class="sinopsis">' + esc(m.sinopsis) + '</p>' +
           '<div class="btn-row">' +
             (chapters.length
-              ? '<a class="btn" href="#/baca/' + esc(m.id) + '/' + chapters[0].nomor + '">Baca Chapter ' + chapters[0].nomor + '</a>'
+              ? (chapters[0].vip
+                  ? '<a class="btn" href="#/vip/' + esc(m.id) + '/' + chapters[0].nomor + '">&#128274; Baca Chapter ' + chapters[0].nomor + ' (VIP)</a>'
+                  : '<a class="btn" href="#/baca/' + esc(m.id) + '/' + chapters[0].nomor + '">Baca Chapter ' + chapters[0].nomor + '</a>')
               : '<span class="btn" style="opacity:.4">Belum ada chapter</span>') +
             '<button class="btn ghost" id="btn-bookmark">' + (isBookmark(m.id) ? '&#9733; Sudah di Bookmark' : '&#9734; Bookmark') + '</button>' +
           '</div>' +
@@ -309,10 +316,12 @@
       '<div class="chapter-list">' +
       chapters.map(function (c) {
         var dibaca = c.nomor <= sudahBaca;
+        var linkCh = c.vip ? '#/vip/' : '#/baca/';
         return '<div class="chapter-row-wrap">' +
-          '<a class="chapter-row" href="#/baca/' + esc(m.id) + '/' + c.nomor + '">' +
+          '<a class="chapter-row' + (c.vip ? ' vip-row' : '') + '" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">' +
           '<span class="ch-num">Chapter ' + c.nomor + '</span>' +
           '<span class="ch-title">' + esc(c.judul || '') + '</span>' +
+          (c.vip ? '<span class="vip-badge">&#128274; VIP</span>' : '') +
           (dibaca ? '<span class="read-badge">Sudah dibaca</span>' : '') +
           '<span class="ch-views" data-vc="' + esc(m.id) + '-' + c.nomor + '">&#128065; <span class="vc-num"></span></span>' +
           '<time>' + waktuRelatif(c.tanggal) + '</time>' +
@@ -355,12 +364,33 @@
     });
   }
 
+  /* ---------- Halaman: Chapter VIP (terkunci, baca di Trakteer) ---------- */
+  function renderVip(mangaId, nomor) {
+    var m = cariManga(mangaId);
+    if (!m) { app.innerHTML = '<p class="empty">Manga tidak ditemukan.</p>'; return; }
+    var ch = m.chapters.find(function (c) { return c.nomor === nomor; });
+    if (!ch) { app.innerHTML = '<p class="empty">Chapter tidak ditemukan.</p>'; return; }
+    app.innerHTML =
+      '<div class="vip-lock">' +
+        '<div class="vip-lock-icon">&#128274;</div>' +
+        '<h1>' + esc(m.judul) + ' — Chapter ' + ch.nomor + '</h1>' +
+        '<p class="vip-lock-sub">Chapter VIP &middot; ' + fmtTanggal(ch.tanggal) + '</p>' +
+        '<p>Chapter ini tersedia lebih awal khusus untuk pendukung di Trakteer. Dukung kreator untuk membaca chapter ini sekarang.</p>' +
+        (ch.trakteer ? '<a class="btn vip-btn" href="' + esc(ch.trakteer) + '" target="_blank" rel="noopener">Dukung di Trakteer &raquo;</a>' : '') +
+        '<a class="btn ghost" href="#/manga/' + esc(m.id) + '">Kembali ke Daftar Chapter</a>' +
+      '</div>' +
+      komentarHtml();
+    muatKomentar('vip-' + m.id + '-' + ch.nomor, m.judul + ' — Chapter ' + ch.nomor + ' (VIP)');
+    window.scrollTo(0, 0);
+  }
+
   /* ---------- Halaman: Reader vertikal ---------- */
   function renderReader(mangaId, nomor) {
     var m = cariManga(mangaId);
     if (!m) { app.innerHTML = '<p class="empty">Manga tidak ditemukan.</p>'; return; }
     var ch = m.chapters.find(function (c) { return c.nomor === nomor; });
     if (!ch) { app.innerHTML = '<p class="empty">Chapter tidak ditemukan.</p>'; return; }
+    if (ch.vip) { renderVip(mangaId, nomor); return; }
 
     // Simpan progress baca
     progress[m.id] = { chapter: nomor, tanggal: ch.tanggal };
@@ -465,6 +495,8 @@
       renderKoleksi();
     } else if (parts[0] === 'manga' && parts[1]) {
       renderDetail(decodeURIComponent(parts[1]));
+    } else if (parts[0] === 'vip' && parts[1] && parts[2]) {
+      renderVip(decodeURIComponent(parts[1]), parseFloat(parts[2]));
     } else if (parts[0] === 'baca' && parts[1] && parts[2]) {
       renderReader(decodeURIComponent(parts[1]), parseFloat(parts[2]));
     } else {
