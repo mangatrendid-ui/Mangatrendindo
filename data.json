@@ -196,21 +196,6 @@
             ]
         },
         {
-            "id": "mokushiroku-no-yonkishi",
-            "judul": "Mokushiroku no Yonkishi",
-            "cover": "mokushirokunoyonkishi.jpeg",
-            "sinopsis": "Percival, anak yang hidup tenang di pegunungan, memulai perjalanan setelah bertemu ksatria misterius — dan ternyata dia adalah salah satu dari Empat Ksatria Kiamat.",
-            "genre": [
-                "Action",
-                "Adventure",
-                "Fantasy"
-            ],
-            "status": "Ongoing",
-            "rating": 3.6,
-            "views": 0,
-            "chapters": []
-        },
-        {
             "id": "be-blues-ao-ni-nare",
             "judul": "Be Blues! ~Ao ni Nare",
             "cover": "beblues.jpg",
@@ -476,6 +461,53 @@
                         "Tougenanki-247-21.jpg",
                         "Tougenanki-247-22.jpg",
                         "Tougenanki-247-23.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "mokushiroku-no-yonkishi",
+            "judul": "Mokushiroku no Yonkishi",
+            "cover": "mokushirokunoyonkishi.jpeg",
+            "sinopsis": "Percival, anak yang hidup tenang di pegunungan, memulai perjalanan setelah bertemu ksatria misterius — dan ternyata dia adalah salah satu dari Empat Ksatria Kiamat.",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "status": "Ongoing",
+            "rating": 3.6,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 262,
+                    "judul": "",
+                    "tanggal": "2026-11-22T06:00",
+                    "download": "https://safefileku.com/download/TsfEC7hNm0fhOsBv",
+                    "pages": [
+                        "mokushirokunoyonkishi-262-00.jpg",
+                        "mokushirokunoyonkishi-262-01.jpg",
+                        "mokushirokunoyonkishi-262-02.jpg",
+                        "mokushirokunoyonkishi-262-03.jpg",
+                        "mokushirokunoyonkishi-262-04.jpg",
+                        "mokushirokunoyonkishi-262-05.jpg",
+                        "mokushirokunoyonkishi-262-06.jpg",
+                        "mokushirokunoyonkishi-262-07.jpg",
+                        "mokushirokunoyonkishi-262-08.jpg",
+                        "mokushirokunoyonkishi-262-09.jpg",
+                        "mokushirokunoyonkishi-262-10.jpg",
+                        "mokushirokunoyonkishi-262-11.jpg",
+                        "mokushirokunoyonkishi-262-12.jpg",
+                        "mokushirokunoyonkishi-262-13.jpg",
+                        "mokushirokunoyonkishi-262-14.jpg",
+                        "mokushirokunoyonkishi-262-15.jpg",
+                        "mokushirokunoyonkishi-262-16.jpg",
+                        "mokushirokunoyonkishi-262-17.jpg",
+                        "mokushirokunoyonkishi-262-18.jpg",
+                        "mokushirokunoyonkishi-262-19.jpg",
+                        "mokushirokunoyonkishi-262-20.jpg",
+                        "mokushirokunoyonkishi-262-21.jpg",
+                        "mokushirokunoyonkishi-262-22.jpg"
                     ]
                 }
             ]
