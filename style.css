@@ -32,7 +32,8 @@ button { cursor: pointer; font-family: inherit; }
   max-width: 1100px; margin: 0 auto; padding: 12px 16px;
   display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
 }
-.logo { font-size: 22px; font-weight: 800; letter-spacing: .5px; white-space: nowrap; }
+.logo { font-size: 22px; font-weight: 800; letter-spacing: .5px; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; }
+.logo img { height: 34px; width: 34px; border-radius: 8px; }
 .logo span { color: var(--accent); }
 .nav { display: flex; gap: 4px; }
 .nav a {
