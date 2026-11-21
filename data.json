@@ -62,61 +62,6 @@
             "chapters": []
         },
         {
-            "id": "tougen-anki",
-            "judul": "Tougen Anki",
-            "cover": "tougenanki.jpg",
-            "sinopsis": "Shiki Ichinose, keturunan Oni, masuk sekolah Momotaro untuk melawan para Momotaro — sambil mencari kebenaran tentang ayahnya.",
-            "genre": [
-                "Action",
-                "Supernatural",
-                "Shounen"
-            ],
-            "status": "Ongoing",
-            "rating": 4.0,
-            "views": 0,
-            "chapters": [
-                {
-                    "nomor": 248,
-                    "judul": "",
-                    "tanggal": "2026-11-21",
-                    "pages": [],
-                    "vip": true,
-                    "trakteer": "https://trakteer.id/krul_teppes/reward/tougen-anki-chapter-248-bahasa-indonesia-shliX"
-                },
-                {
-                    "nomor": 247,
-                    "judul": "",
-                    "tanggal": "2026-11-21",
-                    "pages": [
-                        "Tougenanki-247-00.jpg",
-                        "Tougenanki-247-01.jpg",
-                        "Tougenanki-247-02.jpg",
-                        "Tougenanki-247-03.jpg",
-                        "Tougenanki-247-04.jpg",
-                        "Tougenanki-247-05.jpg",
-                        "Tougenanki-247-06.jpg",
-                        "Tougenanki-247-07.jpg",
-                        "Tougenanki-247-08.jpg",
-                        "Tougenanki-247-09.jpg",
-                        "Tougenanki-247-10.jpg",
-                        "Tougenanki-247-11.jpg",
-                        "Tougenanki-247-12.jpg",
-                        "Tougenanki-247-13.jpg",
-                        "Tougenanki-247-14.jpg",
-                        "Tougenanki-247-15.jpg",
-                        "Tougenanki-247-16.jpg",
-                        "Tougenanki-247-17.jpg",
-                        "Tougenanki-247-18.jpg",
-                        "Tougenanki-247-19.jpg",
-                        "Tougenanki-247-20.jpg",
-                        "Tougenanki-247-21.jpg",
-                        "Tougenanki-247-22.jpg",
-                        "Tougenanki-247-23.jpg"
-                    ]
-                }
-            ]
-        },
-        {
             "id": "mairimashita-iruma-kun",
             "judul": "Mairimashita Iruma-kun",
             "cover": "iruma-kun.jpeg",
@@ -477,6 +422,61 @@
                         "Sakamoto-days-284-21.jpg"
                     ],
                     "download": "https://safefileku.com/download/wqTsEJeS3d7413TX"
+                }
+            ]
+        },
+        {
+            "id": "tougen-anki",
+            "judul": "Tougen Anki",
+            "cover": "tougenanki.jpg",
+            "sinopsis": "Shiki Ichinose, keturunan Oni, masuk sekolah Momotaro untuk melawan para Momotaro — sambil mencari kebenaran tentang ayahnya.",
+            "genre": [
+                "Action",
+                "Supernatural",
+                "Shounen"
+            ],
+            "status": "Ongoing",
+            "rating": 4.0,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 248,
+                    "judul": "",
+                    "tanggal": "2026-11-21",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/tougen-anki-chapter-248-bahasa-indonesia-shliX"
+                },
+                {
+                    "nomor": 247,
+                    "judul": "",
+                    "tanggal": "2026-11-21",
+                    "pages": [
+                        "Tougenanki-247-00.jpg",
+                        "Tougenanki-247-01.jpg",
+                        "Tougenanki-247-02.jpg",
+                        "Tougenanki-247-03.jpg",
+                        "Tougenanki-247-04.jpg",
+                        "Tougenanki-247-05.jpg",
+                        "Tougenanki-247-06.jpg",
+                        "Tougenanki-247-07.jpg",
+                        "Tougenanki-247-08.jpg",
+                        "Tougenanki-247-09.jpg",
+                        "Tougenanki-247-10.jpg",
+                        "Tougenanki-247-11.jpg",
+                        "Tougenanki-247-12.jpg",
+                        "Tougenanki-247-13.jpg",
+                        "Tougenanki-247-14.jpg",
+                        "Tougenanki-247-15.jpg",
+                        "Tougenanki-247-16.jpg",
+                        "Tougenanki-247-17.jpg",
+                        "Tougenanki-247-18.jpg",
+                        "Tougenanki-247-19.jpg",
+                        "Tougenanki-247-20.jpg",
+                        "Tougenanki-247-21.jpg",
+                        "Tougenanki-247-22.jpg",
+                        "Tougenanki-247-23.jpg"
+                    ]
                 }
             ]
         }
