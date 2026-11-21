@@ -490,7 +490,7 @@
     router();
   });
 
-  fetch('data.json')
+  fetch('data.json?_=' + Date.now())
     .then(function (r) { if (!r.ok) throw new Error('data.json tidak ditemukan'); return r.json(); })
     .then(function (data) {
       DATA = data; renderSidebar(); router();
