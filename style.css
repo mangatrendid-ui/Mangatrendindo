@@ -229,3 +229,17 @@ button { cursor: pointer; font-family: inherit; }
 .vip-lock-sub { color: var(--muted); font-size: 14px; }
 .vip-lock p { color: var(--muted); line-height: 1.6; }
 .vip-lock .btn { display: inline-block; margin: 10px 6px 0; }
+
+/* ---------- Update Terbaru ala VoraToon: grid 2 kolom ---------- */
+.update-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.update-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.update-chapters { display: flex; flex-direction: column; gap: 6px; padding: 8px; }
+.update-ch-link { display: flex; justify-content: space-between; align-items: center; gap: 8px; background: var(--card-2); border-radius: 8px; padding: 8px 10px; color: var(--text); font-weight: 700; font-size: 14px; }
+.update-ch-link:hover { text-decoration: underline; }
+.update-ch-link .up-badge { color: var(--green); font-weight: 800; font-size: 11px; margin-left: 4px; }
+.update-ch-time { font-size: 12px; color: var(--muted); font-weight: 400; white-space: nowrap; }
+.update-card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+.update-card h3 { text-align: center; font-size: 15px; padding: 10px 8px 12px; margin: 0; }
+.update-card h3 a { color: var(--text); }
+.update-card h3 a:hover { color: var(--accent); }
+@media (min-width: 900px) { .update-grid { grid-template-columns: repeat(4, 1fr); } }

@@ -212,21 +212,17 @@
     var update = grupUpdate.slice(0, 8);
 
     var html = '<h2 class="section-title">Update Terbaru</h2>' +
-      '<div class="update-list">' +
+      '<div class="update-grid">' +
       update.map(function (g) {
-        var chLinks = g.chapters.slice(0, 3).map(function (c) {
+        var chLinks = g.chapters.slice(0, 2).map(function (c) {
           var linkCh = c.vip ? '#/vip/' : '#/baca/';
-          return '<a class="chapter-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274; VIP' : '') + '</a>';
+          var up = waktuRelatif(c.tanggal) === 'hari ini' ? ' <span class="up-badge">UP</span>' : '';
+          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span>Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274; VIP' : '') + up + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal) + '</span></a>';
         }).join('');
-        if (g.chapters.length > 3) {
-          chLinks += '<a class="chapter-link" href="#/manga/' + esc(g.manga.id) + '">Lihat semua chapter &raquo;</a>';
-        }
-        return '<div class="update-item">' +
+        return '<div class="update-card">' +
+          '<div class="update-chapters">' + chLinks + '</div>' +
           '<a href="#/manga/' + esc(g.manga.id) + '"><img src="' + esc(g.manga.cover) + '" alt="Cover ' + esc(g.manga.judul) + '" loading="lazy"></a>' +
-          '<div><h3><a href="#/manga/' + esc(g.manga.id) + '">' + esc(g.manga.judul) + '</a></h3>' +
-          '<div class="chapter-links">' + chLinks + '</div>' +
-          '<div class="manga-meta"><span>' + esc(g.manga.genre.join(', ')) + '</span></div></div>' +
-          '<span class="update-time"><span class="up-label">UP</span> &middot; ' + fmtTanggal(g.chapters[0].tanggal) + '</span>' +
+          '<h3><a href="#/manga/' + esc(g.manga.id) + '">' + esc(g.manga.judul) + '</a></h3>' +
         '</div>';
       }).join('') + '</div>';
 
