@@ -125,6 +125,26 @@ sudah di-upload ke sini, siapa pun bisa menemukannya walau chapter-nya
 terkunci. Kalau chapter VIP sudah mau digratiskan, upload halamannya seperti
 biasa lalu hapus `"vip"` dan `"trakteer"` dari blok chapter itu.
 
+### 2c. Chapter terjadwal / publish otomatis (opsional)
+
+Kalau gambar chapter sudah di-upload tapi chapter itu belum mau diterbitkan,
+isi `"tanggal"` dengan tanggal dan jam terbit yang diinginkan (WIB), format
+`YYYY-MM-DDTHH:MM`:
+
+```json
+"tanggal": "2026-11-23T10:00"
+```
+
+Situs menyembunyikan chapter itu dari semua daftar dan dari halaman baca
+sampai waktunya tiba, lalu chapter muncul sendiri secara otomatis — tidak
+perlu di-push lagi. Kalau ada yang membuka link chapter itu sebelum waktunya,
+yang tampil halaman "Belum terbit" beserta jadwal terbitnya.
+
+Catatan: repo ini publik, jadi siapa pun yang membuka file `data.json` atau
+daftar file di repo tetap bisa melihat chapter terjadwal dan nama file
+gambarnya. Jadwal ini menyembunyikan chapter dari situs, bukan mengunci
+file-nya.
+
 ### 3. Upload gambar
 
 1. Di GitHub, buka folder `images/` → **Add file → Upload files**.
@@ -149,6 +169,8 @@ memakai gambar placeholder dari `picsum.photos` — aman dipakai sebagai contoh.
 - Halaman detail manga dengan daftar chapter + waktu update
 - Reader vertikal dengan tombol Chapter Sebelumnya / Berikutnya
 - Tombol Download per chapter (kalau diisi link download di data.json)
+- Chapter terjadwal: isi `tanggal` dengan tanggal dan jam di masa depan,
+  chapter tersembunyi sampai waktunya tiba lalu terbit otomatis
 - Bookmark (tombol Bookmark di halaman detail, dilihat di menu Koleksiku)
 - Progres baca tersimpan otomatis di browser (localStorage) — terakhir dibaca
   dan tanda "Sudah dibaca" di daftar chapter

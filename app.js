@@ -59,6 +59,38 @@
       return d.toDateString() === new Date().toDateString();
     } catch (e) { return false; }
   }
+  /* Jadwal terbit: chapter dengan tanggal di masa depan belum terbit.
+     tanggal ditulis "YYYY-MM-DDTHH:MM" (WIB); tanggal polos "YYYY-MM-DD"
+     dianggap terbit mulai 00:00 hari itu. Sampai waktunya tiba, chapter
+     disembunyikan dari semua daftar dan reader, lalu muncul sendiri. */
+  function sudahTerbit(ch) {
+    try {
+      var t = ch.tanggal || '';
+      var d = new Date(t.indexOf('T') !== -1 ? t : t + 'T00:00:00');
+      return d <= new Date();
+    } catch (e) { return true; }
+  }
+  function chaptersTerbit(m) {
+    return (m.chapters || []).filter(sudahTerbit);
+  }
+  function fmtJadwal(tgl) {
+    try {
+      var t = String(tgl || '');
+      var jam = t.indexOf('T') !== -1 ? t.split('T')[1].slice(0, 5) : '';
+      return fmtTanggal(t) + (jam ? ' pukul ' + jam : '');
+    } catch (e) { return tgl; }
+  }
+  function halamanBelumTerbit(m, ch) {
+    app.innerHTML =
+      '<div class="vip-lock">' +
+        '<div class="vip-lock-icon">&#128197;</div>' +
+        '<h1>' + esc(m.judul) + ' — Chapter ' + ch.nomor + '</h1>' +
+        '<p class="vip-lock-sub">Belum terbit</p>' +
+        '<p>Chapter ini terjadwal terbit pada <b>' + esc(fmtJadwal(ch.tanggal)) + ' WIB</b>. Silakan kembali lagi nanti.</p>' +
+        '<a class="btn ghost" href="#/manga/' + esc(m.id) + '">Kembali ke Daftar Chapter</a>' +
+      '</div>';
+    window.scrollTo(0, 0);
+  }
   /* Penghitung view per chapter (CounterAPI v2, gratis).
      Butuh workspace 'mangatrendindo' yang dibuat sekali di counterapi.dev.
      Angka mulai dari 0 dan bertambah setiap kali ada yang membuka chapter.
@@ -120,7 +152,8 @@
       .catch(function () { clearTimeout(t); return null; });
   }
   function chapterTerbaru(m) {
-    return m.chapters.slice().sort(function (a, b) { return b.nomor - a.nomor; })[0];
+    var terbit = chaptersTerbit(m);
+    return terbit.slice().sort(function (a, b) { return b.nomor - a.nomor; })[0];
   }
   /* Judul halaman per rute, supaya Google Analytics mencatat judul manga/chapter,
      bukan cuma 'MANGATRENDINDO — Baca Manga' di semua halaman. */
@@ -162,9 +195,11 @@
           '<span class="rating">&#9733; ' + m.rating.toFixed(1) + '</span>' +
         '</div>' +
         '<div class="manga-meta" style="margin-top:6px">' +
-          '<span>Chapter ' + (ch ? ch.nomor : '-') + '</span>' +
-          '<span>&middot; ' + fmtTanggal(ch ? ch.tanggal : '') + '</span>' +
-          '<span class="up-label">UP</span>' +
+          (ch
+            ? '<span>Chapter ' + ch.nomor + '</span>' +
+              '<span>&middot; ' + fmtTanggal(ch.tanggal) + '</span>' +
+              '<span class="up-label">UP</span>'
+            : '<span>Belum ada chapter</span>') +
         '</div>' +
       '</div></a>';
   }
@@ -180,7 +215,7 @@
           '<span class="rank">' + (i + 1) + '</span>' +
           '<img src="' + esc(m.cover) + '" alt="Cover ' + esc(m.judul) + '" loading="lazy">' +
           '<span><span class="side-title">' + esc(m.judul) + '</span><br>' +
-          '<span class="side-ch">Chapter ' + (ch ? ch.nomor : '-') + '</span></span></a>';
+          '<span class="side-ch">' + (ch ? 'Chapter ' + ch.nomor : 'Belum ada chapter') + '</span></span></a>';
       }).join('');
     }
     var genres = ['Semua'];
@@ -207,7 +242,7 @@
     var semuaChapter = [];
     DATA.manga.forEach(function (m, mi) {
       m.chapters.forEach(function (c, ci) {
-        semuaChapter.push({ manga: m, chapter: c, mi: mi, ci: ci });
+        if (sudahTerbit(c)) semuaChapter.push({ manga: m, chapter: c, mi: mi, ci: ci });
       });
     });
     semuaChapter.sort(function (a, b) {
@@ -255,7 +290,7 @@
         if (!da) return a.judul.localeCompare(b.judul);
         return DATA.manga.indexOf(b) - DATA.manga.indexOf(a);
       }).map(function (m) {
-        var chs = m.chapters.slice().sort(function (a, b) { return b.nomor - a.nomor; });
+        var chs = chaptersTerbit(m).slice().sort(function (a, b) { return b.nomor - a.nomor; });
         var chLinks = chs.slice(0, 3).map(function (c) {
           var linkCh = c.vip ? '#/vip/' : '#/baca/';
           return '<a class="chapter-link" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274;' : '') + '</a>';
@@ -314,7 +349,7 @@
     var m = cariManga(id);
     if (!m) { app.innerHTML = '<p class="empty">Manga tidak ditemukan. <a href="#/daftar">Kembali ke Daftar Manga</a></p>'; return; }
 
-    var chapters = m.chapters.slice().sort(function (a, b) { return b.nomor - a.nomor; });
+    var chapters = chaptersTerbit(m).slice().sort(function (a, b) { return b.nomor - a.nomor; });
     var prog = progress[m.id];
     var sudahBaca = prog ? prog.chapter : 0;
 
@@ -401,6 +436,7 @@
     if (!m) { app.innerHTML = '<p class="empty">Manga tidak ditemukan.</p>'; return; }
     var ch = m.chapters.find(function (c) { return c.nomor === nomor; });
     if (!ch) { app.innerHTML = '<p class="empty">Chapter tidak ditemukan.</p>'; return; }
+    if (!sudahTerbit(ch)) { halamanBelumTerbit(m, ch); return; }
     app.innerHTML =
       '<div class="vip-lock">' +
         '<div class="vip-lock-icon">&#128274;</div>' +
@@ -421,6 +457,7 @@
     if (!m) { app.innerHTML = '<p class="empty">Manga tidak ditemukan.</p>'; return; }
     var ch = m.chapters.find(function (c) { return c.nomor === nomor; });
     if (!ch) { app.innerHTML = '<p class="empty">Chapter tidak ditemukan.</p>'; return; }
+    if (!sudahTerbit(ch)) { halamanBelumTerbit(m, ch); return; }
     if (ch.vip) { renderVip(mangaId, nomor); return; }
 
     // Simpan progress baca
@@ -430,7 +467,7 @@
     // Hitung 1 view untuk chapter ini
     counterHit(mangaId, nomor);
 
-    var semua = m.chapters.slice().sort(function (a, b) { return a.nomor - b.nomor; });
+    var semua = chaptersTerbit(m).slice().sort(function (a, b) { return a.nomor - b.nomor; });
     var idx = semua.findIndex(function (c) { return c.nomor === nomor; });
     var prev = idx > 0 ? semua[idx - 1] : null;
     var next = idx < semua.length - 1 ? semua[idx + 1] : null;
