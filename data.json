@@ -747,6 +747,74 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "sentai-daishikkaku",
+            "judul": "Sentai Daishikkaku",
+            "cover": "sentaidaishikkaku.jpg",
+            "sinopsis": "Tiga belas tahun lalu, Pasukan Monster menyerbu Bumi. Para Dragon Keeper berhasil mengalahkan mereka, tapi prajurit monster yang tersisa dipaksa mengulang kekalahan mereka setiap hari Minggu dalam pertarungan yang sudah diatur. Prajurit D, muak dengan sandiwara ini, menyusup ke barisan Dragon Keeper untuk menghancurkan mereka dari dalam.",
+            "genre": [
+                "Action",
+                "Comedy",
+                "Sci-Fi"
+            ],
+            "status": "Ongoing",
+            "rating": 4.4,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 133,
+                    "judul": "",
+                    "tanggal": "2026-11-22T13:27",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/sentai-daishikkaku-chapter-132-133-bahasa-indonesia-pnhvG"
+                },
+                {
+                    "nomor": 132,
+                    "judul": "",
+                    "tanggal": "2026-11-22T13:27",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/sentai-daishikkaku-chapter-132-133-bahasa-indonesia-pnhvG"
+                },
+                {
+                    "nomor": 131,
+                    "judul": "",
+                    "tanggal": "2026-11-22T13:27",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/sentai-daishikkaku-chapter-130-131-bahasa-indonesia-hbLWr"
+                },
+                {
+                    "nomor": 130,
+                    "judul": "",
+                    "tanggal": "2026-11-22T13:27",
+                    "pages": [
+                        "sentai-daishikkaku-130-00.jpg",
+                        "sentai-daishikkaku-130-01.JPG",
+                        "sentai-daishikkaku-130-02.JPG",
+                        "sentai-daishikkaku-130-03.JPG",
+                        "sentai-daishikkaku-130-04.JPG",
+                        "sentai-daishikkaku-130-05.JPG",
+                        "sentai-daishikkaku-130-06.JPG",
+                        "sentai-daishikkaku-130-07.JPG",
+                        "sentai-daishikkaku-130-08.JPG",
+                        "sentai-daishikkaku-130-09.JPG",
+                        "sentai-daishikkaku-130-10.JPG",
+                        "sentai-daishikkaku-130-11.JPG",
+                        "sentai-daishikkaku-130-12.JPG",
+                        "sentai-daishikkaku-130-13.JPG",
+                        "sentai-daishikkaku-130-14.JPG",
+                        "sentai-daishikkaku-130-15.JPG",
+                        "sentai-daishikkaku-130-16.JPG",
+                        "sentai-daishikkaku-130-17.JPG",
+                        "sentai-daishikkaku-130-18.JPG",
+                        "sentai-daishikkaku-130-19.jpg",
+                        "sentai-daishikkaku-130-20.jpg"
+                    ]
+                }
+            ]
         }
     ],
     "site": {
