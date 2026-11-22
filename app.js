@@ -323,7 +323,7 @@
     });
     var update = grupUpdate;
 
-    var html = '<a class="telegram-banner" href="https://t.me/asherateppes" target="_blank" rel="noopener"><span>Update Terbaru di Telegram</span><small>Chapter baru diumumkan di Telegram dulu — gabung supaya tidak ketinggalan</small></a>' +
+    var html = '<a class="telegram-banner" href="https://t.me/asherateppes" target="_blank" rel="noopener"><span>Info Update Terbaru di Telegram</span><small>Chapter baru diumumkan di Telegram dulu — gabung supaya tidak ketinggalan</small></a>' +
       '<h2 class="section-title">Update Terbaru</h2>' +
       '<div class="update-grid">' +
       update.map(function (g) { return kartuDepan(g.manga); }).join('') + '</div>';
