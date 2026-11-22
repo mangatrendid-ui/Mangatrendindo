@@ -99,6 +99,24 @@
     }
     return ch.tanggal;
   }
+  /* Chapter yang ditampilkan di depan (maks 3 per kartu): 1 chapter gratis
+     terbaru + 2 chapter VIP terbaru, diisi chapter lain kalau VIP-nya
+     kurang dari 2. Supaya pengunjung selalu melihat ada chapter gratis
+     yang bisa dibaca, bukan cuma gembok. */
+  function chaptersDepan(chs) {
+    var diurut = chs.slice().sort(function (a, b) { return b.nomor - a.nomor; });
+    var gratis = diurut.filter(function (c) { return !vipAktif(c); });
+    var vip = diurut.filter(vipAktif);
+    var pilih = [];
+    if (gratis[0]) pilih.push(gratis[0]);
+    vip.slice(0, 2).forEach(function (c) { pilih.push(c); });
+    if (pilih.length < 3) {
+      diurut.forEach(function (c) {
+        if (pilih.length < 3 && pilih.indexOf(c) === -1) pilih.push(c);
+      });
+    }
+    return pilih.sort(function (a, b) { return b.nomor - a.nomor; }).slice(0, 3);
+  }
   function fmtJadwal(tgl) {
     try {
       var t = String(tgl || '');
@@ -292,7 +310,7 @@
     var html = '<h2 class="section-title">Update Terbaru</h2>' +
       '<div class="update-grid">' +
       update.map(function (g) {
-        var chLinks = g.chapters.slice(0, 3).map(function (c) {
+        var chLinks = chaptersDepan(g.chapters).map(function (c) {
           var linkCh = vipAktif(c) ? '#/vip/' : '#/baca/';
           if (vipAktif(c)) {
             return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span class="update-ch-teks"><span class="update-ch-nomor">Chapter ' + c.nomor + '</span>' + (c.judul ? '<span class="update-ch-judul"> — ' + esc(c.judul) + '</span>' : '') + ' &#128274;</span></a>';
@@ -318,7 +336,7 @@
         return DATA.manga.indexOf(b) - DATA.manga.indexOf(a);
       }).map(function (m) {
         var chs = chaptersTerbit(m).slice().sort(function (a, b) { return b.nomor - a.nomor; });
-        var chLinks = chs.slice(0, 3).map(function (c) {
+        var chLinks = chaptersDepan(chs).map(function (c) {
           var linkCh = vipAktif(c) ? '#/vip/' : '#/baca/';
           return '<a class="chapter-link" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (vipAktif(c) ? ' &#128274;' : '') + '</a>';
         }).join('');
