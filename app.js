@@ -285,12 +285,13 @@
   /* Kartu beranda (klik = tayangan iklan): hanya cover + judul + badge.
      Tanpa nomor chapter / daftar chapter, supaya pengunjung harus klik
      cover dulu dan masuk halaman detail. Badge NEW kalau ada chapter
-     terbit hari ini; gembok kalau ada chapter VIP yang masih aktif. */
+     terbit hari ini. Tanpa gembok di beranda — gembok hanya tampil di
+     daftar chapter halaman detail, supaya pengunjung tidak mengira
+     manganya berbayar. */
   function kartuDepan(m) {
     var chs = chaptersTerbit(m);
     var baru = chs.some(function (c) { return isHariIni(tanggalEfektif(c)); });
-    var adaVip = chs.some(vipAktif);
-    var badges = (baru ? '<span class="badge new">NEW</span>' : '') + (adaVip ? '<span class="vip-badge" title="Ada chapter VIP">&#128274;</span>' : '');
+    var badges = baru ? '<span class="badge new">NEW</span>' : '';
     return '<div class="update-card">' +
       '<a href="#/manga/' + esc(m.id) + '"><img src="' + esc(m.cover) + '" alt="Cover ' + esc(m.judul) + '" loading="lazy">' +
       (badges ? '<span class="card-badges">' + badges + '</span>' : '') + '</a>' +
