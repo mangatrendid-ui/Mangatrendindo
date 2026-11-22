@@ -282,6 +282,22 @@
     }
   }
 
+  /* Kartu beranda (klik = tayangan iklan): hanya cover + judul + badge.
+     Tanpa nomor chapter / daftar chapter, supaya pengunjung harus klik
+     cover dulu dan masuk halaman detail. Badge NEW kalau ada chapter
+     terbit hari ini; gembok kalau ada chapter VIP yang masih aktif. */
+  function kartuDepan(m) {
+    var chs = chaptersTerbit(m);
+    var baru = chs.some(function (c) { return isHariIni(tanggalEfektif(c)); });
+    var adaVip = chs.some(vipAktif);
+    var badges = (baru ? '<span class="badge new">NEW</span>' : '') + (adaVip ? '<span class="vip-badge" title="Ada chapter VIP">&#128274;</span>' : '');
+    return '<div class="update-card">' +
+      '<a href="#/manga/' + esc(m.id) + '"><img src="' + esc(m.cover) + '" alt="Cover ' + esc(m.judul) + '" loading="lazy">' +
+      (badges ? '<span class="card-badges">' + badges + '</span>' : '') + '</a>' +
+      '<h3><a href="#/manga/' + esc(m.id) + '">' + esc(m.judul) + '</a></h3>' +
+    '</div>';
+  }
+
   /* ---------- Halaman: Beranda ---------- */
   function renderBeranda() {
     var semuaChapter = [];
@@ -307,26 +323,13 @@
     });
     var update = grupUpdate;
 
-    var html = '<h2 class="section-title">Update Terbaru</h2>' +
+    var html = '<a class="telegram-banner" href="https://t.me/asherateppes" target="_blank" rel="noopener"><span>Update Terbaru di Telegram</span><small>Chapter baru diumumkan di Telegram dulu — gabung supaya tidak ketinggalan</small></a>' +
+      '<h2 class="section-title">Update Terbaru</h2>' +
       '<div class="update-grid">' +
-      update.map(function (g) {
-        var chLinks = chaptersDepan(g.chapters).map(function (c) {
-          var linkCh = vipAktif(c) ? '#/vip/' : '#/baca/';
-          if (vipAktif(c)) {
-            return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span class="update-ch-teks"><span class="update-ch-nomor">Chapter ' + c.nomor + '</span>' + (c.judul ? '<span class="update-ch-judul"> — ' + esc(c.judul) + '</span>' : '') + ' &#128274;</span></a>';
-          }
-          var up = isHariIni(tanggalEfektif(c)) ? ' <span class="up-badge">UP</span>' : '';
-          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span class="update-ch-teks"><span class="update-ch-nomor">Chapter ' + c.nomor + '</span>' + up + (c.judul ? '<span class="update-ch-judul"> — ' + esc(c.judul) + '</span>' : '') + '</span><span class="update-ch-time">' + waktuRelatif(tanggalEfektif(c)).replace(' lalu', '') + '</span></a>';
-        }).join('');
-        return '<div class="update-card">' +
-          '<a href="#/manga/' + esc(g.manga.id) + '"><img src="' + esc(g.manga.cover) + '" alt="Cover ' + esc(g.manga.judul) + '" loading="lazy"></a>' +
-          '<h3><a href="#/manga/' + esc(g.manga.id) + '">' + esc(g.manga.judul) + '</a></h3>' +
-          '<div class="update-chapters">' + chLinks + '</div>' +
-        '</div>';
-      }).join('') + '</div>';
+      update.map(function (g) { return kartuDepan(g.manga); }).join('') + '</div>';
 
     html += '<h2 class="section-title">Semua Manga <span class="total-judul">Total ' + DATA.manga.length + ' judul</span></h2>' +
-      '<div class="update-list">' +
+      '<div class="update-grid">' +
       DATA.manga.slice().sort(function (a, b) {
         var cb = chapterTerbaru(b), ca = chapterTerbaru(a);
         var da = (ca && tanggalEfektif(ca)) || '', db = (cb && tanggalEfektif(cb)) || '';
@@ -334,24 +337,7 @@
         if (d !== 0) return d;
         if (!da) return a.judul.localeCompare(b.judul);
         return DATA.manga.indexOf(b) - DATA.manga.indexOf(a);
-      }).map(function (m) {
-        var chs = chaptersTerbit(m).slice().sort(function (a, b) { return b.nomor - a.nomor; });
-        var chLinks = chaptersDepan(chs).map(function (c) {
-          var linkCh = vipAktif(c) ? '#/vip/' : '#/baca/';
-          return '<a class="chapter-link" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (vipAktif(c) ? ' &#128274;' : '') + '</a>';
-        }).join('');
-        if (chs.length > 3) {
-          chLinks += '<a class="chapter-link" href="#/manga/' + esc(m.id) + '">Lihat semua chapter &raquo;</a>';
-        }
-        if (!chLinks) chLinks = '<span class="chapter-link" style="color:var(--muted)">Belum ada chapter</span>';
-        return '<div class="update-item">' +
-          '<a href="#/manga/' + esc(m.id) + '"><img src="' + esc(m.cover) + '" alt="Cover ' + esc(m.judul) + '" loading="lazy"></a>' +
-          '<div><h3><a href="#/manga/' + esc(m.id) + '">' + esc(m.judul) + '</a></h3>' +
-          '<div class="chapter-links">' + chLinks + '</div>' +
-          '<div class="manga-meta"><span>' + esc(m.genre.join(', ')) + '</span></div></div>' +
-          (chs.length ? '<span class="update-time"><span class="up-label">UP</span> &middot; ' + fmtTanggal(tanggalEfektif(chs[0])) + '</span>' : '') +
-        '</div>';
-      }).join('') + '</div>';
+      }).map(function (m) { return kartuDepan(m); }).join('') + '</div>';
 
     app.innerHTML = html;
 
