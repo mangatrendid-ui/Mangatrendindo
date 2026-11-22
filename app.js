@@ -73,6 +73,32 @@
   function chaptersTerbit(m) {
     return (m.chapters || []).filter(sudahTerbit);
   }
+
+  /* VIP berbatas waktu: chapter dengan "vipSampai" terkunci sampai tanggal
+     itu tiba, lalu otomatis jadi gratis tanpa perlu edit data.json lagi.
+     Tanpa vipSampai, chapter VIP terkunci sampai vip-nya dihapus manual. */
+  function vipAktif(ch) {
+    if (!ch.vip) return false;
+    if (!ch.vipSampai) return true;
+    try {
+      var t = ch.vipSampai;
+      var d = new Date(t.indexOf('T') !== -1 ? t : t + 'T00:00:00');
+      return d > new Date();
+    } catch (e) { return true; }
+  }
+  /* Tanggal yang dipakai untuk urutan & tampilan: setelah masa VIP habis,
+     chapter dihitung sebagai rilis baru pada tanggal vipSampai, supaya
+     muncul lagi paling atas sebagai chapter gratis. */
+  function tanggalEfektif(ch) {
+    if (ch.vip && ch.vipSampai) {
+      try {
+        var t = ch.vipSampai;
+        var d = new Date(t.indexOf('T') !== -1 ? t : t + 'T00:00:00');
+        if (d <= new Date()) return ch.vipSampai;
+      } catch (e) {}
+    }
+    return ch.tanggal;
+  }
   function fmtJadwal(tgl) {
     try {
       var t = String(tgl || '');
@@ -198,7 +224,7 @@
         '<div class="manga-meta" style="margin-top:6px">' +
           (ch
             ? '<span>Chapter ' + ch.nomor + '</span>' +
-              '<span>&middot; ' + fmtTanggal(ch.tanggal) + '</span>' +
+              '<span>&middot; ' + fmtTanggal(tanggalEfektif(ch)) + '</span>' +
               '<span class="up-label">UP</span>'
             : '<span>Belum ada chapter</span>') +
         '</div>' +
@@ -247,7 +273,7 @@
       });
     });
     semuaChapter.sort(function (a, b) {
-      var d = b.chapter.tanggal.localeCompare(a.chapter.tanggal);
+      var d = tanggalEfektif(b.chapter).localeCompare(tanggalEfektif(a.chapter));
       if (d !== 0) return d;
       if (a.mi !== b.mi) return b.mi - a.mi;
       return a.ci - b.ci;
@@ -267,12 +293,12 @@
       '<div class="update-grid">' +
       update.map(function (g) {
         var chLinks = g.chapters.slice(0, 3).map(function (c) {
-          var linkCh = c.vip ? '#/vip/' : '#/baca/';
-          if (c.vip) {
+          var linkCh = vipAktif(c) ? '#/vip/' : '#/baca/';
+          if (vipAktif(c)) {
             return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span class="update-ch-teks"><span class="update-ch-nomor">Chapter ' + c.nomor + '</span>' + (c.judul ? '<span class="update-ch-judul"> — ' + esc(c.judul) + '</span>' : '') + ' &#128274;</span></a>';
           }
-          var up = isHariIni(c.tanggal) ? ' <span class="up-badge">UP</span>' : '';
-          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span class="update-ch-teks"><span class="update-ch-nomor">Chapter ' + c.nomor + '</span>' + up + (c.judul ? '<span class="update-ch-judul"> — ' + esc(c.judul) + '</span>' : '') + '</span><span class="update-ch-time">' + waktuRelatif(c.tanggal).replace(' lalu', '') + '</span></a>';
+          var up = isHariIni(tanggalEfektif(c)) ? ' <span class="up-badge">UP</span>' : '';
+          return '<a class="update-ch-link" href="' + linkCh + esc(g.manga.id) + '/' + c.nomor + '"><span class="update-ch-teks"><span class="update-ch-nomor">Chapter ' + c.nomor + '</span>' + up + (c.judul ? '<span class="update-ch-judul"> — ' + esc(c.judul) + '</span>' : '') + '</span><span class="update-ch-time">' + waktuRelatif(tanggalEfektif(c)).replace(' lalu', '') + '</span></a>';
         }).join('');
         return '<div class="update-card">' +
           '<a href="#/manga/' + esc(g.manga.id) + '"><img src="' + esc(g.manga.cover) + '" alt="Cover ' + esc(g.manga.judul) + '" loading="lazy"></a>' +
@@ -285,7 +311,7 @@
       '<div class="update-list">' +
       DATA.manga.slice().sort(function (a, b) {
         var cb = chapterTerbaru(b), ca = chapterTerbaru(a);
-        var da = (ca && ca.tanggal) || '', db = (cb && cb.tanggal) || '';
+        var da = (ca && tanggalEfektif(ca)) || '', db = (cb && tanggalEfektif(cb)) || '';
         var d = db.localeCompare(da);
         if (d !== 0) return d;
         if (!da) return a.judul.localeCompare(b.judul);
@@ -293,8 +319,8 @@
       }).map(function (m) {
         var chs = chaptersTerbit(m).slice().sort(function (a, b) { return b.nomor - a.nomor; });
         var chLinks = chs.slice(0, 3).map(function (c) {
-          var linkCh = c.vip ? '#/vip/' : '#/baca/';
-          return '<a class="chapter-link" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (c.vip ? ' &#128274;' : '') + '</a>';
+          var linkCh = vipAktif(c) ? '#/vip/' : '#/baca/';
+          return '<a class="chapter-link" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">Chapter ' + c.nomor + (c.judul ? ' — ' + esc(c.judul) : '') + (vipAktif(c) ? ' &#128274;' : '') + '</a>';
         }).join('');
         if (chs.length > 3) {
           chLinks += '<a class="chapter-link" href="#/manga/' + esc(m.id) + '">Lihat semua chapter &raquo;</a>';
@@ -305,7 +331,7 @@
           '<div><h3><a href="#/manga/' + esc(m.id) + '">' + esc(m.judul) + '</a></h3>' +
           '<div class="chapter-links">' + chLinks + '</div>' +
           '<div class="manga-meta"><span>' + esc(m.genre.join(', ')) + '</span></div></div>' +
-          (chs.length ? '<span class="update-time"><span class="up-label">UP</span> &middot; ' + fmtTanggal(chs[0].tanggal) + '</span>' : '') +
+          (chs.length ? '<span class="update-time"><span class="up-label">UP</span> &middot; ' + fmtTanggal(tanggalEfektif(chs[0])) + '</span>' : '') +
         '</div>';
       }).join('') + '</div>';
 
@@ -368,7 +394,7 @@
           '<p class="sinopsis">' + esc(m.sinopsis) + '</p>' +
           '<div class="btn-row">' +
             (chapters.length
-              ? (chapters[0].vip
+              ? (vipAktif(chapters[0])
                   ? '<a class="btn" href="#/vip/' + esc(m.id) + '/' + chapters[0].nomor + '">&#128274; Baca Chapter ' + chapters[0].nomor + '</a>'
                   : '<a class="btn" href="#/baca/' + esc(m.id) + '/' + chapters[0].nomor + '">Baca Chapter ' + chapters[0].nomor + '</a>')
               : '<span class="btn" style="opacity:.4">Belum ada chapter</span>') +
@@ -383,15 +409,15 @@
       '<div class="chapter-list">' +
       chapters.map(function (c) {
         var dibaca = c.nomor <= sudahBaca;
-        var linkCh = c.vip ? '#/vip/' : '#/baca/';
+        var linkCh = vipAktif(c) ? '#/vip/' : '#/baca/';
         return '<div class="chapter-row-wrap">' +
-          '<a class="chapter-row' + (c.vip ? ' vip-row' : '') + '" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">' +
+          '<a class="chapter-row' + (vipAktif(c) ? ' vip-row' : '') + '" href="' + linkCh + esc(m.id) + '/' + c.nomor + '">' +
           '<span class="ch-num">Chapter ' + c.nomor + '</span>' +
           '<span class="ch-title">' + esc(c.judul || '') + '</span>' +
-          (c.vip ? '<span class="vip-badge">&#128274;</span>' : '') +
+          (vipAktif(c) ? '<span class="vip-badge">&#128274;</span>' : '') +
           (dibaca ? '<span class="read-badge">Sudah dibaca</span>' : '') +
           '<span class="ch-views" data-vc="' + esc(m.id) + '-' + c.nomor + '">&#128065; <span class="vc-num"></span></span>' +
-          '<time>' + waktuRelatif(c.tanggal) + '</time>' +
+          '<time>' + waktuRelatif(tanggalEfektif(c)) + '</time>' +
         '</a>' +
         (c.download ? '<a class="btn-dl" href="' + esc(c.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
         '</div>';
@@ -438,6 +464,7 @@
     var ch = m.chapters.find(function (c) { return c.nomor === nomor; });
     if (!ch) { app.innerHTML = '<p class="empty">Chapter tidak ditemukan.</p>'; return; }
     if (!sudahTerbit(ch)) { halamanBelumTerbit(m, ch); return; }
+    if (!vipAktif(ch)) { renderReader(mangaId, nomor); return; }
     app.innerHTML =
       '<div class="vip-lock">' +
         '<div class="vip-lock-icon">&#128274;</div>' +
@@ -459,10 +486,10 @@
     var ch = m.chapters.find(function (c) { return c.nomor === nomor; });
     if (!ch) { app.innerHTML = '<p class="empty">Chapter tidak ditemukan.</p>'; return; }
     if (!sudahTerbit(ch)) { halamanBelumTerbit(m, ch); return; }
-    if (ch.vip) { renderVip(mangaId, nomor); return; }
+    if (vipAktif(ch)) { renderVip(mangaId, nomor); return; }
 
     // Simpan progress baca
-    progress[m.id] = { chapter: nomor, tanggal: ch.tanggal };
+    progress[m.id] = { chapter: nomor, tanggal: tanggalEfektif(ch) };
     saveJSON('mt_progress', progress);
 
     // Hitung 1 view untuk chapter ini
@@ -483,7 +510,7 @@
     app.innerHTML =
       '<div class="reader">' +
         '<div class="reader-head"><h1>' + esc(m.judul) + ' — Chapter ' + ch.nomor + '</h1>' +
-        '<p>' + esc(ch.judul || '') + ' &middot; ' + fmtTanggal(ch.tanggal) + '</p></div>' +
+        '<p>' + esc(ch.judul || '') + ' &middot; ' + fmtTanggal(tanggalEfektif(ch)) + '</p></div>' +
         nav +
         '<div class="reader-pages">' +
           (ch.pages && ch.pages.length
