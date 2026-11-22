@@ -815,6 +815,43 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "kagurabachi",
+            "judul": "Kagurabachi",
+            "cover": "kagurabachi.webp",
+            "sinopsis": "Chihiro Rokuhira, putra seorang pandai pedang legendaris, mewarisi katana sihir Enten setelah ayahnya dibunuh. Dengan pedang itu, ia memburu para penyihir Hishaku yang bertanggung jawab atas kematian ayahnya.",
+            "genre": [
+                "Action",
+                "Fantasy",
+                "Supernatural"
+            ],
+            "status": "Ongoing",
+            "rating": 4.8,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 140,
+                    "judul": "",
+                    "tanggal": "2026-11-23T05:20",
+                    "pages": [
+                        "kagurabachi-140-01.jpeg",
+                        "kagurabachi-140-02.jpeg",
+                        "kagurabachi-140-03.jpeg",
+                        "kagurabachi-140-04.jpeg",
+                        "kagurabachi-140-05.jpeg",
+                        "kagurabachi-140-06.jpeg",
+                        "kagurabachi-140-07.jpeg",
+                        "kagurabachi-140-08.jpeg",
+                        "kagurabachi-140-09.jpeg",
+                        "kagurabachi-140-10.jpeg",
+                        "kagurabachi-140-11.jpeg",
+                        "kagurabachi-140-12.jpg",
+                        "kagurabachi-140-13.jpeg",
+                        "kagurabachi-140-14.jpg"
+                    ]
+                }
+            ]
         }
     ],
     "site": {
