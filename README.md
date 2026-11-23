@@ -145,6 +145,22 @@ daftar file di repo tetap bisa melihat chapter terjadwal dan nama file
 gambarnya. Jadwal ini menyembunyikan chapter dari situs, bukan mengunci
 file-nya.
 
+### 2d. Tampilkan chapter di beranda (opsional)
+
+Secara default, beranda hanya menampilkan cover + judul (tanpa daftar
+chapter), supaya pengunjung harus klik cover dulu. Kalau sebuah judul mau
+menampilkan daftar chapternya langsung di kartu beranda, tambahkan
+`"tampilChapter": true` di blok manga itu:
+
+```json
+"tampilChapter": true,
+```
+
+Kartunya menampilkan maksimal 3 chapter terbaru (1 gratis terbaru + 2 VIP
+terbaru). Hapus baris itu kalau judulnya mau kembali cover saja. Tidak ada
+tulisan atau label apa pun yang tampil di kartu — penanda ini hanya untuk
+mengatur tampilan.
+
 ### 3. Upload gambar
 
 1. Di GitHub, buka folder `images/` → **Add file → Upload files**.
