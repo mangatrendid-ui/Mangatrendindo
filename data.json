@@ -917,6 +917,37 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "demonic-emperor",
+            "judul": "Demonic Emperor",
+            "cover": "demonic-emperor.jpg",
+            "sinopsis": "Zhuo Yifan, Kaisar Iblis yang ditakuti semua orang, dikhianati dan dibunuh setelah mendapatkan Kitab Sembilan Misteri. Jiwanya terlahir kembali di tubuh Zhuo Fan, pelayan muda keluarga kecil — dan dari titik terendah itu, ia mulai merencanakan kebangkitannya.",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "status": "Ongoing",
+            "rating": 4.8,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 939,
+                    "judul": "",
+                    "tanggal": "2026-11-23T13:49",
+                    "pages": [
+                        "demonic-emperor-939-00.jpg",
+                        "demonic-emperor-939-01.jpg",
+                        "demonic-emperor-939-02.jpg",
+                        "demonic-emperor-939-03.jpg",
+                        "demonic-emperor-939-04.jpg",
+                        "demonic-emperor-939-05.jpg",
+                        "demonic-emperor-939-06.jpg",
+                        "demonic-emperor-939-07.jpg"
+                    ]
+                }
+            ]
         }
     ],
     "site": {
