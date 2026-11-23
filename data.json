@@ -1071,6 +1071,47 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "dandadan",
+            "judul": "Dandadan",
+            "cover": "dandadan.jpeg",
+            "sinopsis": "Momo Ayase percaya hantu itu nyata, Okarun percaya alien itu nyata. Setelah saling menantang untuk membuktikan keyakinan masing-masing, keduanya malah mendapatkan kekuatan supranatural — dan hidup mereka berubah menjadi pertarungan melawan hantu dan alien.",
+            "genre": [
+                "Action",
+                "Comedy",
+                "Supernatural"
+            ],
+            "status": "Ongoing",
+            "rating": 4.7,
+            "views": 0,
+            "tampilChapter": true,
+            "chapters": [
+                {
+                    "nomor": 254,
+                    "tanggal": "2026-11-24T06:35",
+                    "pages": [
+                        "dandadan-254-01.jpg",
+                        "dandadan-254-02.jpg",
+                        "dandadan-254-03.jpg",
+                        "dandadan-254-04.jpg",
+                        "dandadan-254-05.jpg",
+                        "dandadan-254-06.jpg",
+                        "dandadan-254-07.jpg",
+                        "dandadan-254-08.jpg",
+                        "dandadan-254-09.jpg",
+                        "dandadan-254-10.jpg",
+                        "dandadan-254-11.jpg",
+                        "dandadan-254-12.jpg",
+                        "dandadan-254-13.jpg",
+                        "dandadan-254-14.jpg",
+                        "dandadan-254-15.jpg",
+                        "dandadan-254-16.jpg",
+                        "dandadan-254-17.jpg",
+                        "dandadan-254-18.jpg"
+                    ]
+                }
+            ]
         }
     ],
     "site": {
