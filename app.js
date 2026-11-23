@@ -552,7 +552,7 @@
                 return '<img src="' + esc(p) + '" alt="Halaman ' + (i + 1) + '" loading="lazy">';
               }).join('')
             : (ch.download
-              ? '<p class="empty" style="padding:24px">Chapter ini hanya tersedia dalam versi download (PDF). Silakan klik tombol Download di atas untuk mengunduhnya.</p>'
+              ? '<p class="empty" style="padding:24px">Chapter ini hanya tersedia dalam versi download (PDF). Silakan klik tombol Download di atas untuk mengunduhnya. Cara melewatinya: tunggu hitungan mundur selesai, lalu klik tombol lanjutkan. Kalau tiba-tiba terbuka halaman lain, itu iklan — tutup tab tersebut dan kembali ke sini, jangan ikuti apa pun di halaman itu.</p>'
               : '<p class="empty" style="padding:24px">Halaman chapter ini belum diunggah.</p>')) +
         '</div>' +
         nav +
