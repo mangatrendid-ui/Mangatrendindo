@@ -931,6 +931,7 @@
             "status": "Ongoing",
             "rating": 4.8,
             "views": 0,
+            "tampilChapter": true,
             "chapters": [
                 {
                     "nomor": 939,
