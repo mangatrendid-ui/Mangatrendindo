@@ -994,6 +994,13 @@
                         "fairytail-223-21.jpg",
                         "fairytail-223-22.jpg"
                     ]
+                },
+                {
+                    "nomor": 222,
+                    "judul": "",
+                    "tanggal": "2026-11-23T18:55",
+                    "download": "https://raw.githubusercontent.com/mangatrendid-ui/Mangatrendindo-PDF/main/fairy%20tail-222.pdf",
+                    "pages": []
                 }
             ]
         }
