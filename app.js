@@ -551,7 +551,9 @@
             ? ch.pages.map(function (p, i) {
                 return '<img src="' + esc(p) + '" alt="Halaman ' + (i + 1) + '" loading="lazy">';
               }).join('')
-            : '<p class="empty" style="padding:24px">Halaman chapter ini belum diunggah. Upload gambar halaman ke folder images/ lalu isi daftar pages di data.json.</p>') +
+            : (ch.download
+              ? '<p class="empty" style="padding:24px">Chapter ini hanya tersedia dalam versi download (PDF). Silakan klik tombol Download di atas untuk mengunduhnya.</p>'
+              : '<p class="empty" style="padding:24px">Halaman chapter ini belum diunggah.</p>')) +
         '</div>' +
         nav +
       '</div>' +
