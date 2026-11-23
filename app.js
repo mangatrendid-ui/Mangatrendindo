@@ -466,11 +466,12 @@
           m.volumes.map(function (v) {
             return '<div class="chapter-row-wrap">' +
               (v.download
-                ? '<a class="chapter-row" href="' + esc(v.download) + '" target="_blank" rel="noopener"><span class="ch-num">Volume ' + v.volume + '</span>' +
-                  '<span class="ch-title">Chapter ' + v.dari + '–' + v.sampai + '</span></a>'
+                ? '<a class="chapter-row vol-dl" data-vol="' + v.volume + '" href="' + esc(v.download) + '" target="_blank" rel="noopener"><span class="ch-num">Volume ' + v.volume + '</span>' +
+                  '<span class="ch-title">Chapter ' + v.dari + '–' + v.sampai + '</span>' +
+                  '<span class="ch-views" data-vc="' + esc(m.id) + '-volume-' + v.volume + '">&#128065; <span class="vc-num"></span></span></a>'
                 : '<span class="chapter-row"><span class="ch-num">Volume ' + v.volume + '</span>' +
                   '<span class="ch-title">Chapter ' + v.dari + '–' + v.sampai + '</span></span>') +
-              (v.download ? '<a class="btn-dl" href="' + esc(v.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
+              (v.download ? '<a class="btn-dl vol-dl" data-vol="' + v.volume + '" href="' + esc(v.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
             '</div>';
           }).join('') + '</div>'
         : '') +
@@ -489,10 +490,18 @@
       renderDetail(m.id);
     });
 
+    /* Hitung klik download volume (counter per volume, mis. ao-ashi-volume-1). */
+    app.querySelectorAll('.vol-dl').forEach(function (a) {
+      a.addEventListener('click', function () {
+        counterHit(m.id, 'volume-' + a.getAttribute('data-vol'));
+      });
+    });
+
     /* Isi jumlah view per chapter + total dibaca (dari layanan counter). */
     var totalEl = document.getElementById('total-dibaca');
     var total = 0, selesai = 0;
-    app.querySelectorAll('[data-vc]').forEach(function (el) {
+    var vcSpans = app.querySelectorAll('[data-vc]');
+    vcSpans.forEach(function (el) {
       var key = el.getAttribute('data-vc');
       var dash = key.lastIndexOf('-');
       counterGet(key.slice(0, dash), parseFloat(key.slice(dash + 1))).then(function (v) {
@@ -502,7 +511,7 @@
           el.querySelector('.vc-num').textContent = v.toLocaleString('id-ID');
           total += v;
         }
-        if (selesai === chapters.length && totalEl && total > 0) {
+        if (selesai === vcSpans.length && totalEl && total > 0) {
           totalEl.textContent = '· ' + total.toLocaleString('id-ID') + ' dibaca';
         }
       });
