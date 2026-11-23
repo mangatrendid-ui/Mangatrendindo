@@ -227,21 +227,6 @@
             "chapters": []
         },
         {
-            "id": "bungou-stray-dogs",
-            "judul": "Bungou Stray Dogs",
-            "cover": "bungou.jpg",
-            "sinopsis": "Atsushi Nakajima, pemuda dengan kemampuan harimau putih, bergabung dengan Agensi Detektif Bersenjata yang anggotanya memiliki kekuatan supernatural.",
-            "genre": [
-                "Action",
-                "Supernatural",
-                "Seinen"
-            ],
-            "status": "Completed",
-            "rating": 4.4,
-            "views": 0,
-            "chapters": []
-        },
-        {
             "id": "one-piece",
             "judul": "One Piece",
             "cover": "Onepiece.jpeg",
@@ -850,6 +835,69 @@
                         "kagurabachi-140-12.jpg",
                         "kagurabachi-140-13.jpeg",
                         "kagurabachi-140-14.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bungou-stray-dogs",
+            "judul": "Bungou Stray Dogs",
+            "cover": "bungou.jpg",
+            "sinopsis": "Atsushi Nakajima, pemuda dengan kemampuan harimau putih, bergabung dengan Agensi Detektif Bersenjata yang anggotanya memiliki kekuatan supernatural.",
+            "genre": [
+                "Action",
+                "Supernatural",
+                "Seinen"
+            ],
+            "status": "Completed",
+            "rating": 4.4,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 84,
+                    "judul": "",
+                    "tanggal": "2026-11-23T11:09",
+                    "pages": [
+                        "bungou-stray-dogs-84-00.jpeg",
+                        "bungou-stray-dogs-84-01.jpg",
+                        "bungou-stray-dogs-84-02.jpg",
+                        "bungou-stray-dogs-84-03.jpg",
+                        "bungou-stray-dogs-84-04.jpg",
+                        "bungou-stray-dogs-84-05.jpg",
+                        "bungou-stray-dogs-84-06.jpg",
+                        "bungou-stray-dogs-84-07.jpg",
+                        "bungou-stray-dogs-84-08.jpg",
+                        "bungou-stray-dogs-84-09.jpg",
+                        "bungou-stray-dogs-84-10.jpg",
+                        "bungou-stray-dogs-84-11.jpg",
+                        "bungou-stray-dogs-84-12.jpg",
+                        "bungou-stray-dogs-84-13.jpg",
+                        "bungou-stray-dogs-84-14.jpg",
+                        "bungou-stray-dogs-84-15.jpg",
+                        "bungou-stray-dogs-84-16.jpg",
+                        "bungou-stray-dogs-84-17.jpg",
+                        "bungou-stray-dogs-84-18.jpg",
+                        "bungou-stray-dogs-84-19.jpg",
+                        "bungou-stray-dogs-84-20.jpg",
+                        "bungou-stray-dogs-84-21.jpg",
+                        "bungou-stray-dogs-84-22.jpg",
+                        "bungou-stray-dogs-84-23.jpg",
+                        "bungou-stray-dogs-84-24.jpg",
+                        "bungou-stray-dogs-84-25.jpg",
+                        "bungou-stray-dogs-84-26.jpg",
+                        "bungou-stray-dogs-84-27.jpg",
+                        "bungou-stray-dogs-84-28.jpg",
+                        "bungou-stray-dogs-84-29.jpg",
+                        "bungou-stray-dogs-84-30.jpg",
+                        "bungou-stray-dogs-84-31.jpg",
+                        "bungou-stray-dogs-84-32.jpg",
+                        "bungou-stray-dogs-84-33.jpg",
+                        "bungou-stray-dogs-84-34.jpg",
+                        "bungou-stray-dogs-84-35.jpg",
+                        "bungou-stray-dogs-84-36.jpg",
+                        "bungou-stray-dogs-84-37.jpg",
+                        "bungou-stray-dogs-84-38.jpg",
+                        "bungou-stray-dogs-84-39.jpg"
                     ]
                 }
             ]
