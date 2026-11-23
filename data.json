@@ -1,52 +1,6 @@
 {
     "manga": [
         {
-            "id": "fairy-tail-100-years-quest",
-            "judul": "Fairy Tail: 100 Years Quest",
-            "cover": "fairytail.jpeg",
-            "sinopsis": "Setelah mengalahkan Zeref dan Acnologia, Natsu dan tim Fairy Tail menerima misi 100 tahun: menyegel Lima Dewa Naga di benua Guiltina.",
-            "genre": [
-                "Action",
-                "Adventure",
-                "Comedy"
-            ],
-            "status": "Ongoing",
-            "rating": 4.3,
-            "views": 0,
-            "chapters": [
-                {
-                    "nomor": 223,
-                    "judul": "",
-                    "tanggal": "2026-11-20",
-                    "pages": [
-                        "fairytail-223-00.jpg",
-                        "fairytail-223-01.jpg",
-                        "fairytail-223-02.jpg",
-                        "fairytail-223-03.jpg",
-                        "fairytail-223-04.jpg",
-                        "fairytail-223-05.jpg",
-                        "fairytail-223-06.jpg",
-                        "fairytail-223-07.jpg",
-                        "fairytail-223-08.jpg",
-                        "fairytail-223-09.jpg",
-                        "fairytail-223-10.jpg",
-                        "fairytail-223-11.jpg",
-                        "fairytail-223-12.jpg",
-                        "fairytail-223-13.jpg",
-                        "fairytail-223-14.jpg",
-                        "fairytail-223-15.jpg",
-                        "fairytail-223-16.jpg",
-                        "fairytail-223-17.jpg",
-                        "fairytail-223-18.jpg",
-                        "fairytail-223-19.jpg",
-                        "fairytail-223-20.jpg",
-                        "fairytail-223-21.jpg",
-                        "fairytail-223-22.jpg"
-                    ]
-                }
-            ]
-        },
-        {
             "id": "undead-unluck",
             "judul": "Undead Unluck",
             "cover": "undead-unluck.jpg",
@@ -962,6 +916,82 @@
                         "demonic-emperor-938-06.jpg",
                         "demonic-emperor-938-07.jpg",
                         "demonic-emperor-938-08.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fairy-tail-100-years-quest",
+            "judul": "Fairy Tail: 100 Years Quest",
+            "cover": "fairytail.jpeg",
+            "sinopsis": "Setelah mengalahkan Zeref dan Acnologia, Natsu dan tim Fairy Tail menerima misi 100 tahun: menyegel Lima Dewa Naga di benua Guiltina.",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Comedy"
+            ],
+            "status": "Ongoing",
+            "rating": 4.3,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 224,
+                    "judul": "",
+                    "tanggal": "2026-11-23T17:30",
+                    "pages": [
+                        "fairytail-224-00.jpg",
+                        "fairytail-224-01.jpg",
+                        "fairytail-224-02.jpg",
+                        "fairytail-224-03.jpg",
+                        "fairytail-224-04.jpg",
+                        "fairytail-224-05.jpg",
+                        "fairytail-224-06.jpg",
+                        "fairytail-224-07.jpg",
+                        "fairytail-224-08.jpg",
+                        "fairytail-224-09.jpg",
+                        "fairytail-224-10.jpg",
+                        "fairytail-224-11.jpg",
+                        "fairytail-224-12.jpg",
+                        "fairytail-224-13.jpg",
+                        "fairytail-224-14.jpg",
+                        "fairytail-224-15.jpg",
+                        "fairytail-224-16.jpg",
+                        "fairytail-224-17.jpg",
+                        "fairytail-224-18.jpg",
+                        "fairytail-224-19.jpg",
+                        "fairytail-224-20.jpg",
+                        "fairytail-224-21.jpg",
+                        "fairytail-224-22.jpg"
+                    ]
+                },
+                {
+                    "nomor": 223,
+                    "judul": "",
+                    "tanggal": "2026-11-20",
+                    "pages": [
+                        "fairytail-223-00.jpg",
+                        "fairytail-223-01.jpg",
+                        "fairytail-223-02.jpg",
+                        "fairytail-223-03.jpg",
+                        "fairytail-223-04.jpg",
+                        "fairytail-223-05.jpg",
+                        "fairytail-223-06.jpg",
+                        "fairytail-223-07.jpg",
+                        "fairytail-223-08.jpg",
+                        "fairytail-223-09.jpg",
+                        "fairytail-223-10.jpg",
+                        "fairytail-223-11.jpg",
+                        "fairytail-223-12.jpg",
+                        "fairytail-223-13.jpg",
+                        "fairytail-223-14.jpg",
+                        "fairytail-223-15.jpg",
+                        "fairytail-223-16.jpg",
+                        "fairytail-223-17.jpg",
+                        "fairytail-223-18.jpg",
+                        "fairytail-223-19.jpg",
+                        "fairytail-223-20.jpg",
+                        "fairytail-223-21.jpg",
+                        "fairytail-223-22.jpg"
                     ]
                 }
             ]
