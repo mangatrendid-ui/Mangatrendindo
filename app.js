@@ -423,7 +423,7 @@
           '<div class="manga-meta">' +
             '<span class="badge status">' + esc(m.status) + '</span>' +
             '<span class="rating">&#9733; ' + m.rating.toFixed(1) + '</span>' +
-            '<span>' + esc(m.genre.join(' &middot; ')) + '</span>' +
+            '<span>' + m.genre.map(function (g) { return esc(g); }).join(' &middot; ') + '</span>' +
             '<span id="total-dibaca">&middot; ' + m.views.toLocaleString('id-ID') + ' dibaca</span>' +
           '</div>' +
           '<p class="sinopsis">' + esc(m.sinopsis) + '</p>' +
