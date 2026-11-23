@@ -461,8 +461,11 @@
           '<div class="chapter-list">' +
           m.volumes.map(function (v) {
             return '<div class="chapter-row-wrap">' +
-              '<span class="chapter-row"><span class="ch-num">Volume ' + v.volume + '</span>' +
-              '<span class="ch-title">Chapter ' + v.dari + '–' + v.sampai + '</span></span>' +
+              (v.download
+                ? '<a class="chapter-row" href="' + esc(v.download) + '" target="_blank" rel="noopener"><span class="ch-num">Volume ' + v.volume + '</span>' +
+                  '<span class="ch-title">Chapter ' + v.dari + '–' + v.sampai + '</span></a>'
+                : '<span class="chapter-row"><span class="ch-num">Volume ' + v.volume + '</span>' +
+                  '<span class="ch-title">Chapter ' + v.dari + '–' + v.sampai + '</span></span>') +
               (v.download ? '<a class="btn-dl" href="' + esc(v.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
             '</div>';
           }).join('') + '</div>'
