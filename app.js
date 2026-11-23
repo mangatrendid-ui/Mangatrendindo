@@ -456,6 +456,17 @@
         (c.download ? '<a class="btn-dl" href="' + esc(c.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
         '</div>';
       }).join('') + '</div>' +
+      ((m.volumes && m.volumes.length)
+        ? '<h2 class="section-title">Volume</h2>' +
+          '<div class="chapter-list">' +
+          m.volumes.map(function (v) {
+            return '<div class="chapter-row-wrap">' +
+              '<span class="chapter-row"><span class="ch-num">Volume ' + v.volume + '</span>' +
+              '<span class="ch-title">Chapter ' + v.dari + '–' + v.sampai + '</span></span>' +
+              (v.download ? '<a class="btn-dl" href="' + esc(v.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
+            '</div>';
+          }).join('') + '</div>'
+        : '') +
       komentarHtml();
 
     app.innerHTML = html;

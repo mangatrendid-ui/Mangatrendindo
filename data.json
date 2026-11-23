@@ -1003,6 +1003,28 @@
                     "pages": []
                 }
             ]
+        },
+        {
+            "id": "ao-ashi",
+            "judul": "Ao Ashi",
+            "cover": "ao-ashi.jpeg",
+            "sinopsis": "Ashito Aoi, siswa SMP dari Ehime yang bermain sepak bola dengan gaya liar, bertemu pelatih Tatsuya Fukuda dari Tokyo City Esperion dan direkrut ke akademi sepak bola muda elit di Tokyo.",
+            "genre": [
+                "Sports",
+                "Drama"
+            ],
+            "status": "Completed",
+            "rating": 4.6,
+            "views": 0,
+            "chapters": [],
+            "volumes": [
+                {
+                    "volume": 1,
+                    "dari": 1,
+                    "sampai": 7,
+                    "download": "https://raw.githubusercontent.com/mangatrendid-ui/Mangatrendindo-PDF/main/ao-ashi-volume-1.pdf"
+                }
+            ]
         }
     ],
     "site": {
