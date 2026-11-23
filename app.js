@@ -411,6 +411,7 @@
     if (!m) { app.innerHTML = '<p class="empty">Manga tidak ditemukan. <a href="#/daftar">Kembali ke Daftar Manga</a></p>'; return; }
 
     var chapters = chaptersTerbit(m).slice().sort(function (a, b) { return b.nomor - a.nomor; });
+    var adaDownload = chapters.some(function (c) { return !!c.download; }) || (m.volumes && m.volumes.some(function (v) { return !!v.download; }));
     var prog = progress[m.id];
     var sudahBaca = prog ? prog.chapter : 0;
 
@@ -439,6 +440,9 @@
             : '') +
         '</div>' +
       '</div>' +
+      (adaDownload
+        ? '<div class="dl-notice">&#128161; <b>Cara melewati link download:</b> tunggu hitungan mundur selesai, lalu ketuk tombol lanjutkan. Kalau tiba-tiba terbuka halaman lain, itu iklan — tutup tab tersebut dan kembali ke sini, jangan ikuti apa pun di halaman itu.</div>'
+        : '') +
       '<h2 class="section-title">Daftar Chapter</h2>' +
       '<div class="chapter-list">' +
       chapters.map(function (c) {

@@ -61,6 +61,7 @@ button { cursor: pointer; font-family: inherit; }
 .total-judul { font-size: 13px; font-weight: 600; color: var(--muted); margin-left: 8px; }
 .section-sub { color: var(--muted); font-size: 14px; margin: -6px 0 14px; }
 .loading, .empty { color: var(--muted); padding: 30px 0; text-align: center; }
+.dl-notice { border: 1px solid var(--accent); border-left: 4px solid var(--accent); background: rgba(255,122,0,.08); border-radius: 8px; padding: 12px 14px; margin: 0 0 4px; font-size: 14px; line-height: 1.6; }
 
 /* Grid postingan ala Voratoon: 2 kolom di HP */
 .manga-grid {
