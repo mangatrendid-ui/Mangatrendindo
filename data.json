@@ -135,21 +135,6 @@
             ]
         },
         {
-            "id": "be-blues-ao-ni-nare",
-            "judul": "Be Blues! ~Ao ni Nare",
-            "cover": "beblues.jpg",
-            "sinopsis": "Ryuu Ichijou, bocah yang bermimpi menjadi pemain sepak bola profesional, berjuang bersama teman-temannya dari lapangan kecil hingga liga profesional.",
-            "genre": [
-                "Sports",
-                "Drama",
-                "Shounen"
-            ],
-            "status": "Completed",
-            "rating": 4.1,
-            "views": 0,
-            "chapters": []
-        },
-        {
             "id": "iruma-kun-if-episode-of-mafia",
             "judul": "Mairimashita! Iruma-kun: If Episode of Mafia",
             "cover": "iruma-mafia.jpg",
@@ -1218,6 +1203,76 @@
                         "undead-unluck-87-19.jpg",
                         "undead-unluck-87-20.jpg",
                         "undead-unluck-87-21.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "be-blues-ao-ni-nare",
+            "judul": "Be Blues! ~Ao ni Nare",
+            "cover": "beblues.jpg",
+            "sinopsis": "Ryuu Ichijou, bocah yang bermimpi menjadi pemain sepak bola profesional, berjuang bersama teman-temannya dari lapangan kecil hingga liga profesional.",
+            "genre": [
+                "Sports",
+                "Drama",
+                "Shounen"
+            ],
+            "status": "Completed",
+            "rating": 4.1,
+            "views": 0,
+            "tampilChapter": true,
+            "chapters": [
+                {
+                    "nomor": 39,
+                    "judul": "",
+                    "tanggal": "2026-11-25T06:00",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/be-blues-chapter-38-39-bahasa-indonesia-wIbiA"
+                },
+                {
+                    "nomor": 38,
+                    "judul": "",
+                    "tanggal": "2026-11-25T06:00",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/be-blues-chapter-38-39-bahasa-indonesia-wIbiA"
+                },
+                {
+                    "nomor": 37,
+                    "judul": "",
+                    "tanggal": "2026-11-25T06:00",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/be-blues-chapter-36-37-bahasa-indonesia-0M5nh"
+                },
+                {
+                    "nomor": 36,
+                    "judul": "",
+                    "tanggal": "2026-11-25T06:00",
+                    "pages": [
+                        "be-blues-36-00.jpg",
+                        "be-blues-36-01.jpg",
+                        "be-blues-36-02.jpg",
+                        "be-blues-36-03.jpg",
+                        "be-blues-36-04.jpg",
+                        "be-blues-36-05.jpg",
+                        "be-blues-36-06.jpg",
+                        "be-blues-36-07.jpg",
+                        "be-blues-36-08.jpg",
+                        "be-blues-36-09.jpg",
+                        "be-blues-36-10.jpg",
+                        "be-blues-36-11.jpg",
+                        "be-blues-36-12.jpg",
+                        "be-blues-36-13.jpg",
+                        "be-blues-36-14.jpg",
+                        "be-blues-36-15.jpg",
+                        "be-blues-36-16.jpg",
+                        "be-blues-36-17.jpg",
+                        "be-blues-36-18.jpg",
+                        "be-blues-36-19.jpg",
+                        "be-blues-36-20.jpg",
+                        "be-blues-36-21.jpg"
                     ]
                 }
             ]
