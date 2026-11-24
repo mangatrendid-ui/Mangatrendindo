@@ -1,21 +1,6 @@
 {
     "manga": [
         {
-            "id": "undead-unluck",
-            "judul": "Undead Unluck",
-            "cover": "undead-unluck.jpg",
-            "sinopsis": "Fuuko Izumo, gadis pembawa sial, bertemu Andy, pria yang tidak bisa mati. Bersama Union, mereka melawan makhluk penolak dan takdir dunia.",
-            "genre": [
-                "Action",
-                "Comedy",
-                "Supernatural"
-            ],
-            "status": "Completed",
-            "rating": 3.9,
-            "views": 0,
-            "chapters": []
-        },
-        {
             "id": "mairimashita-iruma-kun",
             "judul": "Mairimashita Iruma-kun",
             "cover": "iruma-kun.jpeg",
@@ -1156,6 +1141,83 @@
                         "absolute-sword-sense-211-15.jpg",
                         "absolute-sword-sense-211-16.jpg",
                         "absolute-sword-sense-211-17.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "undead-unluck",
+            "judul": "Undead Unluck",
+            "cover": "undead-unluck.jpg",
+            "sinopsis": "Fuuko Izumo, gadis pembawa sial, bertemu Andy, pria yang tidak bisa mati. Bersama Union, mereka melawan makhluk penolak dan takdir dunia.",
+            "genre": [
+                "Action",
+                "Comedy",
+                "Supernatural"
+            ],
+            "status": "Completed",
+            "rating": 3.9,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 91,
+                    "judul": "",
+                    "tanggal": "2026-11-24T13:00",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/undead-unluck-chapter-899091-bahasa-indonesia-tQGeh"
+                },
+                {
+                    "nomor": 90,
+                    "judul": "",
+                    "tanggal": "2026-11-24T13:00",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/undead-unluck-chapter-899091-bahasa-indonesia-tQGeh"
+                },
+                {
+                    "nomor": 89,
+                    "judul": "",
+                    "tanggal": "2026-11-24T13:00",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/undead-unluck-chapter-899091-bahasa-indonesia-tQGeh"
+                },
+                {
+                    "nomor": 88,
+                    "judul": "",
+                    "tanggal": "2026-11-24T13:00",
+                    "pages": [],
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/undead-unluck-chapter-87-88-bahasa-indonesia-IRfNv"
+                },
+                {
+                    "nomor": 87,
+                    "judul": "",
+                    "tanggal": "2026-11-24T12:59",
+                    "pages": [
+                        "undead-unluck-87-00.jpg",
+                        "undead-unluck-87-01.jpg",
+                        "undead-unluck-87-02.jpg",
+                        "undead-unluck-87-03.jpg",
+                        "undead-unluck-87-04.jpg",
+                        "undead-unluck-87-05.jpg",
+                        "undead-unluck-87-06.jpg",
+                        "undead-unluck-87-07.jpg",
+                        "undead-unluck-87-08.jpg",
+                        "undead-unluck-87-09.jpg",
+                        "undead-unluck-87-10.jpg",
+                        "undead-unluck-87-11.jpg",
+                        "undead-unluck-87-12.jpg",
+                        "undead-unluck-87-13.jpg",
+                        "undead-unluck-87-14.jpg",
+                        "undead-unluck-87-15.jpg",
+                        "undead-unluck-87-16.jpg",
+                        "undead-unluck-87-17.jpg",
+                        "undead-unluck-87-18.jpg",
+                        "undead-unluck-87-19.jpg",
+                        "undead-unluck-87-20.jpg",
+                        "undead-unluck-87-21.jpg"
                     ]
                 }
             ]
