@@ -1112,6 +1112,47 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "absolute-sword-sense",
+            "judul": "Absolute Sword Sense",
+            "cover": "absolute-sword-sense.jpg",
+            "sinopsis": "Dari author yang sama dengan Nano Machine. Setelah ditinggalkan oleh keluarganya karena dantiannya yang rusak, seorang pemuda berjuang di dunia murim dengan indra pedangnya yang luar biasa.",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "status": "Ongoing",
+            "rating": 4.5,
+            "views": 0,
+            "tampilChapter": true,
+            "chapters": [
+                {
+                    "nomor": 211,
+                    "tanggal": "2026-11-24T09:23",
+                    "pages": [
+                        "absolute-sword-sense-211-00.jpg",
+                        "absolute-sword-sense-211-01.jpg",
+                        "absolute-sword-sense-211-02.jpg",
+                        "absolute-sword-sense-211-03.jpg",
+                        "absolute-sword-sense-211-04.jpg",
+                        "absolute-sword-sense-211-05.jpg",
+                        "absolute-sword-sense-211-06.jpg",
+                        "absolute-sword-sense-211-07.jpg",
+                        "absolute-sword-sense-211-08.jpg",
+                        "absolute-sword-sense-211-09.jpg",
+                        "absolute-sword-sense-211-10.jpg",
+                        "absolute-sword-sense-211-11.jpg",
+                        "absolute-sword-sense-211-12.jpg",
+                        "absolute-sword-sense-211-13.jpg",
+                        "absolute-sword-sense-211-14.jpg",
+                        "absolute-sword-sense-211-15.jpg",
+                        "absolute-sword-sense-211-16.jpg",
+                        "absolute-sword-sense-211-17.jpg"
+                    ]
+                }
+            ]
         }
     ],
     "site": {
