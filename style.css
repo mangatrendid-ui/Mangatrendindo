@@ -275,3 +275,9 @@ button { cursor: pointer; font-family: inherit; }
 .update-card h3 a:hover { color: var(--accent); }
 @media (min-width: 900px) { .update-grid { grid-template-columns: repeat(4, 1fr); } }
 .update-card .update-chapters { padding-top: 0; }
+
+/* Tab Chapter | Volume di halaman detail (seperti Comix) */
+.tab-bar { display: flex; gap: 8px; margin: 16px 0 4px; border-bottom: 2px solid var(--border); }
+.tab-btn { flex: 1; padding: 10px 8px; background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; color: var(--muted); font-size: 15px; font-weight: 700; }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab-panel[hidden] { display: none; }

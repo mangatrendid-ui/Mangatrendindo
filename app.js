@@ -412,6 +412,8 @@
 
     var chapters = chaptersTerbit(m).slice().sort(function (a, b) { return b.nomor - a.nomor; });
     var adaDownload = chapters.some(function (c) { return !!c.download; }) || (m.volumes && m.volumes.some(function (v) { return !!v.download; }));
+    var punyaVolume = !!(m.volumes && m.volumes.length);
+    var tabAwal = chapters.length ? 'chapter' : 'volume';
     var prog = progress[m.id];
     var sudahBaca = prog ? prog.chapter : 0;
 
@@ -443,8 +445,16 @@
       (adaDownload
         ? '<div class="dl-notice">&#128161; <b>Cara melewati link download:</b> tunggu hitungan mundur selesai, lalu ketuk tombol lanjutkan. Kalau tiba-tiba terbuka halaman lain, itu iklan — tutup tab tersebut dan kembali ke sini, jangan ikuti apa pun di halaman itu.</div>'
         : '') +
-      '<h2 class="section-title">Daftar Chapter</h2>' +
-      '<div class="chapter-list">' +
+      (punyaVolume
+        ? '<div class="tab-bar">' +
+          '<button class="tab-btn' + (tabAwal === 'chapter' ? ' active' : '') + '" data-tab="chapter">Chapter</button>' +
+          '<button class="tab-btn' + (tabAwal === 'volume' ? ' active' : '') + '" data-tab="volume">&#128230; Volume</button>' +
+          '</div>' +
+          '<div class="tab-panel" id="panel-chapter"' + (tabAwal === 'volume' ? ' hidden' : '') + '>' +
+          '<h2 class="section-title">Daftar Chapter</h2>' +
+          '<div class="chapter-list">'
+        : '<h2 class="section-title">Daftar Chapter</h2>' +
+          '<div class="chapter-list">') +
       chapters.map(function (c) {
         var dibaca = c.nomor <= sudahBaca;
         var linkCh = vipAktif(c) ? '#/vip/' : '#/baca/';
@@ -460,8 +470,10 @@
         (c.download ? '<a class="btn-dl" href="' + esc(c.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
         '</div>';
       }).join('') + '</div>' +
-      ((m.volumes && m.volumes.length)
-        ? '<h2 class="section-title">&#128230; Download Batch (Volume)</h2>' +
+      (punyaVolume ? '</div>' : '') +
+      (punyaVolume
+        ? '<div class="tab-panel" id="panel-volume"' + (tabAwal === 'chapter' ? ' hidden' : '') + '>' +
+          '<h2 class="section-title">&#128230; Download Batch (Volume)</h2>' +
           '<div class="chapter-list">' +
           m.volumes.slice().reverse().map(function (v) {
             return '<div class="chapter-row-wrap">' +
@@ -473,12 +485,23 @@
                   '<span class="ch-title">Chapter ' + v.dari + '–' + v.sampai + '</span></span>') +
               (v.download ? '<a class="btn-dl vol-dl" data-vol="' + v.volume + '" href="' + esc(v.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
             '</div>';
-          }).join('') + '</div>'
+          }).join('') + '</div>' +
+          '</div>'
         : '') +
       komentarHtml();
 
     app.innerHTML = html;
     muatKomentar('manga-' + m.id, m.judul);
+
+    /* Tab Chapter | Volume (hanya di halaman detail yang punya volume). */
+    app.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        app.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        document.getElementById('panel-chapter').hidden = btn.getAttribute('data-tab') !== 'chapter';
+        document.getElementById('panel-volume').hidden = btn.getAttribute('data-tab') !== 'volume';
+      });
+    });
 
     document.getElementById('btn-bookmark').addEventListener('click', function () {
       if (isBookmark(m.id)) {
