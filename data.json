@@ -1287,6 +1287,55 @@
                     ]
                 }
             ]
+        },
+        {
+            "id": "wind-breaker",
+            "judul": "Wind Breaker",
+            "cover": "wind-breaker.jpg",
+            "sinopsis": "Sakura Haruka datang ke SMA Fuurin — sekolah dengan nilai tes terendah dan petarung terkuat — demi menjadi yang terkuat dan melindungi kota.",
+            "genre": [
+                "Action",
+                "Comedy",
+                "School"
+            ],
+            "status": "Ongoing",
+            "rating": 4.5,
+            "views": 0,
+            "tampilChapter": true,
+            "chapters": [
+                {
+                    "nomor": 237,
+                    "judul": "",
+                    "tanggal": "2026-11-25T08:39",
+                    "pages": [
+                        "wind-breaker-237-00.jpg",
+                        "wind-breaker-237-01.jpg",
+                        "wind-breaker-237-02.jpg",
+                        "wind-breaker-237-03.jpg",
+                        "wind-breaker-237-04.jpg",
+                        "wind-breaker-237-05.jpg",
+                        "wind-breaker-237-06.jpg",
+                        "wind-breaker-237-07.jpg",
+                        "wind-breaker-237-08.jpg",
+                        "wind-breaker-237-09.jpg",
+                        "wind-breaker-237-10.jpg",
+                        "wind-breaker-237-11.jpg",
+                        "wind-breaker-237-12.jpg",
+                        "wind-breaker-237-13.jpg",
+                        "wind-breaker-237-14.jpg",
+                        "wind-breaker-237-15.jpg",
+                        "wind-breaker-237-16.jpg",
+                        "wind-breaker-237-17.jpg",
+                        "wind-breaker-237-18.jpg",
+                        "wind-breaker-237-19.jpg",
+                        "wind-breaker-237-20.jpg",
+                        "wind-breaker-237-21.jpg",
+                        "wind-breaker-237-22.jpg",
+                        "wind-breaker-237-23.jpg",
+                        "wind-breaker-237-24.jpg"
+                    ]
+                }
+            ]
         }
     ],
     "site": {
