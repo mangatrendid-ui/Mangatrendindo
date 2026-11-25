@@ -148,7 +148,21 @@
             "status": "Ongoing",
             "rating": 4.2,
             "views": 0,
-            "chapters": []
+            "chapters": [],
+            "volumes": [
+                {
+                    "volume": 1,
+                    "dari": 1,
+                    "sampai": 3,
+                    "download": "https://sfl.gl/bqj611S"
+                },
+                {
+                    "volume": 2,
+                    "dari": 4,
+                    "sampai": 7,
+                    "download": "https://sfl.gl/Gzgc"
+                }
+            ]
         },
         {
             "id": "one-piece",
