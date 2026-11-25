@@ -681,6 +681,16 @@
     router();
   });
 
+  /* Anti simpan gambar: blokir menu klik kanan / tekan lama dan drag pada semua <img>
+     (cover + halaman chapter). Hanya penghalang untuk pengunjung awam — bukan pengaman
+     mutlak, karena file gambar tetap ada di repo publik dan bisa di-screenshot. */
+  document.addEventListener('contextmenu', function (e) {
+    if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+  });
+  document.addEventListener('dragstart', function (e) {
+    if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+  });
+
   fetch('data.json?_=' + Date.now())
     .then(function (r) { if (!r.ok) throw new Error('data.json tidak ditemukan'); return r.json(); })
     .then(function (data) {
