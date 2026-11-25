@@ -461,9 +461,9 @@
         '</div>';
       }).join('') + '</div>' +
       ((m.volumes && m.volumes.length)
-        ? '<h2 class="section-title">Volume</h2>' +
+        ? '<h2 class="section-title">&#128230; Download Batch (Volume)</h2>' +
           '<div class="chapter-list">' +
-          m.volumes.map(function (v) {
+          m.volumes.slice().reverse().map(function (v) {
             return '<div class="chapter-row-wrap">' +
               (v.download
                 ? '<a class="chapter-row vol-dl" data-vol="' + v.volume + '" href="' + esc(v.download) + '" target="_blank" rel="noopener"><span class="ch-num">Volume ' + v.volume + '</span>' +
