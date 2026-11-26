@@ -143,7 +143,15 @@
   var COUNTER_BASE = 'https://api.counterapi.dev/v2';
   /* Kolom komentar (Disqus, gratis). Shortname dari dashboard Disqus setelah
      mendaftarkan situs mangatrendindo.my.id (kategori Entertainment).
-     Tiap halaman punya thread sendiri lewat page.identifier. */
+     Tiap halaman punya thread sendiri lewat page.identifier + page.url.
+     PERBAIKAN 2026-11-26: thread sempat tercampur jadi satu di semua chapter.
+     Penyebabnya: Disqus mengenali thread dari page.url, dan karena situs ini
+     single-page, semua alamat hanya beda di bagian # (hash) yang Disqus buang
+     saat mencocokkan — jadi semua identifier lama sudah terikat ke satu
+     thread yang sama. Perbaikannya dua hal: (1) page.url dibuat unik per
+     halaman dengan path tanpa hash, dan (2) identifier diganti format baru
+     (v2) supaya thread baru dibuat dari nol. Komentar lama tertinggal di
+     thread lama. */
   var DISQUS_SHORTNAME = 'mangatrendindo-my-id';
   var DISQUS_SITE = 'https://mangatrendindo.my.id';
   function komentarHtml() {
@@ -153,8 +161,7 @@
      render halaman yang punya kolom komentar, panggil ini dengan id halaman.
      Kalau script Disqus belum dimuat, muat dulu; kalau sudah, reset ke
      halaman baru (cara resmi Disqus untuk SPA). */
-  function muatKomentar(pageId, pageTitle) {
-    var pageUrl = DISQUS_SITE + '/' + location.hash;
+  function muatKomentar(pageId, pageTitle, pageUrl) {
     if (window.DISQUS) {
       window.DISQUS.reset({ reload: true, config: function () {
         this.page.identifier = pageId;
@@ -491,7 +498,7 @@
       komentarHtml();
 
     app.innerHTML = html;
-    muatKomentar('manga-' + m.id, m.judul);
+    muatKomentar('manga-v2-' + m.id, m.judul, DISQUS_SITE + '/manga/' + m.id);
 
     /* Tab Chapter | Volume (hanya di halaman detail yang punya volume). */
     app.querySelectorAll('.tab-btn').forEach(function (btn) {
@@ -559,7 +566,7 @@
         '<a class="btn ghost" href="#/manga/' + esc(m.id) + '">Kembali ke Daftar Chapter</a>' +
       '</div>' +
       komentarHtml();
-    muatKomentar('vip-' + m.id + '-' + ch.nomor, m.judul + ' — Chapter ' + ch.nomor + ' (VIP)');
+    muatKomentar('vip-v2-' + m.id + '-' + ch.nomor, m.judul + ' — Chapter ' + ch.nomor + ' (VIP)', DISQUS_SITE + '/vip/' + m.id + '/' + ch.nomor);
     window.scrollTo(0, 0);
   }
 
@@ -608,7 +615,7 @@
         nav +
       '</div>' +
       komentarHtml();
-    muatKomentar('baca-' + m.id + '-' + ch.nomor, m.judul + ' — Chapter ' + ch.nomor);
+    muatKomentar('baca-v2-' + m.id + '-' + ch.nomor, m.judul + ' — Chapter ' + ch.nomor, DISQUS_SITE + '/baca/' + m.id + '/' + ch.nomor);
     window.scrollTo(0, 0);
   }
 
