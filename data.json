@@ -1,80 +1,6 @@
 {
     "manga": [
         {
-            "id": "mairimashita-iruma-kun",
-            "judul": "Mairimashita Iruma-kun",
-            "cover": "iruma-kun.jpeg",
-            "sinopsis": "Iruma Suzuki, anak manusia yang dijual orang tuanya ke iblis Sullivan, harus bersekolah di sekolah iblis Babyls sambil menyembunyikan bahwa dia manusia.",
-            "genre": [
-                "Comedy",
-                "Fantasy",
-                "School"
-            ],
-            "status": "Ongoing",
-            "rating": 4.2,
-            "views": 0,
-            "chapters": [
-                {
-                    "nomor": 467,
-                    "judul": "",
-                    "tanggal": "2026-11-19",
-                    "pages": [
-                        "iruma-467-00.jpg",
-                        "iruma-467-01.jpg",
-                        "iruma-467-02.jpg",
-                        "iruma-467-03.jpg",
-                        "iruma-467-04.jpg",
-                        "iruma-467-05.jpg",
-                        "iruma-467-06.jpg",
-                        "iruma-467-07.jpg",
-                        "iruma-467-08.jpg",
-                        "iruma-467-09.jpg",
-                        "iruma-467-10.jpg",
-                        "iruma-467-11.jpg",
-                        "iruma-467-12.jpg",
-                        "iruma-467-13.jpg",
-                        "iruma-467-14.jpg",
-                        "iruma-467-15.jpg",
-                        "iruma-467-16.jpg",
-                        "iruma-467-17.jpg",
-                        "iruma-467-18.jpg",
-                        "iruma-467-19.jpg",
-                        "iruma-467-20.jpg",
-                        "iruma-467-21.jpg"
-                    ]
-                },
-                {
-                    "nomor": 466,
-                    "judul": "",
-                    "tanggal": "2026-11-12",
-                    "pages": [
-                        "iruma-466-00.jpg",
-                        "iruma-466-01.jpg",
-                        "iruma-466-02.jpg",
-                        "iruma-466-03.jpg",
-                        "iruma-466-04.jpg",
-                        "iruma-466-05.jpg",
-                        "iruma-466-06.jpg",
-                        "iruma-466-07.jpg",
-                        "iruma-466-08.jpg",
-                        "iruma-466-09.jpg",
-                        "iruma-466-10.jpg",
-                        "iruma-466-11.jpg",
-                        "iruma-466-12.jpg",
-                        "iruma-466-13.jpg",
-                        "iruma-466-14.jpg",
-                        "iruma-466-15.jpg",
-                        "iruma-466-16.jpg",
-                        "iruma-466-17.jpg",
-                        "iruma-466-18.jpg",
-                        "iruma-466-19.jpg",
-                        "iruma-466-20.jpg",
-                        "iruma-466-21.jpg"
-                    ]
-                }
-            ]
-        },
-        {
             "id": "blue-lock",
             "judul": "Blue Lock",
             "cover": "blue-lock.jpeg",
@@ -1437,6 +1363,108 @@
                         "shangri-la-frontier-288-17.jpg",
                         "shangri-la-frontier-288-18.jpg",
                         "shangri-la-frontier-288-19.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "mairimashita-iruma-kun",
+            "judul": "Mairimashita Iruma-kun",
+            "cover": "iruma-kun.jpeg",
+            "sinopsis": "Iruma Suzuki, anak manusia yang dijual orang tuanya ke iblis Sullivan, harus bersekolah di sekolah iblis Babyls sambil menyembunyikan bahwa dia manusia.",
+            "genre": [
+                "Comedy",
+                "Fantasy",
+                "School"
+            ],
+            "status": "Ongoing",
+            "rating": 4.2,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 468,
+                    "judul": "",
+                    "tanggal": "2026-11-26T07:05",
+                    "download": "https://safefileku.com/download/ELUWX7gF54eiUkT3",
+                    "pages": [
+                        "iruma-468-00.jpg",
+                        "iruma-468-01.jpg",
+                        "iruma-468-02.jpg",
+                        "iruma-468-03.jpg",
+                        "iruma-468-04.jpg",
+                        "iruma-468-05.jpg",
+                        "iruma-468-06.jpg",
+                        "iruma-468-07.jpg",
+                        "iruma-468-08.jpg",
+                        "iruma-468-09.jpg",
+                        "iruma-468-10.jpg",
+                        "iruma-468-11.jpg",
+                        "iruma-468-12.jpg",
+                        "iruma-468-13.jpg",
+                        "iruma-468-14.jpg",
+                        "iruma-468-15.jpg",
+                        "iruma-468-16.jpg",
+                        "iruma-468-17.jpg",
+                        "iruma-468-18.jpg",
+                        "iruma-468-19.jpg"
+                    ]
+                },
+                {
+                    "nomor": 467,
+                    "judul": "",
+                    "tanggal": "2026-11-19",
+                    "pages": [
+                        "iruma-467-00.jpg",
+                        "iruma-467-01.jpg",
+                        "iruma-467-02.jpg",
+                        "iruma-467-03.jpg",
+                        "iruma-467-04.jpg",
+                        "iruma-467-05.jpg",
+                        "iruma-467-06.jpg",
+                        "iruma-467-07.jpg",
+                        "iruma-467-08.jpg",
+                        "iruma-467-09.jpg",
+                        "iruma-467-10.jpg",
+                        "iruma-467-11.jpg",
+                        "iruma-467-12.jpg",
+                        "iruma-467-13.jpg",
+                        "iruma-467-14.jpg",
+                        "iruma-467-15.jpg",
+                        "iruma-467-16.jpg",
+                        "iruma-467-17.jpg",
+                        "iruma-467-18.jpg",
+                        "iruma-467-19.jpg",
+                        "iruma-467-20.jpg",
+                        "iruma-467-21.jpg"
+                    ]
+                },
+                {
+                    "nomor": 466,
+                    "judul": "",
+                    "tanggal": "2026-11-12",
+                    "pages": [
+                        "iruma-466-00.jpg",
+                        "iruma-466-01.jpg",
+                        "iruma-466-02.jpg",
+                        "iruma-466-03.jpg",
+                        "iruma-466-04.jpg",
+                        "iruma-466-05.jpg",
+                        "iruma-466-06.jpg",
+                        "iruma-466-07.jpg",
+                        "iruma-466-08.jpg",
+                        "iruma-466-09.jpg",
+                        "iruma-466-10.jpg",
+                        "iruma-466-11.jpg",
+                        "iruma-466-12.jpg",
+                        "iruma-466-13.jpg",
+                        "iruma-466-14.jpg",
+                        "iruma-466-15.jpg",
+                        "iruma-466-16.jpg",
+                        "iruma-466-17.jpg",
+                        "iruma-466-18.jpg",
+                        "iruma-466-19.jpg",
+                        "iruma-466-20.jpg",
+                        "iruma-466-21.jpg"
                     ]
                 }
             ]
