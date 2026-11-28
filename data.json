@@ -61,72 +61,6 @@
             ]
         },
         {
-            "id": "iruma-kun-if-episode-of-mafia",
-            "judul": "Mairimashita! Iruma-kun: If Episode of Mafia",
-            "cover": "iruma-mafia.jpg",
-            "sinopsis": "Di dunia alternatif, Iruma Suzuki tumbuh sebagai pewaris keluarga mafia iblis — kisah lain dari Iruma-kun yang penuh aksi dan komedi.",
-            "genre": [
-                "Action",
-                "Comedy",
-                "Drama",
-                "Fantasy"
-            ],
-            "status": "Ongoing",
-            "rating": 4.2,
-            "views": 0,
-            "chapters": [],
-            "volumes": [
-                {
-                    "volume": 1,
-                    "dari": 1,
-                    "sampai": 3,
-                    "download": "https://besargaji.com/Cm7SI"
-                },
-                {
-                    "volume": 2,
-                    "dari": 4,
-                    "sampai": 7,
-                    "download": "https://besargaji.com/DXwlUQo4vPp"
-                },
-                {
-                    "volume": 3,
-                    "dari": 8,
-                    "sampai": 11,
-                    "download": "https://besargaji.com/zW1up"
-                },
-                {
-                    "volume": 4,
-                    "dari": 12,
-                    "sampai": 15,
-                    "download": "https://besargaji.com/9HZwUuJ88yU"
-                },
-                {
-                    "volume": 5,
-                    "dari": 16,
-                    "sampai": 19,
-                    "download": "https://besargaji.com/cTp8GC50g"
-                },
-                {
-                    "volume": 6,
-                    "dari": 20,
-                    "sampai": 23,
-                    "download": "https://besargaji.com/Fnuw1xiIMT"
-                },
-                {
-                    "volume": 7,
-                    "dari": 24,
-                    "sampai": 27,
-                    "download": "https://besargaji.com/OtAvQ4EV7w2"
-                },
-                {
-                    "volume": 8,
-                    "dari": 28,
-                    "sampai": 35,
-                    "download": "https://besargaji.com/Hdjxhw"
-                }
-            ]
-        },
-        {
             "id": "kingdom",
             "judul": "Kingdom",
             "cover": "Kingdom.jpg",
@@ -1792,6 +1726,116 @@
                     "dari": 1,
                     "sampai": 5,
                     "download": "https://besargaji.com/GzYJN"
+                }
+            ]
+        },
+        {
+            "id": "iruma-kun-if-episode-of-mafia",
+            "judul": "Mairimashita! Iruma-kun: If Episode of Mafia",
+            "cover": "iruma-mafia.jpg",
+            "sinopsis": "Di dunia alternatif, Iruma Suzuki tumbuh sebagai pewaris keluarga mafia iblis — kisah lain dari Iruma-kun yang penuh aksi dan komedi.",
+            "genre": [
+                "Action",
+                "Comedy",
+                "Drama",
+                "Fantasy"
+            ],
+            "status": "Ongoing",
+            "rating": 4.2,
+            "views": 0,
+            "chapters": [
+                {
+                    "nomor": 45,
+                    "judul": "",
+                    "tanggal": "2026-11-28T18:26",
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/iruma-kun-spin-off-mafia-chapter-44-45-bahasa-indonesia-JI9Np",
+                    "pages": []
+                },
+                {
+                    "nomor": 44,
+                    "judul": "",
+                    "tanggal": "2026-11-28T18:26",
+                    "vip": true,
+                    "trakteer": "https://trakteer.id/krul_teppes/reward/iruma-kun-spin-off-mafia-chapter-44-45-bahasa-indonesia-JI9Np",
+                    "pages": []
+                },
+                {
+                    "nomor": 43,
+                    "judul": "BAB 43: UNTUK SEMENTARA",
+                    "tanggal": "2026-11-28T18:26",
+                    "pages": [
+                        "iruma-mafia-43-00.webp",
+                        "iruma-mafia-43-01.webp",
+                        "iruma-mafia-43-02.webp",
+                        "iruma-mafia-43-03.webp",
+                        "iruma-mafia-43-04.webp",
+                        "iruma-mafia-43-05.webp",
+                        "iruma-mafia-43-06.webp",
+                        "iruma-mafia-43-07.webp",
+                        "iruma-mafia-43-08.webp",
+                        "iruma-mafia-43-09.webp",
+                        "iruma-mafia-43-10.webp",
+                        "iruma-mafia-43-11.webp",
+                        "iruma-mafia-43-12.webp",
+                        "iruma-mafia-43-13.webp",
+                        "iruma-mafia-43-14.webp",
+                        "iruma-mafia-43-15.webp",
+                        "iruma-mafia-43-16.webp",
+                        "iruma-mafia-43-17.webp",
+                        "iruma-mafia-43-18.webp",
+                        "iruma-mafia-43-19.webp"
+                    ]
+                }
+            ],
+            "volumes": [
+                {
+                    "volume": 1,
+                    "dari": 1,
+                    "sampai": 3,
+                    "download": "https://besargaji.com/Cm7SI"
+                },
+                {
+                    "volume": 2,
+                    "dari": 4,
+                    "sampai": 7,
+                    "download": "https://besargaji.com/DXwlUQo4vPp"
+                },
+                {
+                    "volume": 3,
+                    "dari": 8,
+                    "sampai": 11,
+                    "download": "https://besargaji.com/zW1up"
+                },
+                {
+                    "volume": 4,
+                    "dari": 12,
+                    "sampai": 15,
+                    "download": "https://besargaji.com/9HZwUuJ88yU"
+                },
+                {
+                    "volume": 5,
+                    "dari": 16,
+                    "sampai": 19,
+                    "download": "https://besargaji.com/cTp8GC50g"
+                },
+                {
+                    "volume": 6,
+                    "dari": 20,
+                    "sampai": 23,
+                    "download": "https://besargaji.com/Fnuw1xiIMT"
+                },
+                {
+                    "volume": 7,
+                    "dari": 24,
+                    "sampai": 27,
+                    "download": "https://besargaji.com/OtAvQ4EV7w2"
+                },
+                {
+                    "volume": 8,
+                    "dari": 28,
+                    "sampai": 35,
+                    "download": "https://besargaji.com/Hdjxhw"
                 }
             ]
         }
