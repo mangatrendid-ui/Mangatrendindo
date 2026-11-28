@@ -655,6 +655,8 @@
     document.querySelectorAll('.btn-fullscreen').forEach(function (b) {
       b.addEventListener('click', toggleLayarPenuh);
     });
+    // Mode baca penuh otomatis saat chapter dibuka
+    document.body.classList.add('mode-layar-penuh');
     setTombolLayarPenuh();
     muatKomentar('baca-v2-' + m.id + '-' + ch.nomor, m.judul + ' — Chapter ' + ch.nomor, DISQUS_SITE + '/baca/' + m.id + '/' + ch.nomor);
     window.scrollTo(0, 0);
