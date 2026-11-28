@@ -1446,69 +1446,6 @@
             ]
         },
         {
-            "id": "demonic-emperor",
-            "judul": "Demonic Emperor",
-            "cover": "demonic-emperor.jpg",
-            "sinopsis": "Zhuo Yifan, Kaisar Iblis yang ditakuti semua orang, dikhianati dan dibunuh setelah mendapatkan Kitab Sembilan Misteri. Jiwanya terlahir kembali di tubuh Zhuo Fan, pelayan muda keluarga kecil — dan dari titik terendah itu, ia mulai merencanakan kebangkitannya.",
-            "genre": [
-                "Action",
-                "Adventure",
-                "Fantasy"
-            ],
-            "status": "Ongoing",
-            "rating": 4.8,
-            "views": 0,
-            "tampilChapter": true,
-            "chapters": [
-                {
-                    "nomor": 940,
-                    "judul": "",
-                    "tanggal": "2026-11-27T07:34",
-                    "pages": [
-                        "demonic-emperor-940-00.jpg",
-                        "demonic-emperor-940-01.jpg",
-                        "demonic-emperor-940-02.jpg",
-                        "demonic-emperor-940-03.jpg",
-                        "demonic-emperor-940-04.jpg",
-                        "demonic-emperor-940-05.jpg",
-                        "demonic-emperor-940-06.jpg",
-                        "demonic-emperor-940-07.jpg"
-                    ]
-                },
-                {
-                    "nomor": 939,
-                    "judul": "",
-                    "tanggal": "2026-11-23T13:49",
-                    "pages": [
-                        "demonic-emperor-939-00.jpg",
-                        "demonic-emperor-939-01.jpg",
-                        "demonic-emperor-939-02.jpg",
-                        "demonic-emperor-939-03.jpg",
-                        "demonic-emperor-939-04.jpg",
-                        "demonic-emperor-939-05.jpg",
-                        "demonic-emperor-939-06.jpg",
-                        "demonic-emperor-939-07.jpg"
-                    ]
-                },
-                {
-                    "nomor": 938,
-                    "judul": "",
-                    "tanggal": "2026-11-23T14:33",
-                    "pages": [
-                        "demonic-emperor-938-00.jpg",
-                        "demonic-emperor-938-01.jpg",
-                        "demonic-emperor-938-02.jpg",
-                        "demonic-emperor-938-03.jpg",
-                        "demonic-emperor-938-04.jpg",
-                        "demonic-emperor-938-05.jpg",
-                        "demonic-emperor-938-06.jpg",
-                        "demonic-emperor-938-07.jpg",
-                        "demonic-emperor-938-08.jpg"
-                    ]
-                }
-            ]
-        },
-        {
             "id": "fairy-tail-100-years-quest",
             "judul": "Fairy Tail: 100 Years Quest",
             "cover": "fairytail.jpeg",
@@ -1757,6 +1694,86 @@
                         "Tougenanki-247-21.jpg",
                         "Tougenanki-247-22.jpg",
                         "Tougenanki-247-23.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "demonic-emperor",
+            "judul": "Demonic Emperor",
+            "cover": "demonic-emperor.jpg",
+            "sinopsis": "Zhuo Yifan, Kaisar Iblis yang ditakuti semua orang, dikhianati dan dibunuh setelah mendapatkan Kitab Sembilan Misteri. Jiwanya terlahir kembali di tubuh Zhuo Fan, pelayan muda keluarga kecil — dan dari titik terendah itu, ia mulai merencanakan kebangkitannya.",
+            "genre": [
+                "Action",
+                "Adventure",
+                "Fantasy"
+            ],
+            "status": "Ongoing",
+            "rating": 4.8,
+            "views": 0,
+            "tampilChapter": true,
+            "chapters": [
+                {
+                    "nomor": 941,
+                    "judul": "",
+                    "tanggal": "2026-11-28T07:41",
+                    "pages": [
+                        "demonic-emperor-941-00.jpg",
+                        "demonic-emperor-941-01.jpg",
+                        "demonic-emperor-941-02.jpg",
+                        "demonic-emperor-941-03.jpg",
+                        "demonic-emperor-941-04.jpg",
+                        "demonic-emperor-941-05.jpg",
+                        "demonic-emperor-941-06.jpg",
+                        "demonic-emperor-941-07.jpg",
+                        "demonic-emperor-941-08.jpg",
+                        "demonic-emperor-941-09.jpg"
+                    ]
+                },
+                {
+                    "nomor": 940,
+                    "judul": "",
+                    "tanggal": "2026-11-27T07:34",
+                    "pages": [
+                        "demonic-emperor-940-00.jpg",
+                        "demonic-emperor-940-01.jpg",
+                        "demonic-emperor-940-02.jpg",
+                        "demonic-emperor-940-03.jpg",
+                        "demonic-emperor-940-04.jpg",
+                        "demonic-emperor-940-05.jpg",
+                        "demonic-emperor-940-06.jpg",
+                        "demonic-emperor-940-07.jpg"
+                    ]
+                },
+                {
+                    "nomor": 939,
+                    "judul": "",
+                    "tanggal": "2026-11-23T13:49",
+                    "pages": [
+                        "demonic-emperor-939-00.jpg",
+                        "demonic-emperor-939-01.jpg",
+                        "demonic-emperor-939-02.jpg",
+                        "demonic-emperor-939-03.jpg",
+                        "demonic-emperor-939-04.jpg",
+                        "demonic-emperor-939-05.jpg",
+                        "demonic-emperor-939-06.jpg",
+                        "demonic-emperor-939-07.jpg"
+                    ]
+                },
+                {
+                    "nomor": 938,
+                    "judul": "",
+                    "tanggal": "2026-11-23T14:33",
+                    "pages": [
+                        "demonic-emperor-938-00.jpg",
+                        "demonic-emperor-938-01.jpg",
+                        "demonic-emperor-938-02.jpg",
+                        "demonic-emperor-938-03.jpg",
+                        "demonic-emperor-938-04.jpg",
+                        "demonic-emperor-938-05.jpg",
+                        "demonic-emperor-938-06.jpg",
+                        "demonic-emperor-938-07.jpg",
+                        "demonic-emperor-938-08.jpg"
                     ]
                 }
             ]
