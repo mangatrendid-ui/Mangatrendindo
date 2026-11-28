@@ -281,3 +281,18 @@ button { cursor: pointer; font-family: inherit; }
 .tab-btn { flex: 1; padding: 10px 8px; background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; color: var(--muted); font-size: 15px; font-weight: 700; }
 .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
 .tab-panel[hidden] { display: none; }
+
+/* ---------- Mode layar penuh di reader ---------- */
+body.mode-layar-penuh .header,
+body.mode-layar-penuh .ad-slot,
+body.mode-layar-penuh .sidebar,
+body.mode-layar-penuh .footer,
+body.mode-layar-penuh #to-top { display: none !important; }
+body.mode-layar-penuh .layout { display: block; }
+body.mode-layar-penuh .container { padding-top: 0; padding-bottom: 0; }
+body.mode-layar-penuh .reader { max-width: 900px; }
+body.mode-layar-penuh .reader-head + .reader-nav {
+  position: sticky; top: 0; z-index: 60;
+  background: var(--bg); padding: 8px 0; margin-top: 0;
+}
+body.mode-layar-penuh .reader-nav .btn-fullscreen { border-color: var(--accent); color: var(--accent-2); }
