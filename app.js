@@ -573,38 +573,11 @@
     window.scrollTo(0, 0);
   }
 
-  /* ---------- Mode layar penuh di reader ---------- */
-  function layarPenuhAktif() {
-    return document.body.classList.contains('mode-layar-penuh');
-  }
+  /* ---------- Mode layar penuh di reader (selalu aktif) ---------- */
   function keluarLayarPenuh() {
-    if (!layarPenuhAktif()) return;
     document.body.classList.remove('mode-layar-penuh');
     if (document.fullscreenElement && document.exitFullscreen) { document.exitFullscreen(); }
-    setTombolLayarPenuh();
   }
-  function setTombolLayarPenuh() {
-    var aktif = layarPenuhAktif();
-    document.querySelectorAll('.btn-fullscreen').forEach(function (b) {
-      b.innerHTML = aktif ? '&#10005; Keluar Layar Penuh' : '&#9974; Layar Penuh';
-    });
-  }
-  function toggleLayarPenuh() {
-    if (layarPenuhAktif()) { keluarLayarPenuh(); return; }
-    document.body.classList.add('mode-layar-penuh');
-    var el = document.documentElement;
-    var p = null;
-    if (el.requestFullscreen) { p = el.requestFullscreen(); }
-    else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
-    if (p && p.catch) { p.catch(function () {}); }
-    setTombolLayarPenuh();
-  }
-  document.addEventListener('fullscreenchange', function () {
-    if (!document.fullscreenElement && layarPenuhAktif()) {
-      document.body.classList.remove('mode-layar-penuh');
-    }
-    setTombolLayarPenuh();
-  });
 
   /* ---------- Halaman: Reader vertikal ---------- */
   function renderReader(mangaId, nomor) {
@@ -630,7 +603,6 @@
     var nav = '<div class="reader-nav">' +
       (prev ? '<a class="btn ghost" href="#/baca/' + esc(m.id) + '/' + prev.nomor + '">&laquo; Chapter ' + prev.nomor + '</a>' : '<span class="btn ghost" style="opacity:.4">&laquo; Sebelumnya</span>') +
       '<a class="btn ghost" href="#/manga/' + esc(m.id) + '">Daftar Chapter</a>' +
-      '<button class="btn ghost btn-fullscreen" type="button">&#9974; Layar Penuh</button>' +
       (ch.download ? '<a class="btn" href="' + esc(ch.download) + '" target="_blank" rel="noopener">&#11015; Download</a>' : '') +
       (next ? '<a class="btn" href="#/baca/' + esc(m.id) + '/' + next.nomor + '">Chapter ' + next.nomor + ' &raquo;</a>' : '<span class="btn" style="opacity:.4">Chapter Berikutnya &raquo;</span>') +
     '</div>';
@@ -652,12 +624,8 @@
         nav +
       '</div>' +
       komentarHtml();
-    document.querySelectorAll('.btn-fullscreen').forEach(function (b) {
-      b.addEventListener('click', toggleLayarPenuh);
-    });
     // Mode baca penuh otomatis saat chapter dibuka
     document.body.classList.add('mode-layar-penuh');
-    setTombolLayarPenuh();
     muatKomentar('baca-v2-' + m.id + '-' + ch.nomor, m.judul + ' — Chapter ' + ch.nomor, DISQUS_SITE + '/baca/' + m.id + '/' + ch.nomor);
     window.scrollTo(0, 0);
   }
